@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "lang": {
+    "name": "English",
+    "switchTo": "🌐 ID"
+  },
+  "site": {
+    "title": "Laksmana (Oci) Tri Moerdani — Fractional CPO",
+    "description": "Fractional CPO and co-founder of Reka Cipta Digital. Twenty years in digital work — helping companies build the right product, not just a product."
+  }
+}

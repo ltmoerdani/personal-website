@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laksmana (Oci) Tri Moerdani — Fractional CPO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ── TOKENS ─────────────────────────────────────────── */
+:root {
+  --paper:       #F8F7F3;
+  --ink:         #1D1C1A;
+  --ink-60:      rgba(29,28,26,0.60);
+  --ink-35:      rgba(29,28,26,0.35);
+  --ink-12:      rgba(29,28,26,0.12);
+  --ink-05:      rgba(29,28,26,0.05);
+  --forest:      #2E5D4B;
+  --forest-bg:   #E8F0EB;
+  --forest-35:   rgba(46,93,75,0.35);
+  --pro-red:     #C8232A;   /* Pro Archery brand red */
+  --white:       #FFFFFF;
+  --serif:       'DM Serif Display', Georgia, serif;
+  --sans:        'DM Sans', system-ui, sans-serif;
+  --mono:        'JetBrains Mono', monospace;
+  --gutter:      clamp(1.5rem, 6vw, 5rem);
+  --max:         1140px;
+  --pad:         clamp(5rem, 10vw, 9rem);
+}
+
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; scroll-padding-top:72px; }
+body {
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+/* Grain texture */
+body::after {
+  content:'';
+  position:fixed; inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity:0.032; pointer-events:none; z-index:9000;
+}
+
+::selection { background:var(--forest); color:var(--paper); }
+
+/* ── REVEAL ─────────────────────────────────────────── */
+.r { opacity:0; transform:translateY(22px); transition:opacity .72s cubic-bezier(.16,1,.3,1),transform .72s cubic-bezier(.16,1,.3,1); }
+.r.on { opacity:1; transform:none; }
+.d1{transition-delay:.10s} .d2{transition-delay:.20s} .d3{transition-delay:.32s} .d4{transition-delay:.46s}
+@media(prefers-reduced-motion:reduce){.r{opacity:1;transform:none;transition:none}}
+
+/* ── NAV ────────────────────────────────────────────── */
+#nav {
+  position:fixed; top:0; left:0; right:0; z-index:200;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:18px var(--gutter);
+  background:rgba(248,247,243,0.93);
+  backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--ink-05);
+  opacity:0; transform:translateY(-6px);
+  transition:opacity .28s ease, transform .28s ease;
+  pointer-events:none;
+}
+#nav.vis { opacity:1; transform:none; pointer-events:auto; }
+.nav-logo { font-family:var(--serif); font-size:1.1rem; color:var(--ink); text-decoration:none; letter-spacing:-.01em; }
+.nav-links { display:flex; align-items:center; gap:2.5rem; }
+.nav-links a { font-size:.8125rem; color:var(--ink-60); text-decoration:none; letter-spacing:.02em; }
+.nav-links .cta { color:var(--forest); border-bottom:1px solid var(--forest-35); padding-bottom:1px; }
+
+/* ── §1 HERO ────────────────────────────────────────── */
+#hero {
+  position:relative; min-height:100vh;
+  display:flex; flex-direction:column; justify-content:flex-end;
+  padding:0 var(--gutter) clamp(4rem,10vh,7rem);
+  overflow:hidden;
+}
+.hero-rings {
+  position:absolute; top:50%; right:-8%;
+  transform:translateY(-52%);
+  width:68vmin; height:68vmin;
+  pointer-events:none;
+}
+.hero-rings circle { fill:none; stroke:var(--ink); }
+.hero-meta {
+  font-family:var(--mono); font-size:.68rem; color:var(--ink-35);
+  letter-spacing:.14em; text-transform:uppercase; margin-bottom:2.5rem;
+  animation:sIn .8s cubic-bezier(.16,1,.3,1) .25s both;
+}
+h1.hero-q {
+  font-family:var(--serif);
+  font-size:clamp(2.2rem,5.2vw,4.75rem);
+  line-height:1.10; color:var(--ink);
+  letter-spacing:-.032em; font-style:italic;
+  max-width:880px; text-wrap:pretty;
+  animation:sIn 1s cubic-bezier(.16,1,.3,1) .4s both;
+}
+.hero-scroll {
+  position:absolute; right:var(--gutter); bottom:2.5rem;
+  display:flex; flex-direction:column; align-items:center; gap:10px;
+  animation:sIn .7s ease 1.5s both;
+}
+.hero-scroll span {
+  font-family:var(--mono); font-size:.58rem; color:var(--ink-35);
+  letter-spacing:.18em; text-transform:uppercase; writing-mode:vertical-rl;
+}
+.scroll-line {
+  width:1px; height:44px;
+  background:linear-gradient(to bottom, var(--ink-35), transparent);
+  animation:scrollPulse 2s ease 2.2s infinite;
+}
+@keyframes sIn { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
+@keyframes scrollPulse {
+  0%{transform:scaleY(0);transform-origin:top;opacity:0}
+  40%{transform:scaleY(1);transform-origin:top;opacity:1}
+  70%{transform:scaleY(1);transform-origin:bottom}
+  100%{transform:scaleY(0);transform-origin:bottom;opacity:0}
+}
+
+/* ── §2 IDENTITY ────────────────────────────────────── */
+#identity { padding:var(--pad) var(--gutter); background:var(--paper); }
+.id-inner { max-width:var(--max); margin:0 auto; }
+.id-rule { width:100%; height:1px; background:var(--ink-12); margin-bottom:clamp(3rem,6vw,5rem); }
+.id-grid { display:grid; grid-template-columns:5fr 7fr; gap:5rem; align-items:start; }
+.id-label { font-family:var(--mono); font-size:.65rem; color:var(--ink-35); letter-spacing:.14em; text-transform:uppercase; margin-bottom:1rem; }
+.id-name { font-family:var(--serif); font-size:clamp(1.5rem,2.5vw,2.1rem); color:var(--ink); letter-spacing:-.02em; line-height:1.2; margin-bottom:.5rem; }
+.id-sub { font-size:.8125rem; color:var(--ink-60); line-height:1.7; }
+.id-bar { width:32px; height:2px; background:var(--forest); margin-top:2rem; }
+.id-thesis { font-family:var(--serif); font-size:clamp(1.4rem,2.2vw,2.1rem); line-height:1.22; color:var(--ink); letter-spacing:-.02em; font-style:italic; margin-bottom:2rem; text-wrap:pretty; }
+.id-body { font-size:1rem; line-height:1.78; color:var(--ink-60); max-width:560px; text-wrap:pretty; margin-bottom:1.25rem; }
+.text-link { font-size:.875rem; color:var(--forest); text-decoration:none; border-bottom:1px solid var(--forest-35); padding-bottom:2px; letter-spacing:.01em; display:inline-block; margin-top:1.5rem; }
+
+/* ── §3 ENGAGEMENT — Pro Archery ────────────────────── */
+#engagement {
+  padding:var(--pad) var(--gutter);
+  position:relative; overflow:hidden;
+  /* Site screenshot as bg texture with heavy overlay */
+  background:
+    linear-gradient(rgba(8,7,6,0.78), rgba(8,7,6,0.82)),
+    url('proarchery-site.png') center / cover no-repeat fixed;
+}
+/* Subtle scanline on dark */
+#engagement::before {
+  content:''; position:absolute; inset:0;
+  background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(248,247,243,.012) 3px,rgba(248,247,243,.012) 4px);
+  pointer-events:none;
+}
+.eng-inner { max-width:var(--max); margin:0 auto; position:relative; }
+.eng-eyebrow { font-family:var(--mono); font-size:.65rem; color:rgba(248,247,243,.3); letter-spacing:.16em; text-transform:uppercase; margin-bottom:1.5rem; }
+
+/* Pro Archery logo — mix-blend-mode:screen makes black bg transparent */
+.eng-logo {
+  height:40px; width:auto;
+  mix-blend-mode:screen;
+  margin-bottom:2.75rem;
+  display:block;
+}
+
+.eng-client {
+  font-family:var(--serif);
+  font-size:clamp(4rem,12vw,10rem);
+  color:var(--paper);
+  letter-spacing:-.04em; line-height:.9;
+  text-transform:uppercase;
+}
+.eng-client em { font-style:italic; color:var(--pro-red); }
+
+.eng-rule { width:100%; height:1px; background:rgba(248,247,243,.07); margin:2.5rem 0; }
+
+.eng-stats { display:flex; flex-wrap:wrap; gap:0; margin-bottom:3rem; }
+.stat { padding-right:3rem; }
+.stat+.stat { padding-left:3rem; border-left:1px solid rgba(248,247,243,.07); }
+.stat-n { font-family:var(--mono); font-size:1.15rem; color:var(--paper); font-weight:500; letter-spacing:-.025em; margin-bottom:8px; }
+.stat-l { font-family:var(--sans); font-size:.62rem; color:rgba(248,247,243,.3); letter-spacing:.14em; text-transform:uppercase; }
+
+.eng-desc { font-size:1rem; line-height:1.78; color:rgba(248,247,243,.52); max-width:560px; text-wrap:pretty; margin-bottom:2rem; }
+.eng-coda { font-family:var(--serif); font-size:.9375rem; font-style:italic; color:rgba(248,247,243,.22); }
+
+/* ── §4 BUILT ───────────────────────────────────────── */
+#built { background:var(--forest-bg); padding:var(--pad) var(--gutter); }
+.built-inner { max-width:var(--max); margin:0 auto; }
+.built-hdr { display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:1rem; }
+.built-title { font-family:var(--serif); font-size:clamp(1.5rem,2.5vw,2.25rem); color:var(--ink); letter-spacing:-.02em; }
+.built-hint { font-size:.75rem; color:var(--ink-35); flex-shrink:0; }
+
+.cards { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; margin-top:2.5rem; }
+.card {
+  background:var(--white); border:1px solid rgba(29,28,26,.06);
+  border-radius:4px; overflow:hidden;
+  position:relative; display:flex; flex-direction:column;
+  min-height:230px; cursor:default;
+  transition:box-shadow 220ms ease, transform 220ms ease;
+}
+.card:hover { box-shadow:0 18px 60px rgba(29,28,26,.10); transform:translateY(-4px); }
+
+/* Image header for cards that have one */
+.card-img-hdr {
+  height:125px; overflow:hidden; flex-shrink:0;
+  border-bottom:1px solid rgba(29,28,26,.05);
+}
+.card-img-hdr img { width:100%; height:100%; object-fit:cover; object-position:top left; transition:transform .6s cubic-bezier(.16,1,.3,1); }
+.card:hover .card-img-hdr img { transform:scale(1.06); }
+
+.card-body { padding:1.75rem 2rem; display:flex; flex-direction:column; flex:1; }
+.card-num { font-family:var(--mono); font-size:.65rem; color:var(--forest); letter-spacing:.1em; margin-bottom:1rem; }
+.card-name { font-family:var(--serif); font-size:1.5rem; color:var(--ink); letter-spacing:-.01em; line-height:1.1; }
+.card-btm { margin-top:auto; padding-top:1.5rem; }
+.card-stat { font-family:var(--mono); font-size:1rem; color:var(--forest); font-weight:500; letter-spacing:-.02em; margin-bottom:4px; }
+.card-stat-l { font-size:.7rem; color:var(--ink-35); letter-spacing:.04em; }
+.card-tag { font-size:.78rem; color:rgba(29,28,26,.38); line-height:1.55; margin-top:.75rem; }
+.card-back {
+  position:absolute; inset:0; padding:2rem;
+  background:var(--forest);
+  display:flex; align-items:center;
+  opacity:0; transition:opacity 200ms ease;
+}
+.card:hover .card-back { opacity:1; }
+.card-back p { font-family:var(--serif); font-size:1.025rem; font-style:italic; line-height:1.65; color:rgba(248,247,243,.92); }
+
+/* Featured card — full-width, side-by-side */
+.card-featured {
+  display:grid; grid-template-columns:1fr 1fr;
+  background:var(--white); border:1px solid rgba(29,28,26,.06);
+  border-radius:4px; overflow:hidden;
+  min-height:280px; margin-top:1.25rem;
+  position:relative; cursor:default;
+  transition:box-shadow 220ms ease, transform 220ms ease;
+}
+.card-featured:hover { box-shadow:0 18px 60px rgba(29,28,26,.10); transform:translateY(-4px); }
+.card-featured-img {
+  background:#1a1a2e; display:flex; align-items:center; justify-content:center;
+  overflow:hidden; border-right:1px solid rgba(29,28,26,.05);
+}
+.card-featured-img img {
+  width:100%; height:100%; object-fit:cover; object-position:top left;
+  transition:transform .6s cubic-bezier(.16,1,.3,1);
+}
+.card-featured:hover .card-featured-img img { transform:scale(1.04); }
+.card-featured-body {
+  padding:2.25rem 2.5rem; display:flex; flex-direction:column; justify-content:center;
+}
+.card-featured-name {
+  font-family:var(--serif); font-size:clamp(1.5rem,2vw,2rem); color:var(--ink);
+  letter-spacing:-.015em; line-height:1.1; margin-bottom:.25rem;
+}
+.card-featured-author {
+  font-family:var(--sans); font-size:.8125rem; color:var(--ink-60); margin-bottom:1.25rem;
+}
+.card-featured-author span { color:var(--forest); font-weight:500; }
+.card-featured-stats { display:flex; gap:2.5rem; margin-bottom:1.25rem; }
+.card-featured-stat-n {
+  font-family:var(--mono); font-size:1.1rem; color:var(--forest); font-weight:500;
+  letter-spacing:-.02em; margin-bottom:2px;
+}
+.card-featured-stat-l { font-size:.68rem; color:var(--ink-35); letter-spacing:.04em; }
+.card-featured-desc {
+  font-size:.875rem; line-height:1.7; color:var(--ink-60); text-wrap:pretty;
+}
+.card-featured-tag {
+  font-size:.78rem; color:rgba(29,28,26,.38); line-height:1.55; margin-top:auto; padding-top:1rem;
+}
+.card-featured-badge {
+  display:inline-flex; align-items:center; gap:6px;
+  font-family:var(--mono); font-size:.62rem; color:var(--paper); background:var(--forest);
+  padding:5px 12px; border-radius:2px; letter-spacing:.06em; text-transform:uppercase;
+  margin-bottom:1rem; width:fit-content;
+}
+.card-featured-back {
+  position:absolute; inset:0; padding:2.5rem;
+  background:var(--forest); display:flex; align-items:center; justify-content:center;
+  opacity:0; transition:opacity 200ms ease;
+}
+.card-featured:hover .card-featured-back { opacity:1; }
+.card-featured-back p {
+  font-family:var(--serif); font-size:1.15rem; font-style:italic;
+  line-height:1.65; color:rgba(248,247,243,.92); max-width:480px; text-align:center;
+}
+@media(max-width:768px){
+  .card-featured { grid-template-columns:1fr; }
+  .card-featured-img { max-height:220px; border-right:none; border-bottom:1px solid rgba(29,28,26,.05); }
+  .card-featured-body { padding:1.75rem; }
+}
+
+/* ── §5 TWENTY YEARS ────────────────────────────────── */
+#arc { padding:var(--pad) var(--gutter); background:var(--paper); }
+.arc-inner { max-width:var(--max); margin:0 auto; }
+.arc-heading { font-family:var(--serif); font-size:clamp(4rem,10vw,9rem); color:var(--ink); letter-spacing:-.04em; line-height:.92; margin-bottom:3.5rem; }
+.arc-body { font-size:clamp(1rem,1.4vw,1.075rem); line-height:1.85; color:var(--ink-60); max-width:740px; text-wrap:pretty; }
+.arc-body em { color:var(--forest); font-style:italic; }
+.arc-tl { margin-top:5rem; position:relative; }
+.arc-tl-rule { position:absolute; top:7px; left:0; right:0; height:1px; background:var(--ink-12); }
+.arc-items { display:grid; grid-template-columns:repeat(5,1fr); position:relative; }
+.arc-dot { width:5px; height:5px; border-radius:50%; background:var(--forest); margin-bottom:14px; }
+.arc-yr { font-family:var(--mono); font-size:.72rem; color:var(--forest); font-weight:500; letter-spacing:.04em; margin-bottom:5px; }
+.arc-lbl { font-size:.75rem; color:var(--ink-35); line-height:1.5; }
+
+/* ── §6 CONTACT ─────────────────────────────────────── */
+#contact { padding:var(--pad) var(--gutter); background:var(--paper); border-top:1px solid var(--ink-05); }
+.contact-inner { max-width:var(--max); margin:0 auto; display:grid; grid-template-columns:1.1fr .9fr; gap:6rem; align-items:start; }
+.contact-h { font-family:var(--serif); font-size:clamp(1.75rem,3.5vw,3rem); color:var(--ink); letter-spacing:-.025em; line-height:1.18; font-style:italic; text-wrap:pretty; }
+.contact-h span { color:var(--forest); }
+.contact-email { display:inline-block; font-family:var(--mono); font-size:.875rem; color:var(--forest); text-decoration:none; border-bottom:1px solid var(--forest-35); padding-bottom:2px; letter-spacing:.02em; margin-top:3rem; }
+.contact-or { font-size:.78rem; color:var(--ink-35); margin:1.75rem 0 1.25rem; }
+textarea.msg { width:100%; font-family:var(--sans); font-size:.9375rem; color:var(--ink); background:transparent; border:none; border-bottom:1px solid var(--ink-12); padding:.5rem 0 .75rem; resize:none; outline:none; line-height:1.7; }
+textarea.msg:focus { border-bottom-color:var(--ink-35); }
+textarea.msg::placeholder { color:var(--ink-35); }
+.send-btn { font-family:var(--sans); font-size:.8125rem; color:var(--paper); background:var(--forest); border:none; cursor:pointer; padding:10px 22px; letter-spacing:.05em; border-radius:2px; font-weight:500; margin-top:1.25rem; transition:background 150ms ease; }
+.send-btn:hover { background:#234a3b; }
+.sent-msg { font-family:var(--serif); font-size:1.15rem; color:var(--forest); font-style:italic; line-height:1.55; display:none; }
+
+.social-label { font-family:var(--mono); font-size:.62rem; color:var(--ink-35); letter-spacing:.15em; text-transform:uppercase; margin-bottom:1.5rem; }
+.social-link { display:flex; align-items:center; gap:.875rem; text-decoration:none; padding:1.25rem 0; border-bottom:1px solid var(--ink-05); transition:padding-left 200ms ease; }
+.social-link:first-of-type { border-top:1px solid var(--ink-05); }
+.social-link:hover { padding-left:.5rem; }
+.social-name { font-family:var(--serif); font-size:1.25rem; color:var(--ink); letter-spacing:-.01em; }
+.social-handle { font-family:var(--mono); font-size:.72rem; color:var(--ink-35); margin-left:auto; letter-spacing:.03em; }
+
+/* ── CASE STUDY SHOWCASE ────────────────────────────── */
+.showcase-frame {
+  margin-top:3.5rem; border-radius:6px; overflow:hidden;
+  background:#111; border:1px solid rgba(248,247,243,0.06);
+  box-shadow:0 32px 80px rgba(0,0,0,0.5); max-width:860px;
+}
+.showcase-bar {
+  display:flex; align-items:center; gap:6px;
+  padding:10px 14px; background:rgba(248,247,243,0.03);
+  border-bottom:1px solid rgba(248,247,243,0.05);
+}
+.showcase-dot { width:7px; height:7px; border-radius:50%; background:rgba(248,247,243,0.10); }
+.showcase-url {
+  font-family:var(--mono); font-size:.6rem; color:rgba(248,247,243,0.22);
+  letter-spacing:.04em; margin-left:8px;
+}
+.showcase-body { overflow:hidden; }
+.showcase-body img {
+  width:100%; display:block;
+  transition:transform 12s cubic-bezier(.16,1,.3,1);
+}
+.showcase-frame:hover .showcase-body img { transform:scale(1.04); }
+@media(max-width:768px){
+  .showcase-frame { margin-top:2.5rem; border-radius:4px; }
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+footer { padding:1.75rem var(--gutter); border-top:1px solid var(--ink-05); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; }
+.fc { font-size:.72rem; color:var(--ink-35); letter-spacing:.01em; }
+.fl { display:flex; gap:2rem; }
+.fl a { font-size:.72rem; color:var(--ink-35); text-decoration:none; }
+
+/* ── RESPONSIVE ─────────────────────────────────────── */
+@media(max-width:768px){
+  .id-grid { grid-template-columns:1fr; gap:2.5rem; }
+  .eng-stats { gap:2rem; }
+  .stat+.stat { padding-left:2rem; }
+  .cards { grid-template-columns:1fr; }
+  .arc-items { grid-template-columns:1fr 1fr; gap:2rem 1rem; }
+  .arc-tl-rule { display:none; }
+  .contact-inner { grid-template-columns:1fr; gap:4rem; }
+  .hero-scroll { display:none; }
+  .eng-client { font-size:clamp(3rem,14vw,6rem); }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav" role="navigation">
+  <a href="#hero" class="nav-logo">Oci</a>
+  <div class="nav-links">
+    <a href="#identity">Work</a>
+    <a href="#built">Built</a>
+    <a href="#arc">Twenty Years</a>
+    <a href="#contact" class="cta">Start a conversation</a>
+  </div>
+</nav>
+
+<!-- §1 HERO -->
+<section id="hero">
+  <svg class="hero-rings" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="200" cy="200" r="195" stroke-opacity="0.06" stroke-width="1"/>
+    <circle cx="200" cy="200" r="156" stroke-opacity="0.055" stroke-width="1"/>
+    <circle cx="200" cy="200" r="118" stroke-opacity="0.05" stroke-width="1"/>
+    <circle cx="200" cy="200" r="80"  stroke-opacity="0.045" stroke-width="1"/>
+    <circle cx="200" cy="200" r="44"  stroke-opacity="0.04" stroke-width="1.5"/>
+    <circle cx="200" cy="200" r="12"  stroke-opacity="0.06" stroke-width="2"/>
+  </svg>
+  <div style="position:relative;max-width:var(--max);width:100%;margin:0 auto;">
+    <p class="hero-meta">Laksmana (Oci) Tri Moerdani &nbsp;·&nbsp; Fractional CPO &nbsp;·&nbsp; Jakarta</p>
+    <h1 class="hero-q">"What's the last product decision your team made that you could trace directly to a customer problem?"</h1>
+  </div>
+  <div class="hero-scroll" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- §2 IDENTITY -->
+<section id="identity">
+  <div class="id-inner">
+    <div class="id-rule r"></div>
+    <div class="id-grid">
+      <div class="r d1">
+        <p class="id-label">Fractional CPO</p>
+        <h2 class="id-name">Laksmana (Oci)<br>Tri Moerdani</h2>
+        <p class="id-sub">Co-Founder, Reka Cipta Digital<br>Jakarta, Indonesia</p>
+        <div class="id-bar"></div>
+      </div>
+      <div class="r d2">
+        <p class="id-thesis">"Most product failures aren't engineering problems. They're clarity problems."</p>
+        <p class="id-body">I work with founders who have built something real, then watched the gap grow between what the product does and what customers actually need. I'm not the consultant who arrives with a slide deck. I join the stand-ups. I stay until the product team can name the problem as clearly as they can name the feature.</p>
+        <p class="id-body">That's the whole practice, really. Name the problem. Everything else follows.</p>
+        <a href="#contact" class="text-link">Start a conversation →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- §3 ENGAGEMENT — Pro Archery -->
+<section id="engagement">
+  <div class="eng-inner">
+    <p class="eng-eyebrow r">Currently embedded at</p>
+    <!-- Logo: mix-blend-mode:screen makes black bg transparent on dark section -->
+    <img src="proarchery-logo.png" alt="Pro Archery" class="eng-logo r d1">
+    <h2 class="eng-client r d2">Pro&nbsp;<em>Archery</em></h2>
+    <div class="eng-rule r d2"></div>
+    <div class="eng-stats r d3">
+      <div class="stat">
+        <p class="stat-n">12,000+</p>
+        <p class="stat-l">SKUs</p>
+      </div>
+      <div class="stat">
+        <p class="stat-n">Rp10M+/mo</p>
+        <p class="stat-l">Revenue</p>
+      </div>
+      <div class="stat">
+        <p class="stat-n">Phase 4</p>
+        <p class="stat-l">Current</p>
+      </div>
+      <div class="stat">
+        <p class="stat-n">Sept 2026</p>
+        <p class="stat-l">Launch</p>
+      </div>
+    </div>
+    <p class="eng-desc r d3">Building product infrastructure for Indonesia's largest professional archery equipment retailer. From catalogue architecture to the customer journey that turns 12,000+ SKUs into clear, confident buying decisions. Four phases. Going live September 2026.</p>
+    <p class="eng-coda r d4"></p>
+    <!-- Browser-frame showcase -->
+    <div class="showcase-frame r d3">
+      <div class="showcase-bar">
+        <div class="showcase-dot"></div>
+        <div class="showcase-dot"></div>
+        <div class="showcase-dot"></div>
+        <span class="showcase-url">proarchery.co.id</span>
+      </div>
+      <div class="showcase-body">
+        <img src="proarchery-site.png" alt="Pro Archery website, target archery expertise" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- §4 BUILT -->
+<section id="built">
+  <div class="built-inner">
+    <div class="built-hdr">
+      <h2 class="built-title r">What I build outside client work</h2>
+      <p class="built-hint r d1">Hover each card to see the problem it solves.</p>
+    </div>
+    <div class="cards">
+
+      <!-- Card 01: MyArchery -->
+      <div class="card r d1">
+        <div class="card-body">
+          <p class="card-num">01</p>
+          <h3 class="card-name">MyArchery.id</h3>
+          <div class="card-btm">
+            <p class="card-stat">8,000+</p>
+            <p class="card-stat-l">active users</p>
+            <p class="card-tag">Neutral tournament platform for archery clubs across Indonesia</p>
+          </div>
+        </div>
+        <div class="card-back">
+          <p>Indonesia had no neutral platform for archery clubs to run their own tournaments. We built one.</p>
+        </div>
+      </div>
+
+      <!-- Card 02: Blazz -->
+      <div class="card r d2">
+        <div class="card-body">
+          <p class="card-num">02</p>
+          <h3 class="card-name">Blazz</h3>
+          <div class="card-btm">
+            <p class="card-stat">WhatsApp</p>
+            <p class="card-stat-l">B2B SaaS · Indonesian SMEs</p>
+            <p class="card-tag">Business tools that live where their owners already work</p>
+          </div>
+        </div>
+        <div class="card-back">
+          <p>Indonesian SME owners live in WhatsApp. Their business tools don't. Blazz closes that gap.</p>
+        </div>
+      </div>
+
+    </div>
+
+      <!-- Featured card 03: OpenCode — full-width with marketplace screenshot -->
+      <div class="card-featured r d3">
+        <div class="card-featured-img">
+          <img src="opencode-marketplace.png" alt="OpenCode for Copilot Chat, 4,488 installs, 5-star rating on VS Marketplace" loading="lazy">
+        </div>
+        <div class="card-featured-body">
+          <p class="card-featured-badge">VS Code Extension</p>
+          <h3 class="card-featured-name">OpenCode</h3>
+          <p class="card-featured-author">by <span>Laksmana Tri Moerdani</span></p>
+          <div class="card-featured-stats">
+            <div>
+              <p class="card-featured-stat-n">4,488</p>
+              <p class="card-featured-stat-l">installs</p>
+            </div>
+            <div>
+              <p class="card-featured-stat-n">★★★★★</p>
+              <p class="card-featured-stat-l">11 reviews</p>
+            </div>
+            <div>
+              <p class="card-featured-stat-n">Free</p>
+              <p class="card-featured-stat-l">no Copilot Pro needed</p>
+            </div>
+          </div>
+          <p class="card-featured-desc">Use 30+ frontier AI models (DeepSeek V4, Kimi K2.6, GLM-5.1, Qwen3.7, MiMo V2.5, MiniMax M2.7, free Claude Opus, GPT-5.5, Gemini 3.5, Grok) in GitHub Copilot Chat. Bring Your Own Key.</p>
+          <p class="card-featured-tag">30+ frontier AI models inside GitHub Copilot. BYOK.</p>
+        </div>
+        <div class="card-featured-back">
+          <p>GitHub Copilot locks you into their model list. OpenCode lets developers bring any frontier model they want.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- §5 TWENTY YEARS -->
+<section id="arc">
+  <div class="arc-inner">
+    <h2 class="arc-heading r">Twenty<br>years.</h2>
+    <p class="arc-body r d1">Started building databases for <em>offshore rigs in Batam</em>. High stakes, no room for error. Taught web design. Founded an e-commerce that taught more about market fit than any MBA module. Managed products for a <em>haj travel platform</em> where a confusing flow wasn't just a UX problem. Co-founded a digital agency in <em>Jakarta</em> built around one rule: name the problem before you name the solution. Now embedded inside companies as their product executive, on call and on the org chart. Each step, a different version of the same question: <em>what actually needs to be built?</em></p>
+    <div class="arc-tl r d2">
+      <div class="arc-tl-rule"></div>
+      <div class="arc-items">
+        <div><div class="arc-dot"></div><p class="arc-yr">2009</p><p class="arc-lbl">Offshore &<br>Teaching</p></div>
+        <div><div class="arc-dot"></div><p class="arc-yr">2013</p><p class="arc-lbl">MBA &<br>E-Commerce</p></div>
+        <div><div class="arc-dot"></div><p class="arc-yr">2018</p><p class="arc-lbl">Haj<br>Platform</p></div>
+        <div><div class="arc-dot"></div><p class="arc-yr">2021</p><p class="arc-lbl">Co-Founded<br>RCD Jakarta</p></div>
+        <div><div class="arc-dot"></div><p class="arc-yr">Now</p><p class="arc-lbl">Fractional<br>CPO</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- §6 CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div>
+      <h2 class="contact-h r">"If your product decisions and business outcomes have quietly drifted apart,"</h2>
+      <a href="mailto:ltmoerdani@gmail.com" class="contact-email r d1">ltmoerdani@gmail.com</a>
+      <p class="contact-or r d2">atau ceritakan situasinya</p>
+      <div class="r d3" id="form-wrap">
+        <textarea class="msg" id="msg" placeholder="Ceritakan situasinya…" rows="4"></textarea>
+        <div><button class="send-btn" id="send">Kirim →</button></div>
+      </div>
+      <p class="sent-msg" id="sent">Pesan terkirim. Saya akan segera kembali.</p>
+    </div>
+    <div class="r d2">
+      <p class="social-label">Temukan saya di</p>
+      <a href="https://linkedin.com/in/ltmoerdani" target="_blank" rel="noopener noreferrer" class="social-link">
+        <span class="social-name">LinkedIn</span>
+        <span class="social-handle">/in/ltmoerdani</span>
+      </a>
+      <a href="https://github.com/ltmoerdani" target="_blank" rel="noopener noreferrer" class="social-link">
+        <span class="social-name">GitHub</span>
+        <span class="social-handle">ltmoerdani</span>
+      </a>
+      <a href="https://marketplace.visualstudio.com/items?itemName=ltmoerdani.opencode-copilot-chat" target="_blank" rel="noopener noreferrer" class="social-link">
+        <span class="social-name">VS Marketplace</span>
+        <span class="social-handle">OpenCode</span>
+      </a>
+      <a href="https://myarchery.id" target="_blank" rel="noopener noreferrer" class="social-link">
+        <span class="social-name">MyArchery.id</span>
+        <span class="social-handle">myarchery.id</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="fc">Laksmana Tri Moerdani &nbsp;·&nbsp; 2026</p>
+  <div class="fl">
+    <a href="https://linkedin.com/in/ltmoerdani" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="https://github.com/ltmoerdani" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </div>
+</footer>
+
+<script>
+  // Nav visibility
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('vis', window.scrollY > 60);
+  }, { passive: true });
+
+  // Scroll reveals
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.r').forEach(el => io.observe(el));
+
+  // Form
+  document.getElementById('send').addEventListener('click', () => {
+    if (document.getElementById('msg').value.trim()) {
+      document.getElementById('form-wrap').style.display = 'none';
+      document.getElementById('sent').style.display = 'block';
+    }
+  });
+</script>
+</body>
+</html>

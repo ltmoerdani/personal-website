@@ -1,0 +1,63 @@
+:root {
+  --accent: #2E5D4B;
+  --bg: #F8F7F3;
+  --ink: #1D1C1A;
+  --paper: #FDFCFA;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Archivo', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+::selection { background: var(--accent); color: var(--bg); }
+
+a { color: inherit; text-decoration: none; }
+
+/* Language visibility is now handled by URL-based routing (/en, /id).
+   The data-lang / data-l CSS approach has been retired in favor of
+   next-intl. Only the matching language is rendered server-side. */
+
+/* Grain overlay */
+#ltm-grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 80;
+  opacity: 0.05;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
+}
+html[data-grain='off'] #ltm-grain { display: none; }
+
+/* Photo shapes */
+#ltm-photo { border-radius: 50%; }
+html[data-photoshape='arch'] #ltm-photo { border-radius: 220px 220px 24px 24px; }
+html[data-photoshape='square'] #ltm-photo { border-radius: 24px; }
+
+/* Keyframes */
+@keyframes ltm-rise {
+  from { opacity: 0; transform: translateY(46px) rotate(1deg); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes ltm-marquee { to { transform: translateX(-50%); } }
+@keyframes ltm-spin    { to { transform: rotate(360deg); } }
+@keyframes ltm-blink   { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+@keyframes ltm-fade    { from { opacity: 0; } to { opacity: 1; } }
+
+/* Scroll reveal — elements start hidden, fade up when .is-visible is added */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+  transition-delay: calc(var(--reveal-index, 0) * 110ms);
+}
+[data-reveal].is-visible { opacity: 1; transform: none; }

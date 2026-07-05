@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oci Moerdani · Portfolio (White Palette)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Libre+Caslon+Display&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  /* =========================================================
+     WARM-DOMINANT PALETTE: cream ~45%, white ~25%, green ~20%, dark ~10%
+     Warm cream as primary surface (easier on the eye than pure white),
+     pure white reserved for contrast moments, green as secondary accent.
+     ========================================================= */
+  :root {
+    --cream:        #F5F2EB;   /* dominant surface, warm paper */
+    --cream-deep:   #EDE8DB;   /* section alternator, slightly deeper */
+    --white:        #FFFFFF;   /* reserved: hero + CTA contrast moments */
+    --bg-dark:      #16211B;   /* work showcase + footer */
+    --green:        #2E5D4B;   /* secondary accent: CTA, links, numbers */
+    --green-hover:  #234A3B;
+    --lime:         #C9E24E;   /* RESERVED: small highlight only */
+    --ink:          #1F2A24;   /* text utama */
+    --ink-muted:    #5A6B62;   /* text sekunder */
+    --line:         #D9D4C5;   /* divider, warm tone match cream */
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Instrument Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+  }
+  ::selection { background: var(--green); color: #fff; }
+
+  @keyframes riseIn { from { opacity: 0; transform: translateY(36px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes blinkDot { 0%, 100% { opacity: 1; } 50% { opacity: .25; } }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  a { transition: color .15s ease, background .15s ease, border-color .15s ease; }
+
+  .wrap { max-width: 1360px; margin: 0 auto; }
+
+  /* ============ NAV ============ */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 44px;
+    background: rgba(245, 242, 235, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-logo { font-family: 'Libre Caslon Display', serif; font-size: 21px; color: var(--ink); text-decoration: none; letter-spacing: .01em; }
+  .nav-logo em { color: var(--green); font-style: italic; }
+  .nav-right { display: flex; align-items: center; gap: 30px; font-size: 13.5px; font-weight: 500; }
+  .nav-link { color: var(--ink-muted); text-decoration: none; }
+  .nav-link:hover { color: var(--green); }
+  .nav-cta {
+    display: inline-block; background: var(--green); color: #fff;
+    border-radius: 99px; padding: 9px 20px; text-decoration: none; font-weight: 600;
+  }
+  .nav-cta:hover { background: var(--green-hover); }
+  .lang-toggle { display: flex; border: 1px solid var(--line); border-radius: 99px; overflow: hidden; }
+  .lang-toggle button { border: 0; background: transparent; padding: 6px 12px; font: 600 12px/1 'Instrument Sans', sans-serif; color: var(--ink-muted); cursor: pointer; }
+  .lang-toggle button.active { background: var(--ink); color: #fff; }
+
+  /* ============ HERO (pure white opening punch) ============ */
+  .hero-wrap { background: var(--white); }
+  .hero {
+    min-height: 96vh; display: flex; flex-direction: column; justify-content: center;
+    padding: 160px 44px 80px; max-width: 1360px; margin: 0 auto;
+  }
+  .hero-kicker {
+    font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--green);
+    display: flex; align-items: center; gap: 10px;
+    animation: riseIn .7s ease both;
+  }
+  .hero-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--lime); animation: blinkDot 2s ease infinite; }
+  .hero h1 {
+    margin: 32px 0 0; font-family: 'Libre Caslon Display', serif; font-weight: 400;
+    font-size: clamp(44px, 6.4vw, 96px); line-height: 1.08; letter-spacing: -0.01em;
+    max-width: 1160px; animation: riseIn .8s .12s ease both;
+  }
+  .hero h1 em { color: var(--green); font-style: italic; }
+  .hero-sub {
+    margin: 24px 0 0; font-size: 18px; line-height: 1.55;
+    color: var(--ink-muted); max-width: 560px;
+    animation: riseIn .8s .18s ease both;
+  }
+  .hero-cta-row { display: flex; align-items: center; gap: 16px; margin-top: 52px; flex-wrap: wrap; animation: riseIn .8s .26s ease both; }
+  .btn-primary {
+    display: inline-block; background: var(--green); color: #fff;
+    border-radius: 99px; padding: 15px 30px; text-decoration: none; font-weight: 600; font-size: 15px;
+  }
+  .btn-primary:hover { background: var(--green-hover); }
+  .btn-ghost {
+    display: inline-block; border: 1px solid var(--line); color: var(--ink);
+    border-radius: 99px; padding: 15px 30px; text-decoration: none; font-weight: 600; font-size: 15px;
+  }
+  .btn-ghost:hover { border-color: var(--green); color: var(--green); }
+  .hero-meta {
+    display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+    margin-top: 80px; padding-top: 24px; border-top: 1px solid var(--line);
+    font-family: 'Space Mono', monospace; font-size: 11.5px; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--ink-muted);
+    animation: riseIn .8s .38s ease both;
+  }
+  .hero-meta span { display: flex; align-items: baseline; gap: 8px; }
+  .hero-meta b { color: var(--green); font-weight: 700; }
+
+  /* ============ ABOUT (deeper cream, warmer than body) ============ */
+  .about { background: var(--cream-deep); padding: 120px 44px; }
+  .about-grid { max-width: 1360px; margin: 0 auto; display: grid; grid-template-columns: minmax(160px, 1fr) minmax(0, 2.6fr); gap: 48px; }
+  .label-tag { font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--green); }
+  .about-lead { margin: 0; font-family: 'Libre Caslon Display', serif; font-size: clamp(26px, 3vw, 44px); line-height: 1.28; max-width: 940px; }
+  .about-lead em { color: var(--green); font-style: italic; }
+  .about-body { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; margin-top: 52px; max-width: 940px; }
+  .about-body p { margin: 0; font-size: 16px; line-height: 1.75; color: var(--ink-muted); }
+  .about-stats { display: flex; gap: 56px; flex-wrap: wrap; margin-top: 64px; }
+  .about-stats .v { font-family: 'Libre Caslon Display', serif; font-size: clamp(30px, 3vw, 48px); color: var(--green); }
+  .about-stats .l { font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; margin-top: 6px; color: var(--ink-muted); }
+
+  /* ============ WORK (dark showcase preserved) ============ */
+  .work { padding: 120px 44px; background: var(--bg-dark); color: #F3EFE6; }
+  .work h2 { margin: 0; font-family: 'Libre Caslon Display', serif; font-weight: 400; font-size: clamp(38px, 4.6vw, 68px); text-align: center; }
+  .work h2 em { color: var(--lime); font-style: italic; }
+  .work-sub { margin: 20px auto 0; text-align: center; font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: rgba(243, 239, 230, .5); }
+  .work-list { margin-top: 72px; border-top: 1px solid rgba(243, 239, 230, .16); }
+  .work-row {
+    display: grid; grid-template-columns: 120px minmax(0, 1.4fr) minmax(0, 1fr) 170px; gap: 36px;
+    align-items: center; padding: 34px 12px; border-bottom: 1px solid rgba(243, 239, 230, .16); cursor: pointer;
+  }
+  .work-row:hover { background: rgba(201, 226, 78, .07); }
+  .work-ph {
+    aspect-ratio: 4/3; border: 1px solid rgba(243, 239, 230, .25); background: rgba(243, 239, 230, .06);
+    background-image: repeating-linear-gradient(45deg, transparent 0 10px, rgba(243, 239, 230, .06) 10px 11px);
+    display: flex; align-items: center; justify-content: center; border-radius: 3px;
+  }
+  .work-ph span { font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: .08em; text-transform: uppercase; color: rgba(243, 239, 230, .5); }
+  .work-row h3 { margin: 0; font-family: 'Libre Caslon Display', serif; font-weight: 400; font-size: clamp(24px, 2.4vw, 36px); }
+  .work-role { font-size: 14px; color: rgba(243, 239, 230, .55); margin-top: 8px; }
+  .work-desc { margin: 0; font-size: 14px; line-height: 1.65; color: rgba(243, 239, 230, .65); }
+  .work-tag { font-family: 'Space Mono', monospace; font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--lime); text-align: right; }
+
+  /* ============ QUOTES (still dark for contrast) ============ */
+  .quotes { background: var(--bg-dark); color: #F3EFE6; padding: 0 44px 120px; }
+  .quotes-label { font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--lime); text-align: center; }
+  .quotes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 28px; margin-top: 44px; }
+  .quote-card { border: 1px solid rgba(243, 239, 230, .18); border-radius: 4px; padding: 40px 36px; display: flex; flex-direction: column; justify-content: space-between; gap: 28px; }
+  .quote-text { font-family: 'Libre Caslon Display', serif; font-size: clamp(20px, 1.8vw, 26px); line-height: 1.45; font-style: italic; }
+  .quote-who { font-weight: 600; font-size: 14.5px; }
+  .quote-org { font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: rgba(243, 239, 230, .5); margin-top: 5px; }
+  .quotes-note { text-align: center; margin-top: 20px; font-family: 'Space Mono', monospace; font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: rgba(243, 239, 230, .35); }
+
+  /* ============ MARQUEE (green-on-white, not full lime) ============ */
+  .marquee {
+    background: var(--green); color: #fff; overflow: hidden; padding: 14px 0;
+  }
+  .marquee-track {
+    display: flex; width: max-content; animation: marquee 26s linear infinite;
+    font-family: 'Libre Caslon Display', serif; font-size: 20px; font-style: italic; white-space: nowrap;
+  }
+  .marquee-track span { padding-right: 16px; }
+
+  /* ============ SERVICES (pure white, contrast break) ============ */
+  .services { background: var(--white); padding: 120px 44px; }
+  .services h2 { margin: 0; font-family: 'Libre Caslon Display', serif; font-weight: 400; font-size: clamp(38px, 4.6vw, 68px); }
+  .services h2 em { color: var(--green); font-style: italic; }
+  .services-voice { margin: 24px 0 0; font-size: 16px; line-height: 1.72; color: var(--ink-muted); max-width: 660px; }
+  .services-list { margin-top: 64px; border-top: 1px solid var(--line); }
+  .service-row {
+    display: grid; grid-template-columns: minmax(0, 1fr) 40px minmax(0, 1.2fr); gap: 36px;
+    align-items: center; padding: 42px 0; border-bottom: 1px solid var(--line);
+  }
+  .service-row:hover { padding-left: 18px; background: rgba(46, 93, 75, .04); }
+  .service-row h3 { margin: 0; font-family: 'Libre Caslon Display', serif; font-weight: 400; font-size: clamp(26px, 2.8vw, 44px); }
+  .service-slash { font-family: 'Libre Caslon Display', serif; font-size: 32px; color: var(--green); font-style: italic; }
+  .service-desc { margin: 0; font-size: 15px; line-height: 1.7; color: var(--ink-muted); }
+
+  /* ============ TRAJECTORY (cream body) ============ */
+  .trajectory { background: var(--cream); padding: 120px 44px; }
+  .trajectory-grid { max-width: 1360px; margin: 0 auto; display: grid; grid-template-columns: minmax(160px, 1fr) minmax(0, 2.6fr); gap: 48px; }
+  .trajectory h2 { margin: 0 0 18px; font-family: 'Libre Caslon Display', serif; font-weight: 400; font-size: clamp(34px, 4vw, 58px); }
+  .trajectory h2 em { color: var(--green); }
+  .trajectory-intro { margin: 0 0 52px; font-size: 16px; line-height: 1.75; color: var(--ink-muted); max-width: 620px; }
+  .traj-list { border-top: 1px solid var(--ink); }
+  .traj-row {
+    display: grid; grid-template-columns: 160px minmax(0, 1fr) minmax(0, 1fr); gap: 24px;
+    padding: 17px 0; border-bottom: 1px solid var(--line); align-items: baseline;
+  }
+  .traj-row:hover { background: rgba(46, 93, 75, .05); }
+  .traj-y { font-family: 'Space Mono', monospace; font-size: 12px; color: var(--green); }
+  .traj-role { font-weight: 600; font-size: 15.5px; }
+  .traj-co { font-size: 14px; color: var(--ink-muted); }
+  .traj-section-label { font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--green); margin-bottom: 16px; }
+
+  .creds { display: flex; gap: 10px; flex-wrap: wrap; }
+  .creds span {
+    font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: .05em;
+    border: 1px solid var(--ink); border-radius: 99px; padding: 8px 16px;
+  }
+  .creds span:hover { background: var(--green); color: #fff; border-color: var(--green); }
+
+  /* ============ CTA (pure white, final contrast moment) ============ */
+  .cta { background: var(--white); color: var(--ink); padding: 140px 44px; text-align: center; }
+  .cta h2 { margin: 0 auto; font-family: 'Libre Caslon Display', serif; font-weight: 400; font-size: clamp(42px, 6vw, 92px); line-height: 1.06; max-width: 1000px; }
+  .cta h2 em { color: var(--green); font-style: italic; }
+  .cta-body { margin: 30px auto 0; font-size: 17px; line-height: 1.7; color: var(--ink-muted); max-width: 540px; }
+  .cta-row { display: flex; gap: 14px; justify-content: center; margin-top: 44px; flex-wrap: wrap; }
+  .cta-note { margin-top: 18px; font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-muted); }
+
+  /* ============ FOOTER (dark closing) ============ */
+  .footer { background: var(--bg-dark); color: #F3EFE6; padding: 90px 44px 32px; }
+  .footer-word { font-family: 'Libre Caslon Display', serif; font-size: clamp(56px, 10vw, 170px); line-height: 1; text-align: center; }
+  .footer-word em { color: var(--lime); font-style: italic; }
+  .footer-meta {
+    display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    margin-top: 72px; padding-top: 24px; border-top: 1px solid rgba(243, 239, 230, .18);
+    font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: .08em;
+    text-transform: uppercase; color: rgba(243, 239, 230, .5);
+  }
+
+  /* compare badge */
+  .compare-badge {
+    position: fixed; bottom: 16px; left: 16px; z-index: 100;
+    background: var(--ink); color: #fff; font-family: 'Space Mono', monospace;
+    font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
+    padding: 8px 14px; border-radius: 99px; border: 1px solid var(--green);
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <a href="#top" class="nav-logo">Oci <em>Moerdani</em></a>
+  <div class="nav-right">
+    <a href="#about" class="nav-link">About</a>
+    <a href="#work" class="nav-link">Work</a>
+    <a href="#services" class="nav-link">Services</a>
+    <a href="#contact" class="nav-cta">Contact</a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<div class="hero-wrap">
+<div id="top" class="hero">
+  <div class="hero-kicker">
+    <span class="hero-dot"></span>
+    One slot open for Q3 2026
+  </div>
+  <h1>
+    Most products fail because the <em>goal got fuzzy</em>, not the code.
+  </h1>
+  <p class="hero-sub">
+    Fractional product leadership for companies that can no longer say, in one sentence, what they are building.
+  </p>
+  <div class="hero-cta-row">
+    <a href="#work" class="btn-primary">View the work ↓</a>
+    <a href="#contact" class="btn-ghost">Start a conversation →</a>
+  </div>
+  <div class="hero-meta">
+    <span><b>2007</b> Web design</span>
+    <span><b>2009</b> Offshore engineering</span>
+    <span><b>2018</b> Product management</span>
+    <span><b>2021</b> Co-founder, RCD</span>
+    <span><b>2024</b> Fractional CPO</span>
+  </div>
+</div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<div id="about" class="about">
+  <div class="about-grid">
+    <div class="label-tag">(About)</div>
+    <div>
+      <p class="about-lead">
+        <em>Laksmana "Oci" Tri Moerdani.</em> Twenty years in, I keep seeing the same shape: a company ships a platform, and six months later nobody in the room can say what it was meant to fix. The standup still runs. The roadmap still grows. The original question is gone.
+      </p>
+      <div class="about-body">
+        <p>I co-founded Reka Cipta Digital because most product owners have never been forced to write down, in one sentence a CFO would fund, what the thing is actually for. So that's the first thing I make people do. It is uncomfortable. I've been told it feels like homework. Currently doing this inside Pro Archery, 12,000+ SKUs, retail and consumer platform launching September.</p>
+        <p>The other thing I do is build. MyArchery.id runs scoring for most archery events in Indonesia, built because three friends were tired of running national qualifiers on spreadsheets. Blazz is WhatsApp-native SaaS for warung owners. OpenCode puts 30+ AI models inside GitHub Copilot, and I shipped it because I wanted them there. None of these started as product strategy. They started as irritation.</p>
+      </div>
+      <div class="about-stats">
+        <div><div class="v">20+</div><div class="l">Years shipping digital products</div></div>
+        <div><div class="v">Rp10M+</div><div class="l">Monthly transactions managed</div></div>
+        <div><div class="v">12,000+</div><div class="l">SKUs under product strategy</div></div>
+        <div><div class="v">8,000+</div><div class="l">Athletes on MyArchery.id</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ WORK (dark) ============ -->
+<div id="work" class="work">
+  <div class="wrap">
+    <h2>Selected work, <em>2014 to now.</em></h2>
+    <p class="work-sub">Each one started with a question, not a brief</p>
+    <div class="work-list">
+      <div class="work-row">
+        <div class="work-ph"><span>Platform</span></div>
+        <div><h3>Pro Archery</h3><div class="work-role">Fractional CPO · 2024 to present</div></div>
+        <p class="work-desc">12,000+ SKUs, Rp10M+ in monthly transactions, consumer platform launching September. The hard part wasn't the catalog. It was getting leadership to agree on which customer we were building for.</p>
+        <div class="work-tag">Retail · E-Comm</div>
+      </div>
+      <div class="work-row">
+        <div class="work-ph"><span>Product</span></div>
+        <div><h3>MyArchery.id</h3><div class="work-role">Founder · 8,000+ active users</div></div>
+        <p class="work-desc">Most archery clubs in Indonesia run their events on this. Built it because I was tired of watching national qualifiers die inside spreadsheets.</p>
+        <div class="work-tag">Sport-Tech</div>
+      </div>
+      <div class="work-row">
+        <div class="work-ph"><span>Extension</span></div>
+        <div><h3>OpenCode</h3><div class="work-role">Creator · VS Code extension</div></div>
+        <p class="work-desc">30+ frontier AI models wired into GitHub Copilot Chat. 3,952 installs, mostly word of mouth. Still cheaper than a single Copilot seat, which still surprises me.</p>
+        <div class="work-tag">Open Source</div>
+      </div>
+      <div class="work-row">
+        <div class="work-ph"><span>App</span></div>
+        <div><h3>Blazz</h3><div class="work-role">Co-Builder</div></div>
+        <p class="work-desc">WhatsApp-native B2B SaaS for Indonesian SMEs. The premise is unromantic: customers already live in WhatsApp, so meet them there instead of dragging them into an app.</p>
+        <div class="work-tag">B2B SaaS</div>
+      </div>
+      <div class="work-row">
+        <div class="work-ph"><span>Dashboard</span></div>
+        <div><h3>Jalan Kita 2.0</h3><div class="work-role">Product Lead · via RCD · 2021 to 2022</div></div>
+        <p class="work-desc">Road and bridge monitoring for the national roads authority. Field crews photograph damage, the system ranks what gets fixed first. Bureaucracy moved slower than the concrete.</p>
+        <div class="work-tag">GovTech · IoT</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ QUOTES ============ -->
+<div class="quotes">
+  <div class="wrap">
+    <div class="quotes-label">(What clients say)</div>
+    <div class="quotes-grid">
+      <div class="quote-card">
+        <div class="quote-text">"He made us answer the questions we had been avoiding for a year. What the platform is for. Who pays for it. We hated him for two weeks. Then we shipped something a quarter of the size, and it was the right thing."</div>
+        <div><div class="quote-who">Leadership Team</div><div class="quote-org">Pro Archery</div></div>
+      </div>
+      <div class="quote-card">
+        <div class="quote-text">"Before MyArchery, a qualifier meant three days of spreadsheets and one exhausted volunteer. Now the brackets and results are live before the athletes leave the field. I still don't fully understand how he got the federation to agree."</div>
+        <div><div class="quote-who">Event Organizer</div><div class="quote-org">Indonesian Archery Community</div></div>
+      </div>
+    </div>
+    <div class="quotes-note">Draft quotes. Replace with approved client statements.</div>
+  </div>
+</div>
+
+<!-- ============ MARQUEE (green-on-white, not full lime) ============ -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Fractional CPO · Product Strategy · Reka Cipta Digital · MyArchery.id · OpenCode · Blazz · Twenty years in digital ·&nbsp;</span>
+    <span>Fractional CPO · Product Strategy · Reka Cipta Digital · MyArchery.id · OpenCode · Blazz · Twenty years in digital ·&nbsp;</span>
+  </div>
+</div>
+
+<!-- ============ SERVICES ============ -->
+<div id="services" class="services">
+  <div class="wrap">
+    <h2>How I <em>work with you.</em></h2>
+    <p class="services-voice">You get me, directly. Not an account manager, not a junior routed through a senior. When a project needs design or engineering weight, Reka Cipta Digital, the studio I co-founded, supplies it. I stay your single point of contact. That's the whole model.</p>
+    <div class="services-list">
+      <div class="service-row">
+        <h3>Fractional CPO</h3>
+        <div class="service-slash">/</div>
+        <p class="service-desc">Embedded product leadership, part-time. I sit in your planning, not above it. Most of what I do is refuse work that doesn't earn its place on the roadmap.</p>
+      </div>
+      <div class="service-row">
+        <h3>Product Strategy & Discovery</h3>
+        <div class="service-slash">/</div>
+        <p class="service-desc">A three-week sprint. Week one, we write down what the problem actually is, in one sentence. Week two, we build the smallest thing that could prove us wrong. Week three, we find out.</p>
+      </div>
+      <div class="service-row">
+        <h3>UX & Product Design</h3>
+        <div class="service-slash">/</div>
+        <p class="service-desc">Designed for the warehouse worker who will actually tap the screen, not the persona in the pitch deck. I have watched a beautiful checkout die because nobody asked the cashier.</p>
+      </div>
+      <div class="service-row">
+        <h3>Build, with Reka Cipta Digital</h3>
+        <div class="service-slash">/</div>
+        <p class="service-desc">Product, design, and engineering in one team, on purpose. Small. No handoffs, no "let me check with delivery." If something breaks at midnight, the person who built it picks up.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ TRAJECTORY ============ -->
+<div class="trajectory">
+  <div class="trajectory-grid">
+    <div class="label-tag">(Trajectory)</div>
+    <div>
+      <h2>Twenty years, one thread<em>.</em></h2>
+      <p class="trajectory-intro">I started in offshore engineering databases, which sounds unrelated until you notice both jobs are the same job: figure out what the system is actually for, then refuse to let people forget it.</p>
+      <div class="traj-list">
+        <div class="traj-row"><div class="traj-y">2024 to now</div><div class="traj-role">Fractional CPO</div><div class="traj-co">Pro Archery</div></div>
+        <div class="traj-row"><div class="traj-y">2023 to now</div><div class="traj-role">Wakabid Media & Database</div><div class="traj-co">Perpani Pengkot Jakarta Timur</div></div>
+        <div class="traj-row"><div class="traj-y">2021 to now</div><div class="traj-role">Co-Founder</div><div class="traj-co">Reka Cipta Digital</div></div>
+        <div class="traj-row"><div class="traj-y">2020 to 2021</div><div class="traj-role">Head of Product</div><div class="traj-co">Plaza Digital Solusi</div></div>
+        <div class="traj-row"><div class="traj-y">2018 to 2020</div><div class="traj-role">Product Manager</div><div class="traj-co">MyHalalTrip · Pesantren Go Digital</div></div>
+        <div class="traj-row"><div class="traj-y">2015 to 2018</div><div class="traj-role">Project Manager</div><div class="traj-co">Trimedia Global Kreasi</div></div>
+        <div class="traj-row"><div class="traj-y">2014 to 2015</div><div class="traj-role">Founder</div><div class="traj-co">Photomobs</div></div>
+        <div class="traj-row"><div class="traj-y">2009 to 2011</div><div class="traj-role">Database & Commissioning Engineer</div><div class="traj-co">McDermott International</div></div>
+        <div class="traj-row"><div class="traj-y">2007 to 2009</div><div class="traj-role">Web Design Instructor</div><div class="traj-co">BINUS Center</div></div>
+        <div class="traj-row"><div class="traj-y">2007 to 2008</div><div class="traj-role">Web Designer</div><div class="traj-co">Batavianet</div></div>
+      </div>
+      <div style="margin-top: 56px;">
+        <div class="traj-section-label">(Honors & Awards)</div>
+        <div class="traj-list">
+          <div class="traj-row"><div class="traj-y">2024</div><div style="font-family: 'Libre Caslon Display', serif; font-size: 19px;">Archery Judge Licensed</div><div class="traj-co">Perpani</div></div>
+          <div class="traj-row"><div class="traj-y">2021</div><div style="font-family: 'Libre Caslon Display', serif; font-size: 19px;">Jalan Kita 2.0 Launch</div><div class="traj-co">National Roads Authority</div></div>
+        </div>
+      </div>
+      <div style="margin-top: 56px;">
+        <div class="traj-section-label">(Credentials & Affiliations)</div>
+        <div class="creds">
+          <span>Licensed Grade C, Archery Judge</span>
+          <span>Wakabid Media & Database, Perpani Pengkot Jakarta Timur</span>
+          <span>MBA Entrepreneurship, Institut Teknologi Bandung</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CTA ============ -->
+<div id="contact" class="cta">
+  <h2>Want to start a project <em>with clarity</em>?</h2>
+  <p class="cta-body">If your product decisions and your business outcomes have drifted apart and nobody can say when, that's the conversation worth having. I can't promise I'll take the engagement. I can promise I'll read what you send.</p>
+  <div class="cta-row">
+    <a href="https://cal.com/ltmoerdani" target="_blank" class="btn-primary">Book a discovery call →</a>
+    <a href="mailto:hi@ltmoerdani.com" class="btn-ghost">Get in touch</a>
+    <a href="https://www.linkedin.com/in/ltmoerdani" target="_blank" class="btn-ghost">LinkedIn</a>
+  </div>
+  <div class="cta-note">30 minutes · no pitch · direct with me</div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<div class="footer">
+  <div class="footer-word">ltmoerdani<em>.com</em></div>
+  <div class="footer-meta">
+    <span>© 2026 Laksmana Tri Moerdani</span>
+    <span>Built in Jakarta, shipped to whoever reads this</span>
+    <span>Jakarta, Indonesia</span>
+  </div>
+</div>
+
+<div class="compare-badge">Palette: Warm Cream + White + Green</div>
+
+</body>
+</html>

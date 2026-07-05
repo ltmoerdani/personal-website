@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<script>try{document.documentElement.dataset.lang=localStorage.getItem('ltm-lang')||'en';}catch(e){document.documentElement.dataset.lang='en';}</script>
+<style>
+:root{--accent:#2E5D4B;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:#F8F7F3;color:#1D1C1A;-webkit-font-smoothing:antialiased;}
+::selection{background:var(--accent);color:#F8F7F3;}
+html[data-lang="en"] [data-l="id"]{display:none !important;}
+html[data-lang="id"] [data-l="en"]{display:none !important;}
+@keyframes ltm-rise{from{opacity:0;transform:translateY(46px);}to{opacity:1;transform:none;}}
+@keyframes ltm-fade{from{opacity:0;}to{opacity:1;}}
+</style>
+<template id="__bundler_thumbnail" data-bg-color="#1D1C1A">
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+<rect width="1200" height="800" fill="#1D1C1A"></rect>
+<text x="600" y="430" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="200" fill="#F8F7F3">PA</text>
+</svg>
+</template>
+</helmet>
+
+<div data-screen-label="Case: Pro Archery" style="font-family:'Archivo',sans-serif;background:#F8F7F3;color:#1D1C1A;overflow-x:clip;">
+
+<nav style="position:sticky;top:0;z-index:90;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px clamp(20px,4vw,56px);background:rgba(248,247,243,0.85);backdrop-filter:blur(12px);border-bottom:1px solid rgba(29,28,26,0.08);">
+  <a href="01-ltmoerdani-standalone.html" style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#1D1C1A;text-decoration:none;" style-hover="color:var(--accent);">← ltmoerdani.com</a>
+  <button onClick="{{ toggleLang }}" style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;letter-spacing:0.08em;padding:7px 14px;border:1.5px solid #1D1C1A;border-radius:99px;background:transparent;color:#1D1C1A;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;gap:6px;" style-hover="background:#1D1C1A;color:#F8F7F3;"><span data-l="en">🌐 ID</span><span data-l="id">🌐 EN</span></button>
+</nav>
+
+<header style="background:#1D1C1A;color:#F8F7F3;">
+  <div style="max-width:1100px;margin:0 auto;padding:clamp(64px,10vh,120px) clamp(20px,4vw,56px);">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:color-mix(in oklab, var(--accent) 50%, white);animation:ltm-fade 1s both;"><span data-l="en">Case study · Fractional CPO · Oct 2024 — now</span><span data-l="id">Studi kasus · Fractional CPO · Okt 2024 — sekarang</span></div>
+    <h1 style="margin:22px 0 0;font-size:clamp(48px,7vw,104px);font-weight:900;letter-spacing:-0.035em;line-height:1;animation:ltm-rise 0.9s cubic-bezier(0.16,1,0.3,1) 0.1s both;">Pro Archery</h1>
+    <p style="margin:26px 0 0;max-width:640px;font-size:19px;line-height:1.7;color:rgba(248,247,243,0.7);animation:ltm-rise 0.9s cubic-bezier(0.16,1,0.3,1) 0.25s both;"><span data-l="en">Indonesia's professional archery equipment retailer. No product function existed before this — the roadmap, the team, the priorities all started here.</span><span data-l="id">Retailer perlengkapan panahan profesional Indonesia. Sebelumnya tidak ada fungsi produk sama sekali — roadmap, tim, dan prioritas semuanya dimulai di sini.</span></p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:rgba(248,247,243,0.15);border:1px solid rgba(248,247,243,0.15);border-radius:16px;overflow:hidden;margin-top:52px;animation:ltm-rise 0.9s cubic-bezier(0.16,1,0.3,1) 0.4s both;">
+      <div style="background:#1D1C1A;padding:24px;"><div style="font-weight:900;font-size:34px;letter-spacing:-0.03em;color:color-mix(in oklab, var(--accent) 45%, white);">12,000+</div><div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(248,247,243,0.5);margin-top:4px;">SKUs</div></div>
+      <div style="background:#1D1C1A;padding:24px;"><div style="font-weight:900;font-size:34px;letter-spacing:-0.03em;color:color-mix(in oklab, var(--accent) 45%, white);">Rp10M+</div><div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(248,247,243,0.5);margin-top:4px;"><span data-l="en">Monthly transactions</span><span data-l="id">Transaksi / bulan</span></div></div>
+      <div style="background:#1D1C1A;padding:24px;"><div style="font-weight:900;font-size:34px;letter-spacing:-0.03em;color:color-mix(in oklab, var(--accent) 45%, white);">4</div><div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(248,247,243,0.5);margin-top:4px;"><span data-l="en">Phases</span><span data-l="id">Fase</span></div></div>
+      <div style="background:#1D1C1A;padding:24px;"><div style="font-weight:900;font-size:34px;letter-spacing:-0.03em;color:color-mix(in oklab, var(--accent) 45%, white);">Sep 2026</div><div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(248,247,243,0.5);margin-top:4px;"><span data-l="en">Consumer launch</span><span data-l="id">Rilis konsumen</span></div></div>
+    </div>
+  </div>
+</header>
+
+<section style="max-width:820px;margin:0 auto;padding:clamp(56px,9vh,100px) clamp(20px,4vw,56px) 0;">
+  <div data-reveal="0">
+    <h2 style="margin:0 0 16px;font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:clamp(30px,3.6vw,44px);"><span data-l="en">The wrong first move</span><span data-l="id">Langkah pertama yang keliru</span></h2>
+    <p style="margin:0;font-size:17px;line-height:1.8;color:rgba(29,28,26,0.72);"><span data-l="en">I initially wanted to start with the consumer platform, since that's what the business was asking for. It took two months of looking at the inventory mess to realize the consumer platform would just expose the same chaos with a nicer interface.</span><span data-l="id">Awalnya saya ingin mulai dari platform konsumen, karena itu yang diminta bisnis. Butuh dua bulan bergelut dengan kekacauan inventori untuk sadar bahwa platform konsumen hanya akan memamerkan kekacauan yang sama dengan tampilan lebih bagus.</span></p>
+  </div>
+</section>
+
+<section style="max-width:820px;margin:0 auto;padding:clamp(40px,6vh,64px) clamp(20px,4vw,56px) 0;">
+  <div data-reveal="0">
+    <h2 style="margin:0 0 24px;font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:clamp(30px,3.6vw,44px);"><span data-l="en">Four phases, four problems</span><span data-l="id">Empat fase, empat masalah</span></h2>
+  </div>
+  <div style="display:grid;gap:14px;">
+    <div data-reveal="0" style="display:grid;grid-template-columns:64px 1fr;gap:20px;padding:22px 24px;border:1.5px solid rgba(29,28,26,0.14);border-radius:16px;background:#FDFCFA;align-items:baseline;">
+      <span style="font-family:'Instrument Serif',serif;font-style:italic;font-size:34px;color:var(--accent);">01</span>
+      <div><strong style="font-size:17px;"><span data-l="en">Internal inventory</span><span data-l="id">Inventori internal</span></strong><p style="margin:4px 0 0;font-size:14.5px;line-height:1.7;color:rgba(29,28,26,0.62);"><span data-l="en">12,000+ SKUs. The foundation everything else depends on. Live since mid-2025.</span><span data-l="id">12.000+ SKU. Fondasi yang menopang semuanya. Live sejak pertengahan 2025.</span></p></div>
+    </div>
+    <div data-reveal="1" style="display:grid;grid-template-columns:64px 1fr;gap:20px;padding:22px 24px;border:1.5px solid rgba(29,28,26,0.14);border-radius:16px;background:#FDFCFA;align-items:baseline;">
+      <span style="font-family:'Instrument Serif',serif;font-style:italic;font-size:34px;color:var(--accent);">02</span>
+      <div><strong style="font-size:17px;"><span data-l="en">Multi-store transactions</span><span data-l="id">Transaksi multi-toko</span></strong><p style="margin:4px 0 0;font-size:14.5px;line-height:1.7;color:rgba(29,28,26,0.62);"><span data-l="en">Infrastructure handling Rp10M+ in monthly transactions across stores.</span><span data-l="id">Infrastruktur yang menangani transaksi Rp10 juta+ per bulan lintas toko.</span></p></div>
+    </div>
+    <div data-reveal="2" style="display:grid;grid-template-columns:64px 1fr;gap:20px;padding:22px 24px;border:1.5px solid rgba(29,28,26,0.14);border-radius:16px;background:#FDFCFA;align-items:baseline;">
+      <span style="font-family:'Instrument Serif',serif;font-style:italic;font-size:34px;color:var(--accent);">03</span>
+      <div><strong style="font-size:17px;"><span data-l="en">Warehouse-to-storefront UX</span><span data-l="id">UX gudang-ke-etalase</span></strong><p style="margin:4px 0 0;font-size:14.5px;line-height:1.7;color:rgba(29,28,26,0.62);"><span data-l="en">The operational flow between what's in the warehouse and what the store can sell.</span><span data-l="id">Alur operasional antara isi gudang dan apa yang bisa dijual toko.</span></p></div>
+    </div>
+    <div data-reveal="3" style="display:grid;grid-template-columns:64px 1fr;gap:20px;padding:22px 24px;border:1.5px solid var(--accent);border-radius:16px;background:color-mix(in oklab, var(--accent) 9%, #F8F7F3);align-items:baseline;">
+      <span style="font-family:'Instrument Serif',serif;font-style:italic;font-size:34px;color:var(--accent);">04</span>
+      <div><strong style="font-size:17px;"><span data-l="en">Consumer e-commerce platform</span><span data-l="id">Platform e-commerce konsumen</span></strong><p style="margin:4px 0 0;font-size:14.5px;line-height:1.7;color:rgba(29,28,26,0.62);"><span data-l="en">What the business asked for first — shipping last, on purpose. Launches September 2026.</span><span data-l="id">Yang pertama diminta bisnis — sengaja dirilis terakhir. Meluncur September 2026.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<section style="max-width:820px;margin:0 auto;padding:clamp(40px,6vh,64px) clamp(20px,4vw,56px) 0;">
+  <div data-reveal="0" style="border:1.5px dashed rgba(29,28,26,0.3);border-radius:16px;aspect-ratio:16/8;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(-45deg,rgba(29,28,26,0.03) 0 12px,transparent 12px 24px);">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:12.5px;color:rgba(29,28,26,0.5);"><span data-l="en">[ product screenshot — internal platform dashboard ]</span><span data-l="id">[ screenshot produk — dashboard platform internal ]</span></span>
+  </div>
+</section>
+
+<section style="max-width:820px;margin:0 auto;padding:clamp(40px,6vh,64px) clamp(20px,4vw,56px) clamp(56px,9vh,100px);">
+  <div data-reveal="0" style="border-left:3px solid var(--accent);padding-left:28px;">
+    <p style="margin:0;font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(24px,2.8vw,32px);line-height:1.5;"><span data-l="en">Not advising from a deck. Making product decisions that move revenue.</span><span data-l="id">Bukan memberi saran dari deck. Mengambil keputusan produk yang menggerakkan revenue.</span></p>
+  </div>
+</section>
+
+<footer style="border-top:1.5px solid rgba(29,28,26,0.12);">
+  <div style="max-width:1100px;margin:0 auto;padding:36px clamp(20px,4vw,56px);display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;">
+    <a href="01-ltmoerdani-standalone.html" style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#1D1C1A;text-decoration:none;" style-hover="color:var(--accent);">← <span data-l="en">All work</span><span data-l="id">Semua karya</span></a>
+    <a href="02-case-myarchery.html" style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--accent);text-decoration:none;font-weight:700;"><span data-l="en">Next: MyArchery.id</span><span data-l="id">Berikutnya: MyArchery.id</span> →</a>
+  </div>
+</footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    const ease = 'cubic-bezier(0.16,1,0.3,1)';
+    const io = new IntersectionObserver((ents) => {
+      ents.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'none';
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('[data-reveal]').forEach((el) => {
+      const d = parseInt(el.dataset.reveal || '0', 10) * 110;
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'opacity 0.9s ' + ease + ' ' + d + 'ms, transform 0.9s ' + ease + ' ' + d + 'ms';
+      io.observe(el);
+    });
+  }
+  renderVals() {
+    return {
+      toggleLang: () => {
+        const d = document.documentElement;
+        const next = d.dataset.lang === 'en' ? 'id' : 'en';
+        d.dataset.lang = next;
+        try { localStorage.setItem('ltm-lang', next); } catch (e) {}
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

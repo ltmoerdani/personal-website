@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<script>try{document.documentElement.dataset.lang=localStorage.getItem('ltm-lang')||'en';}catch(e){document.documentElement.dataset.lang='en';}</script>
+<style>
+:root{--accent:#2E5D4B;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:#F8F7F3;color:#1D1C1A;-webkit-font-smoothing:antialiased;}
+::selection{background:var(--accent);color:#F8F7F3;}
+html[data-lang="en"] [data-l="id"]{display:none !important;}
+html[data-lang="id"] [data-l="en"]{display:none !important;}
+@keyframes ltm-rise{from{opacity:0;transform:translateY(46px);}to{opacity:1;transform:none;}}
+@keyframes ltm-fade{from{opacity:0;}to{opacity:1;}}
+</style>
+<template id="__bundler_thumbnail" data-bg-color="#2E5D4B">
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+<rect width="1200" height="800" fill="#2E5D4B"></rect>
+<text x="600" y="430" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="200" fill="#F8F7F3">MA</text>
+</svg>
+</template>
+</helmet>
+
+<div data-screen-label="Case: MyArchery.id" style="font-family:'Archivo',sans-serif;background:#F8F7F3;color:#1D1C1A;overflow-x:clip;">
+
+<nav style="position:sticky;top:0;z-index:90;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px clamp(20px,4vw,56px);background:rgba(248,247,243,0.85);backdrop-filter:blur(12px);border-bottom:1px solid rgba(29,28,26,0.08);">
+  <a href="01-ltmoerdani-standalone.html" style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#1D1C1A;text-decoration:none;" style-hover="color:var(--accent);">← ltmoerdani.com</a>
+  <button onClick="{{ toggleLang }}" style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;letter-spacing:0.08em;padding:7px 14px;border:1.5px solid #1D1C1A;border-radius:99px;background:transparent;color:#1D1C1A;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;gap:6px;" style-hover="background:#1D1C1A;color:#F8F7F3;"><span data-l="en">🌐 ID</span><span data-l="id">🌐 EN</span></button>
+</nav>
+
+<header style="background:color-mix(in oklab, var(--accent) 12%, #F8F7F3);">
+  <div style="max-width:1100px;margin:0 auto;padding:clamp(64px,10vh,120px) clamp(20px,4vw,56px);">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);animation:ltm-fade 1s both;"><span data-l="en">Case study · Founder &amp; builder · Side project → market standard</span><span data-l="id">Studi kasus · Founder &amp; builder · Proyek sampingan → standar pasar</span></div>
+    <h1 style="margin:22px 0 0;font-size:clamp(48px,7vw,104px);font-weight:900;letter-spacing:-0.035em;line-height:1;animation:ltm-rise 0.9s cubic-bezier(0.16,1,0.3,1) 0.1s both;">MyArchery<span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:var(--accent);">.id</span></h1>
+    <p style="margin:26px 0 0;max-width:640px;font-size:19px;line-height:1.7;color:rgba(29,28,26,0.68);animation:ltm-rise 0.9s cubic-bezier(0.16,1,0.3,1) 0.25s both;"><span data-l="en">The platform most archery clubs in Indonesia now run their events on — scoring, registration, event management. Built outside client work, from inside the sport.</span><span data-l="id">Platform yang kini dipakai mayoritas klub panahan Indonesia untuk menjalankan event — skoring, registrasi, manajemen event. Dibangun di luar pekerjaan klien, dari dalam olahraganya.</span></p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:rgba(29,28,26,0.14);border:1px solid rgba(29,28,26,0.14);border-radius:16px;overflow:hidden;margin-top:52px;animation:ltm-rise 0.9s cubic-bezier(0.16,1,0.3,1) 0.4s both;">
+      <div style="background:#F8F7F3;padding:24px;"><div style="font-weight:900;font-size:34px;letter-spacing:-0.03em;color:var(--accent);">8,000+</div><div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(29,28,26,0.5);margin-top:4px;"><span data-l="en">Active users</span><span data-l="id">Pengguna aktif</span></div></div>
+      <div style="background:#F8F7F3;padding:24px;"><div style="font-weight:900;font-size:34px;letter-spacing:-0.03em;color:var(--accent);">#1</div><div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(29,28,26,0.5);margin-top:4px;"><span data-l="en">Platform for club events in Indonesia</span><span data-l="id">Platform event klub di Indonesia</span></div></div>
+      <div style="background:#F8F7F3;padding:24px;"><div style="font-weight:900;font-size:34px;letter-spacing:-0.03em;color:var(--accent);">Grade C</div><div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(29,28,26,0.5);margin-top:4px;"><span data-l="en">Licensed archery judge</span><span data-l="id">Juri panahan berlisensi</span></div></div>
+    </div>
+  </div>
+</header>
+
+<section style="max-width:820px;margin:0 auto;padding:clamp(56px,9vh,100px) clamp(20px,4vw,56px) 0;">
+  <div data-reveal="0">
+    <h2 style="margin:0 0 16px;font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:clamp(30px,3.6vw,44px);"><span data-l="en">Built from inside the sport</span><span data-l="id">Dibangun dari dalam olahraganya</span></h2>
+    <p style="margin:0;font-size:17px;line-height:1.8;color:rgba(29,28,26,0.72);"><span data-l="en">This isn't a builder guessing what archers need. I hold a Grade C archery judge license and serve as Wakabid Media &amp; Database at Perpani Jakarta Timur — the city-level archery federation. The domain expertise is institutionally verified, not a personal claim.</span><span data-l="id">Ini bukan builder yang menebak-nebak kebutuhan pemanah. Saya pemegang lisensi juri panahan Grade C dan menjabat Wakabid Media &amp; Database di Perpani Jakarta Timur — federasi panahan tingkat kota. Keahlian domainnya terverifikasi institusi, bukan klaim personal.</span></p>
+  </div>
+</section>
+
+<section style="max-width:820px;margin:0 auto;padding:clamp(40px,6vh,64px) clamp(20px,4vw,56px) 0;">
+  <div data-reveal="0">
+    <h2 style="margin:0 0 16px;font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:clamp(30px,3.6vw,44px);"><span data-l="en">Business problem first</span><span data-l="id">Masalah bisnis dulu</span></h2>
+    <p style="margin:0;font-size:17px;line-height:1.8;color:rgba(29,28,26,0.72);"><span data-l="en">Clubs ran events on spreadsheets, WhatsApp groups, and paper scoresheets. Every one of my products started from a business problem like this one — the technology came after, the same order every time. Today 8,000+ active users run their events on the platform.</span><span data-l="id">Klub menjalankan event lewat spreadsheet, grup WhatsApp, dan lembar skor kertas. Semua produk saya berangkat dari masalah bisnis seperti ini — teknologinya menyusul, urutannya selalu sama. Kini 8.000+ pengguna aktif menjalankan event mereka di platform ini.</span></p>
+  </div>
+</section>
+
+<section style="max-width:820px;margin:0 auto;padding:clamp(40px,6vh,64px) clamp(20px,4vw,56px) 0;">
+  <div data-reveal="0" style="border:1.5px dashed rgba(29,28,26,0.3);border-radius:16px;aspect-ratio:16/8;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(-45deg,rgba(29,28,26,0.03) 0 12px,transparent 12px 24px);">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:12.5px;color:rgba(29,28,26,0.5);"><span data-l="en">[ product screenshot — event scoring interface ]</span><span data-l="id">[ screenshot produk — antarmuka skoring event ]</span></span>
+  </div>
+  <div data-reveal="1" style="margin-top:20px;">
+    <a href="https://myarchery.id" target="_blank" style="display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#F8F7F3;text-decoration:none;font-weight:700;font-size:15px;padding:14px 26px;border-radius:99px;" style-hover="background:color-mix(in oklab, var(--accent) 78%, black);">myarchery.id ↗</a>
+  </div>
+</section>
+
+<section style="max-width:820px;margin:0 auto;padding:clamp(40px,6vh,64px) clamp(20px,4vw,56px) clamp(56px,9vh,100px);">
+  <div data-reveal="0" style="border-left:3px solid var(--accent);padding-left:28px;">
+    <p style="margin:0;font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(24px,2.8vw,32px);line-height:1.5;"><span data-l="en">The strongest product insight comes from being your own most demanding user.</span><span data-l="id">Insight produk terkuat datang dari menjadi pengguna paling menuntut atas produkmu sendiri.</span></p>
+  </div>
+</section>
+
+<footer style="border-top:1.5px solid rgba(29,28,26,0.12);">
+  <div style="max-width:1100px;margin:0 auto;padding:36px clamp(20px,4vw,56px);display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;">
+    <a href="04-case-pro-archery.html" style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#1D1C1A;text-decoration:none;" style-hover="color:var(--accent);">← <span data-l="en">Prev: Pro Archery</span><span data-l="id">Sebelumnya: Pro Archery</span></a>
+    <a href="03-case-opencode.html" style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--accent);text-decoration:none;font-weight:700;"><span data-l="en">Next: OpenCode</span><span data-l="id">Berikutnya: OpenCode</span> →</a>
+  </div>
+</footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    const ease = 'cubic-bezier(0.16,1,0.3,1)';
+    const io = new IntersectionObserver((ents) => {
+      ents.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'none';
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('[data-reveal]').forEach((el) => {
+      const d = parseInt(el.dataset.reveal || '0', 10) * 110;
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'opacity 0.9s ' + ease + ' ' + d + 'ms, transform 0.9s ' + ease + ' ' + d + 'ms';
+      io.observe(el);
+    });
+  }
+  renderVals() {
+    return {
+      toggleLang: () => {
+        const d = document.documentElement;
+        const next = d.dataset.lang === 'en' ? 'id' : 'en';
+        d.dataset.lang = next;
+        try { localStorage.setItem('ltm-lang', next); } catch (e) {}
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
