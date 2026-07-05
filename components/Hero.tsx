@@ -43,16 +43,16 @@ export function Hero() {
                 display: 'inline-block',
               }}
             />
-            <span>Laksmana (Oci) Tri Moerdani — Jakarta</span>
+            <span>Laksmana (Oci) Tri Moerdani · Jakarta</span>
             <span style={{ animation: 'ltm-blink 1.2s step-end infinite' }}>▍</span>
           </div>
 
           <h1
             style={{
-              margin: '26px 0 0',
-              fontSize: 'clamp(44px,6.4vw,96px)',
-              lineHeight: 1.02,
-              letterSpacing: '-0.035em',
+              margin: '22px 0 0',
+              fontSize: 'clamp(32px,5vw,64px)',
+              lineHeight: 1.12,
+              letterSpacing: '-0.03em',
               fontWeight: 900,
               textWrap: 'balance',
             }}
@@ -90,10 +90,10 @@ export function Hero() {
 
           <p
             style={{
-              margin: '28px 0 0',
-              maxWidth: 560,
-              fontSize: 18,
-              lineHeight: 1.7,
+              margin: '22px 0 0',
+              maxWidth: 480,
+              fontSize: 16,
+              lineHeight: 1.6,
               color: 'rgba(29,28,26,0.68)',
               animation: 'ltm-rise 0.9s var(--ease) 0.5s both',
             }}
@@ -102,7 +102,7 @@ export function Hero() {
               en={
                 <>
                   Fractional CPO and co-founder of Reka Cipta Digital. Twenty years in
-                  digital work — helping companies build the{' '}
+                  digital work, helping companies build the{' '}
                   <strong style={{ color: 'var(--ink)' }}>right</strong> product, not just{' '}
                   <em>a</em> product.
                 </>
@@ -110,7 +110,7 @@ export function Hero() {
               id={
                 <>
                   Fractional CPO dan co-founder Reka Cipta Digital. Dua puluh tahun di
-                  dunia digital — membantu perusahaan membangun produk yang{' '}
+                  dunia digital, membantu perusahaan membangun produk yang{' '}
                   <strong style={{ color: 'var(--ink)' }}>tepat</strong>, bukan sekadar{' '}
                   <em>sebuah</em> produk.
                 </>
@@ -122,7 +122,7 @@ export function Hero() {
             style={{
               display: 'flex',
               gap: 14,
-              marginTop: 36,
+              marginTop: 28,
               flexWrap: 'wrap',
               animation: 'ltm-rise 0.9s var(--ease) 0.62s both',
             }}
@@ -210,7 +210,7 @@ function Line({ children, delay }: { children: React.ReactNode; delay: string })
   return (
     <span
       style={{
-        display: 'inline-block',
+        display: 'block',
         animation: `ltm-rise 0.9s var(--ease) ${delay} both`,
       }}
     >

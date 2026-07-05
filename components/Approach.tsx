@@ -15,27 +15,27 @@ const steps: Step[] = [
     titleEn: 'Name the problem in a sentence',
     titleId: 'Sebutkan masalahnya dalam satu kalimat',
     bodyEn:
-      "Then build the smallest thing that proves or kills the assumption. If the problem doesn't fit in a sentence, the project isn't ready — no matter how good the deck looks.",
+      "Then build the smallest thing that proves or kills the assumption. If the problem doesn't fit in a sentence, the project isn't ready, no matter how good the deck looks.",
     bodyId:
-      'Lalu bangun hal terkecil yang membuktikan atau mematikan asumsinya. Kalau masalahnya tidak muat dalam satu kalimat, proyeknya belum siap — sebagus apa pun deck-nya.',
+      'Lalu bangun hal terkecil yang membuktikan atau mematikan asumsinya. Kalau masalahnya tidak muat dalam satu kalimat, proyeknya belum siap, sebagus apa pun deck-nya.',
   },
   {
     num: '02',
     titleEn: 'Sequence beats speed',
     titleId: 'Urutan mengalahkan kecepatan',
     bodyEn:
-      "At Pro Archery I wanted to start with the consumer platform — it's what the business asked for. Two months with the inventory mess showed it would just expose the same chaos with a nicer interface. Each phase has to work before the next begins.",
+      "At Pro Archery I wanted to start with the consumer platform, it's what the business asked for. Two months with the inventory mess showed it would just expose the same chaos with a nicer interface. Each phase has to work before the next begins.",
     bodyId:
-      'Di Pro Archery saya ingin mulai dari platform konsumen — itu yang diminta bisnis. Dua bulan bergelut dengan inventori menunjukkan platform itu hanya akan memamerkan kekacauan yang sama dengan tampilan lebih bagus. Tiap fase harus jalan dulu sebelum fase berikutnya.',
+      'Di Pro Archery saya ingin mulai dari platform konsumen, itu yang diminta bisnis. Dua bulan bergelut dengan inventori menunjukkan platform itu hanya akan memamerkan kekacauan yang sama dengan tampilan lebih bagus. Tiap fase harus jalan dulu sebelum fase berikutnya.',
   },
   {
     num: '03',
     titleEn: 'Words a CFO would sign off on',
     titleId: 'Kata-kata yang berani diteken CFO',
     bodyEn:
-      "The failures I've watched weren't process failures. Whoever owned the product was never forced to define what the business actually needed it to do — in words a CFO would sign off on. That definition is the job.",
+      "The failures I've watched weren't process failures. Whoever owned the product was never forced to define what the business actually needed it to do, in words a CFO would sign off on. That definition is the job.",
     bodyId:
-      'Kegagalan yang saya saksikan bukan kegagalan proses. Pemilik produknya tidak pernah dipaksa mendefinisikan apa yang sebenarnya dibutuhkan bisnis — dalam kata-kata yang berani diteken CFO. Definisi itulah pekerjaannya.',
+      'Kegagalan yang saya saksikan bukan kegagalan proses. Pemilik produknya tidak pernah dipaksa mendefinisikan apa yang sebenarnya dibutuhkan bisnis, dalam kata-kata yang berani diteken CFO. Definisi itulah pekerjaannya.',
   },
 ];
 

@@ -14,14 +14,14 @@ const pillars: Pillar[] = [
   {
     num: '01',
     title: 'Fractional CPO',
-    en: 'Embedded inside organizations, not advising from a slide deck. Currently leading product at Pro Archery — roadmap, team, priorities. Decisions that move revenue.',
-    id: 'Bekerja di dalam organisasi, bukan memberi saran dari slide deck. Saat ini memimpin produk di Pro Archery — roadmap, tim, prioritas. Keputusan yang menggerakkan revenue.',
+    en: 'Embedded inside organizations, not advising from a slide deck. Currently leading product at Pro Archery: roadmap, team, priorities. Decisions that move revenue.',
+    id: 'Bekerja di dalam organisasi, bukan memberi saran dari slide deck. Saat ini memimpin produk di Pro Archery: roadmap, tim, prioritas. Keputusan yang menggerakkan revenue.',
   },
   {
     num: '02',
     title: 'Builder',
-    en: 'MyArchery.id, Blazz, OpenCode. Products that started from a business problem and are live today. The technology came after — the same order every time.',
-    id: 'MyArchery.id, Blazz, OpenCode. Produk yang berangkat dari masalah bisnis dan berjalan sampai hari ini. Teknologinya menyusul — urutannya selalu sama.',
+    en: 'MyArchery.id, Blazz, OpenCode. Products that started from a business problem and are live today. The technology came after, the same order every time.',
+    id: 'MyArchery.id, Blazz, OpenCode. Produk yang berangkat dari masalah bisnis dan berjalan sampai hari ini. Teknologinya menyusul, urutannya selalu sama.',
   },
   {
     num: '03',

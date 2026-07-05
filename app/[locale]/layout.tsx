@@ -47,11 +47,11 @@ export async function generateMetadata({
   const { locale } = await params;
   const active = (hasLocale(locales, locale) ? locale : defaultLocale) as Locale;
 
-  const title = 'Laksmana (Oci) Tri Moerdani — Fractional CPO';
+  const title = 'Laksmana (Oci) Tri Moerdani · Fractional CPO';
   const description =
     active === 'id'
-      ? 'Fractional CPO dan co-founder Reka Cipta Digital. Dua puluh tahun di dunia digital — membantu perusahaan membangun produk yang tepat, bukan sekadar sebuah produk.'
-      : 'Fractional CPO and co-founder of Reka Cipta Digital. Twenty years in digital work — helping companies build the right product, not just a product.';
+      ? 'Fractional CPO dan co-founder Reka Cipta Digital. Dua puluh tahun di dunia digital, membantu perusahaan membangun produk yang tepat, bukan sekadar sebuah produk.'
+      : 'Fractional CPO and co-founder of Reka Cipta Digital. Twenty years in digital work, helping companies build the right product, not just a product.';
 
   // hreflang alternates — every page declares both locale variants.
   const path = ''; // root; sub-pages will override metadata via their own generateMetadata

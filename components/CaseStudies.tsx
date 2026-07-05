@@ -63,7 +63,7 @@ function ProArcheryCard() {
         <div>
           <div style={featuredEyebrow}>
             <span style={dot} />
-            <T en="Featured · Fractional CPO · Oct 2024 — now" id="Unggulan · Fractional CPO · Okt 2024 — sekarang" />
+            <T en="Featured · Fractional CPO · Oct 2024 – present" id="Unggulan · Fractional CPO · Okt 2024 – sekarang" />
           </div>
           <h3 style={featuredTitle}>Pro Archery</h3>
           <p style={featuredBody}>
@@ -107,14 +107,14 @@ function MyArcheryCard() {
           <Counter target={8000} suffix="+" fallback="8,000+" />
         </div>
         <div style={caption}>
-          <T en="[ screenshot — event scoring interface ]" id="[ screenshot — antarmuka skoring event ]" />
+          <T en="[ screenshot: event scoring interface ]" id="[ screenshot: antarmuka skoring event ]" />
         </div>
       </div>
       <h3 style={caseTitle}>MyArchery.id</h3>
       <p style={caseBody}>
         <T
-          en="The platform most archery clubs in Indonesia now run their events on. Built from inside the sport — I hold a Grade C judge license."
-          id="Platform yang kini dipakai mayoritas klub panahan Indonesia untuk menjalankan event. Dibangun dari dalam olahraganya — saya pemegang lisensi juri Grade C."
+          en="The platform most archery clubs in Indonesia now run their events on. Built from inside the sport. I hold a Grade C judge license."
+          id="Platform yang kini dipakai mayoritas klub panahan Indonesia untuk menjalankan event. Dibangun dari dalam olahraganya. Saya pemegang lisensi juri Grade C."
         />
       </p>
       <Tags>
@@ -171,14 +171,14 @@ function BlazzCard() {
           <T en="Business happens in the chat 💬" id="Bisnis terjadi di dalam chat 💬" />
         </div>
         <div style={caption}>
-          <T en="[ product shot — Blazz ]" id="[ tampilan produk — Blazz ]" />
+          <T en="[ product shot: Blazz ]" id="[ tampilan produk: Blazz ]" />
         </div>
       </div>
       <h3 style={caseTitle}>Blazz</h3>
       <p style={caseBody}>
         <T
-          en="WhatsApp-native SaaS for Indonesian SMEs — built where Indonesian business actually happens: inside the chat."
-          id="SaaS berbasis WhatsApp untuk UKM Indonesia — dibangun di tempat bisnis Indonesia benar-benar terjadi: di dalam chat."
+          en="WhatsApp-native SaaS for Indonesian SMEs. Built where Indonesian business actually happens: inside the chat."
+          id="SaaS berbasis WhatsApp untuk UKM Indonesia. Dibangun di tempat bisnis Indonesia benar-benar terjadi: di dalam chat."
         />
       </p>
       <Tags>
@@ -198,7 +198,7 @@ function JakiCard() {
           IoT
         </div>
         <div style={{ fontFamily: 'var(--font-jetbrains), monospace', fontSize: 12, letterSpacing: '0.08em', color: 'rgba(248,247,243,0.6)' }}>
-          <T en="[ dashboard shot — national road monitoring ]" id="[ tampilan dashboard — monitoring jalan nasional ]" />
+          <T en="[ dashboard shot: national road monitoring ]" id="[ tampilan dashboard: monitoring jalan nasional ]" />
         </div>
       </div>
       <h3 style={caseTitle}>
@@ -252,8 +252,8 @@ function BookCard() {
         </h3>
         <p style={{ margin: '4px 0 0', fontSize: 14, color: 'rgba(29,28,26,0.6)' }}>
           <T
-            en="A self-published 7-day framework for validating a business idea — before the money and the building start."
-            id="Framework 7 hari untuk memvalidasi ide bisnis — sebelum uang dan pembangunan dimulai."
+            en="A self-published 7-day framework for validating a business idea, before the money and the building start."
+            id="Framework 7 hari untuk memvalidasi ide bisnis, sebelum uang dan pembangunan dimulai."
           />
         </p>
       </div>

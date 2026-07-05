@@ -12,13 +12,13 @@ type Entry = {
 
 const entries: Entry[] = [
   {
-    period: '2024 —',
+    period: '2024 –',
     role: 'Fractional CPO · Pro Archery',
     en: 'Not advising from a deck. Making product decisions that move revenue.',
     id: 'Bukan memberi saran dari deck. Mengambil keputusan produk yang menggerakkan revenue.',
   },
   {
-    period: '2021 —',
+    period: '2021 –',
     role: 'Co-Founder · Reka Cipta Digital',
     en: 'A remote-first agency built on one rule: name the problem in a sentence, then build the smallest thing that proves or kills the assumption.',
     id: 'Agensi remote-first dengan satu aturan: sebutkan masalahnya dalam satu kalimat, lalu bangun hal terkecil yang membuktikan atau mematikan asumsinya.',
@@ -27,7 +27,7 @@ const entries: Entry[] = [
     period: '2020 – 21',
     role: 'Head of Product · Plaza Digital Solusi',
     en: '40% jump in product adoption; build cycles halved. Less a strategy than a series of small bets that mostly held.',
-    id: 'Adopsi produk naik 40%; siklus build terpangkas separuh. Bukan strategi besar — serangkaian taruhan kecil yang kebanyakan bertahan.',
+    id: 'Adopsi produk naik 40%; siklus build terpangkas separuh. Bukan strategi besar, serangkaian taruhan kecil yang kebanyakan bertahan.',
   },
   {
     period: '2018 – 20',
@@ -67,7 +67,7 @@ export function Timeline() {
       <div style={{ maxWidth: 1280, margin: '0 auto', padding: 'clamp(64px,10vh,120px) clamp(20px,4vw,56px)' }}>
         <Reveal index={0}>
           <div style={{ fontFamily: 'var(--font-jetbrains), monospace', fontSize: 13, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'color-mix(in oklab, var(--accent) 50%, white)', marginBottom: 14 }}>
-            2007 — 2026
+            2007 – 2026
           </div>
         </Reveal>
         <Reveal index={0}>
@@ -78,8 +78,8 @@ export function Timeline() {
         <Reveal index={0}>
           <p style={{ margin: '0 0 52px', maxWidth: 560, fontSize: 16, lineHeight: 1.7, color: 'rgba(248,247,243,0.6)' }}>
             <T
-              en="Enough time to watch the same failure repeat — and to learn which order things actually have to happen in."
-              id="Cukup lama untuk menyaksikan kegagalan yang sama berulang — dan belajar urutan yang sebenarnya harus terjadi."
+              en="Enough time to watch the same failure repeat, and to learn which order things actually have to happen in."
+              id="Cukup lama untuk menyaksikan kegagalan yang sama berulang, dan belajar urutan yang sebenarnya harus terjadi."
             />
           </p>
         </Reveal>

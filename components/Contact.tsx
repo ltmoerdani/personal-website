@@ -18,13 +18,13 @@ export function Contact() {
             <T
               en={
                 <>
-                  If your product decisions and business outcomes have quietly drifted apart — that conversation is{' '}
+                  If your product decisions and business outcomes have quietly drifted apart, that conversation is{' '}
                   <AccentWord>welcome</AccentWord>.
                 </>
               }
               id={
                 <>
-                  Kalau keputusan produk dan hasil bisnis Anda diam-diam mulai berjalan sendiri-sendiri — percakapan itu{' '}
+                  Kalau keputusan produk dan hasil bisnis Anda diam-diam mulai berjalan sendiri-sendiri, percakapan itu{' '}
                   <AccentWord>terbuka</AccentWord>.
                 </>
               }

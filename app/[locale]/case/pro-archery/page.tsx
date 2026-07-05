@@ -67,15 +67,15 @@ export default function ProArcheryCase() {
         >
           <div style={eyebrow}>
             <T
-              en="Case study · Fractional CPO · Oct 2024 — now"
-              id="Studi kasus · Fractional CPO · Okt 2024 — sekarang"
+              en="Case study · Fractional CPO · Oct 2024 – present"
+              id="Studi kasus · Fractional CPO · Okt 2024 – sekarang"
             />
           </div>
           <h1 style={h1}>Pro Archery</h1>
           <p style={lede}>
             <T
-              en="Indonesia's professional archery equipment retailer. No product function existed before this — the roadmap, the team, the priorities all started here."
-              id="Retailer perlengkapan panahan profesional Indonesia. Sebelumnya tidak ada fungsi produk sama sekali — roadmap, tim, dan prioritas semuanya dimulai di sini."
+              en="Indonesia's professional archery equipment retailer. No product function existed before this. The roadmap, the team, the priorities all started here."
+              id="Retailer perlengkapan panahan profesional Indonesia. Sebelumnya tidak ada fungsi produk sama sekali. Roadmap, tim, dan prioritas semuanya dimulai di sini."
             />
           </p>
           <CaseStatGrid accent="light">
@@ -123,8 +123,8 @@ export default function ProArcheryCase() {
       </section>
 
       <CaseScreenshot
-        en="[ product screenshot — internal platform dashboard ]"
-        id="[ screenshot produk — dashboard platform internal ]"
+        en="[ product screenshot: internal platform dashboard ]"
+        id="[ screenshot produk: dashboard platform internal ]"
       />
 
       <CaseQuote

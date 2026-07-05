@@ -11,19 +11,19 @@ type Award = {
 const awards: Award[] = [
   {
     year: '2023',
-    title: 'PitchFest Series — AMSI',
+    title: 'PitchFest Series · AMSI',
     noteEn: 'On behalf of Reka Cipta Digital',
     noteId: 'Atas nama Reka Cipta Digital',
   },
   {
     year: '2016',
-    title: 'Alpha Startups ID #Batch 1 — 1337 Ventures',
+    title: 'Alpha Startups ID #Batch 1 · 1337 Ventures',
     noteEn: 'Pre-accelerator program',
     noteId: 'Program pre-accelerator',
   },
   {
     year: '2013',
-    title: '2nd Winner Business Coach — SBM ITB ESTAR',
+    title: '2nd Winner Business Coach · SBM ITB ESTAR',
   },
 ];
 
@@ -32,15 +32,15 @@ const credentials = [
     titleEn: 'Licensed Grade C Archery Judge',
     titleId: 'Juri Panahan Berlisensi Grade C',
     noteEn:
-      '+ Wakabid Media & Database, Perpani Jakarta Timur — verified domain authority, not a personal claim',
+      '+ Wakabid Media & Database, Perpani Jakarta Timur, verified domain authority, not a personal claim',
     noteId:
-      '+ Wakabid Media & Database, Perpani Jakarta Timur — otoritas domain terverifikasi, bukan klaim personal',
+      '+ Wakabid Media & Database, Perpani Jakarta Timur, otoritas domain terverifikasi, bukan klaim personal',
   },
   {
-    titleEn: 'MBA Entrepreneurship — Institut Teknologi Bandung',
-    titleId: 'MBA Entrepreneurship — Institut Teknologi Bandung',
-    noteEn: 'S.Kom., S.Si Mathematics & Computer Science — BINUS University',
-    noteId: 'S.Kom., S.Si Mathematics & Computer Science — BINUS University',
+    titleEn: 'MBA Entrepreneurship · Institut Teknologi Bandung',
+    titleId: 'MBA Entrepreneurship · Institut Teknologi Bandung',
+    noteEn: 'S.Kom., S.Si Mathematics & Computer Science · BINUS University',
+    noteId: 'S.Kom., S.Si Mathematics & Computer Science · BINUS University',
   },
   {
     titleEn: 'Languages',

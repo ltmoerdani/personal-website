@@ -37,7 +37,7 @@ const testimonials: Testimonial[] = [
     name: 'gederay',
     metaEn: 'Indonesia · Business plan',
     quote:
-      'The seller listened to exactly what I was expecting. The requirements were understood very quickly — I greatly appreciated the communication and service.',
+      'The seller listened to exactly what I was expecting. The requirements were understood very quickly. I greatly appreciated the communication and service.',
   },
   {
     initials: 'B',
@@ -49,7 +49,7 @@ const testimonials: Testimonial[] = [
     initials: 'A',
     name: 'asudradji',
     metaEn: 'Indonesia · Business plan',
-    quote: 'Thank you for your support and cooperation — good luck and all the best for the future.',
+    quote: 'Thank you for your support and cooperation. Good luck and all the best for the future.',
   },
 ];
 

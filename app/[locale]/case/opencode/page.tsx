@@ -38,8 +38,8 @@ export default function OpenCodeCase() {
           </h1>
           <p style={lede}>
             <T
-              en="An open-source extension that brings 30+ frontier AI models into GitHub Copilot Chat — used by developers in more than a dozen countries."
-              id="Ekstensi open-source yang menghadirkan 30+ model AI frontier ke dalam GitHub Copilot Chat — dipakai developer di belasan negara."
+              en="An open-source extension that brings 30+ frontier AI models into GitHub Copilot Chat, used by developers in more than a dozen countries."
+              id="Ekstensi open-source yang menghadirkan 30+ model AI frontier ke dalam GitHub Copilot Chat, dipakai developer di belasan negara."
             />
           </p>
           <CaseStatGrid accent="light">
@@ -56,8 +56,8 @@ export default function OpenCodeCase() {
         titleId="Kenapa seorang CPO merilis dev tool open-source"
       >
         <T
-          en="Same rule as everything else: it started from a problem, not a technology. Developers wanted frontier models inside the Copilot Chat workflow they already lived in — not another separate app. The extension solves exactly that, and nothing more."
-          id="Aturannya sama seperti yang lain: berangkat dari masalah, bukan teknologi. Developer ingin model frontier di dalam alur kerja Copilot Chat yang sudah mereka pakai — bukan aplikasi terpisah lagi. Ekstensi ini menyelesaikan persis itu, tidak lebih."
+          en="Same rule as everything else: it started from a problem, not a technology. Developers wanted frontier models inside the Copilot Chat workflow they already lived in, not another separate app. The extension solves exactly that, and nothing more."
+          id="Aturannya sama seperti yang lain: berangkat dari masalah, bukan teknologi. Developer ingin model frontier di dalam alur kerja Copilot Chat yang sudah mereka pakai, bukan aplikasi terpisah lagi. Ekstensi ini menyelesaikan persis itu, tidak lebih."
         />
       </CaseSection>
 
@@ -81,8 +81,8 @@ export default function OpenCodeCase() {
             <div>
               <span style={check}>✓</span>{' '}
               <T
-                en="installed — rated 5.0 by developers in 12+ countries"
-                id="terpasang — rating 5.0 dari developer di 12+ negara"
+                en="installed, rated 5.0 by developers in 12+ countries"
+                id="terpasang, rating 5.0 dari developer di 12+ negara"
               />
             </div>
           </div>

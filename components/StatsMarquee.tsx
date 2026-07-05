@@ -10,13 +10,13 @@ const items: StatItem[] = [
   { value: '12,000+', labelEn: 'SKUs', labelId: 'SKU' },
   {
     value: '8,000+',
-    labelEn: 'active users — MyArchery.id',
-    labelId: 'pengguna aktif — MyArchery.id',
+    labelEn: 'active users · MyArchery.id',
+    labelId: 'pengguna aktif · MyArchery.id',
   },
   {
     value: '3,952',
-    labelEn: 'installs · 5★ — OpenCode',
-    labelId: 'instalasi · 5★ — OpenCode',
+    labelEn: 'installs · 5★ · OpenCode',
+    labelId: 'instalasi · 5★ · OpenCode',
   },
   { value: 'Rp10M+', labelEn: 'monthly transactions', labelId: 'transaksi bulanan' },
   { value: '3', labelEn: 'continents of clients', labelId: 'benua klien' },
