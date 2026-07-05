@@ -39,8 +39,8 @@ export default function MyArcheryCase() {
           </h1>
           <p style={lede}>
             <T
-              en="The platform most archery clubs in Indonesia now run their events on: scoring, registration, event management. Built outside client work, from inside the sport."
-              id="Platform yang kini dipakai mayoritas klub panahan Indonesia untuk menjalankan event: skoring, registrasi, manajemen event. Dibangun di luar pekerjaan klien, dari dalam olahraganya."
+              en="The platform most archery clubs in Indonesia now run their events on: scoring, registration, event management. Built from inside the sport, not from a pitch deck."
+              id="Platform yang kini dipakai mayoritas klub panahan Indonesia untuk menjalankan event: skoring, registrasi, manajemen event. Dibangun dari dalam olahraganya, bukan dari pitch deck."
             />
           </p>
           <CaseStatGrid>
@@ -105,7 +105,7 @@ export default function MyArcheryCase() {
 
       <CaseFooter
         prev={{ href: '/case/pro-archery', en: 'Prev: Pro Archery', id: 'Sebelumnya: Pro Archery' }}
-        next={{ href: '/case/opencode', en: 'Next: OpenCode', id: 'Berikutnya: OpenCode' }}
+        next={{ href: '/case/opencode', en: 'Next: OpenCode for Copilot Chat', id: 'Berikutnya: OpenCode for Copilot Chat' }}
       />
     </div>
   );

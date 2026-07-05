@@ -4,6 +4,7 @@ import { Link } from '@/i18n/navigation';
 import { Reveal } from './Reveal';
 import { Counter } from './Counter';
 import { T } from './T';
+import { useInstallCount, formatInstalls } from '@/lib/useInstallCount';
 
 export function CaseStudies() {
   return (
@@ -113,8 +114,8 @@ function MyArcheryCard() {
       <h3 style={caseTitle}>MyArchery.id</h3>
       <p style={caseBody}>
         <T
-          en="The platform most archery clubs in Indonesia now run their events on. Built from inside the sport. I hold a Grade C judge license."
-          id="Platform yang kini dipakai mayoritas klub panahan Indonesia untuk menjalankan event. Dibangun dari dalam olahraganya. Saya pemegang lisensi juri Grade C."
+          en="The platform most archery clubs in Indonesia now run their events on. Built from inside the sport, not from a pitch deck. I hold a Grade C judge license."
+          id="Platform yang kini dipakai mayoritas klub panahan Indonesia untuk menjalankan event. Dibangun dari dalam olahraganya, bukan dari pitch deck. Saya pemegang lisensi juri Grade C."
         />
       </p>
       <Tags>
@@ -131,17 +132,19 @@ function MyArcheryCard() {
 }
 
 function OpenCodeCard() {
+  const { installs } = useInstallCount();
+
   return (
     <Link href="/case/opencode" style={caseLink}>
       <div style={{ ...placeholderBox, background: 'var(--ink)' }}>
-        <div style={{ fontFamily: 'var(--font-jetbrains), monospace', fontWeight: 700, fontSize: 'clamp(36px,4vw,54px)', letterSpacing: '-0.04em', lineHeight: 1, color: 'var(--bg)' }}>
-          opencode
-          <span style={{ color: 'color-mix(in oklab, var(--accent) 45%, white)', animation: 'ltm-blink 1.2s step-end infinite' }}>
-            _
-          </span>
-        </div>
-        <div style={{ fontFamily: 'var(--font-jetbrains), monospace', fontSize: 13, color: 'color-mix(in oklab, var(--accent) 45%, white)' }}>
-          <Counter target={3952} fallback="3,952" /> installs · 5.0 ★
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/opencodego.png"
+          alt="OpenCode for Copilot Chat"
+          style={{ width: '55%', maxWidth: 160, height: 'auto', objectFit: 'contain' }}
+        />
+        <div style={{ fontFamily: 'var(--font-jetbrains), monospace', fontSize: 12, color: 'color-mix(in oklab, var(--accent) 45%, white)', position: 'absolute', bottom: 12, left: 0, right: 0, textAlign: 'center' }}>
+          {formatInstalls(installs)} installs · 5.0 ★
         </div>
       </div>
       <h3 style={caseTitle}>
@@ -149,8 +152,8 @@ function OpenCodeCard() {
       </h3>
       <p style={caseBody}>
         <T
-          en="30+ frontier AI models inside GitHub Copilot Chat. Used by developers in more than a dozen countries."
-          id="30+ model AI frontier di dalam GitHub Copilot Chat. Dipakai developer di belasan negara."
+          en="30+ frontier AI models inside GitHub Copilot Chat, at a fraction of Copilot Pro+ cost. Same UI, same Agent Mode, no context switching."
+          id="30+ model AI frontier di dalam GitHub Copilot Chat, dengan biaya sebagian kecil dari Copilot Pro+. UI yang sama, Agent Mode yang sama, tanpa pindah konteks."
         />
       </p>
       <Tags>
@@ -177,8 +180,8 @@ function BlazzCard() {
       <h3 style={caseTitle}>Blazz</h3>
       <p style={caseBody}>
         <T
-          en="WhatsApp-native SaaS for Indonesian SMEs. Built where Indonesian business actually happens: inside the chat."
-          id="SaaS berbasis WhatsApp untuk UKM Indonesia. Dibangun di tempat bisnis Indonesia benar-benar terjadi: di dalam chat."
+          en="WhatsApp-native SaaS for Indonesian SMEs. Built where business actually happens: inside the chat, not in a slide deck."
+          id="SaaS berbasis WhatsApp untuk UKM Indonesia. Dibangun di tempat bisnis benar-benar terjadi: di dalam chat, bukan di slide deck."
         />
       </p>
       <Tags>
@@ -206,8 +209,8 @@ function JakiCard() {
       </h3>
       <p style={caseBody}>
         <T
-          en="Road & bridge condition monitoring for Indonesia's national roads authority. A bridge that goes unreported stays broken."
-          id="Pemantauan kondisi jalan & jembatan untuk Ditjen Bina Marga. Jembatan yang tidak terlaporkan tetap rusak."
+          en="Road and bridge condition monitoring for Indonesia's national roads authority. A bridge that goes unreported stays broken."
+          id="Pemantauan kondisi jalan dan jembatan untuk Ditjen Bina Marga. Jembatan yang tidak terlaporkan tetap rusak."
         />
       </p>
       <Tags>

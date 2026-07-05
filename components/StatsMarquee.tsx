@@ -1,4 +1,7 @@
+'use client';
+
 import { T } from './T';
+import { useInstallCount, formatInstalls } from '@/lib/useInstallCount';
 
 type StatItem = {
   value: string;
@@ -6,24 +9,15 @@ type StatItem = {
   labelId: string;
 };
 
-const items: StatItem[] = [
-  { value: '12,000+', labelEn: 'SKUs', labelId: 'SKU' },
-  {
-    value: '8,000+',
-    labelEn: 'active users · MyArchery.id',
-    labelId: 'pengguna aktif · MyArchery.id',
-  },
-  {
-    value: '3,952',
-    labelEn: 'installs · 5★ · OpenCode',
-    labelId: 'instalasi · 5★ · OpenCode',
-  },
-  { value: 'Rp10M+', labelEn: 'monthly transactions', labelId: 'transaksi bulanan' },
-  { value: '3', labelEn: 'continents of clients', labelId: 'benua klien' },
-  { value: '20', labelEn: 'years in digital work', labelId: 'tahun di dunia digital' },
+const staticItems: Omit<StatItem, 'value'>[] = [
+  { labelEn: 'SKUs', labelId: 'SKU' },
+  { labelEn: 'active users · MyArchery.id', labelId: 'pengguna aktif · MyArchery.id' },
+  { labelEn: 'monthly transactions', labelId: 'transaksi bulanan' },
+  { labelEn: 'continents of clients', labelId: 'benua klien' },
+  { labelEn: 'years in digital work', labelId: 'tahun di dunia digital' },
 ];
 
-function MarqueeRow() {
+function MarqueeRow({ items }: { items: StatItem[] }) {
   return (
     <div style={rowStyle}>
       {items.map((item, i) => (
@@ -38,6 +32,21 @@ function MarqueeRow() {
 }
 
 export function StatsMarquee() {
+  const { installs } = useInstallCount();
+
+  const items: StatItem[] = [
+    { value: '12,000+', ...staticItems[0] },
+    { value: '8,000+', ...staticItems[1] },
+    {
+      value: formatInstalls(installs),
+      labelEn: 'installs · 5★ · OpenCode',
+      labelId: 'instalasi · 5★ · OpenCode',
+    },
+    { value: 'Rp10M+', ...staticItems[2] },
+    { value: '3', ...staticItems[3] },
+    { value: '20', ...staticItems[4] },
+  ];
+
   return (
     <div
       style={{
@@ -50,11 +59,15 @@ export function StatsMarquee() {
       }}
     >
       <div style={{ display: 'flex', width: 'max-content', animation: 'ltm-marquee 28s linear infinite' }}>
-        <MarqueeRow />
-        <MarqueeRow />
+        <MarqueeRow items={items} />
+        <MarqueeRow items={items} />
       </div>
     </div>
   );
+}
+
+function Diamond() {
+  return <span style={{ margin: '0 20px', fontSize: 8, opacity: 0.35 }}>◆</span>;
 }
 
 const rowStyle: React.CSSProperties = {
@@ -71,14 +84,10 @@ const rowStyle: React.CSSProperties = {
 const itemStyle: React.CSSProperties = {
   display: 'inline-flex',
   alignItems: 'baseline',
+  gap: 6,
 };
 
 const strongStyle: React.CSSProperties = {
-  fontFamily: 'var(--font-archivo), sans-serif',
-  fontWeight: 900,
-  fontSize: 19,
+  fontSize: 16,
+  fontWeight: 800,
 };
-
-function Diamond() {
-  return <span style={{ marginLeft: 44, color: 'var(--accent)' }}>◆</span>;
-}

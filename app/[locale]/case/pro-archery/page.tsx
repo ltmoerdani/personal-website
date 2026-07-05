@@ -74,8 +74,8 @@ export default function ProArcheryCase() {
           <h1 style={h1}>Pro Archery</h1>
           <p style={lede}>
             <T
-              en="Indonesia's professional archery equipment retailer. No product function existed before this. The roadmap, the team, the priorities all started here."
-              id="Retailer perlengkapan panahan profesional Indonesia. Sebelumnya tidak ada fungsi produk sama sekali. Roadmap, tim, dan prioritas semuanya dimulai di sini."
+              en="Indonesia's professional archery equipment retailer. No product function existed before I started. The roadmap, the team, the priorities all began here."
+              id="Retailer perlengkapan panahan profesional Indonesia. Tidak ada fungsi produk sebelum saya mulai. Roadmap, tim, dan prioritas semuanya dimulai dari sini."
             />
           </p>
           <CaseStatGrid accent="light">

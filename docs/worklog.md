@@ -9,28 +9,22 @@
 
 | Field | Value |
 |-------|-------|
-| **Last Session** | 2026-07-05 — Docs rewrite + dev server troubleshooting |
-| **Worked On** | **DOCS CLEANUP + SERVER FIX.** (1) All 7 docs were remnants from a previous project (Zertifico). Rewrote all from scratch to match actual project: ltmoerdani.com with next-intl i18n architecture. (2) Dev server was throwing `Internal Server Error` due to corrupted Turbopack cache (missing SST files in `.next/dev/cache/turbopack/`). Fixed by clearing `.next/` folder entirely. Server now healthy: `GET /en 200`, `GET /id 200`, `GET /en/case/pro-archery 200`. |
-| **Stopped At** | Docs aligned to real architecture. Dev server running stable at localhost:3000. All locales + case studies returning 200. |
-| **Next Action** | → (a) Final copy polish for all sections (EN/ID). (b) Real case study data + screenshots. (c) Add favicon + OG image (currently 404). (d) Mobile QA across breakpoints. (e) Set `NEXT_PUBLIC_SITE_URL=https://ltmoerdani.com` for production. (f) Deploy. |
-| **Open Issues** | (1) `GET /favicon.ico 404` — no favicon yet. (2) Next.js 16 `middleware.ts` deprecation warning (still functional, monitor). |
+| **Last Session** | 2026-07-05 — Hero fix, em dash cleanup, OpenCode case study rewrite, dynamic install count |
+| **Worked On** | **FULL SITE POLISH + OPENCODE CASE STUDY.** (1) Hero heading: font `clamp(44px,6.4vw,96px)` → `clamp(32px,5vw,64px)`, forced 3-line block display. (2) Zero em dashes: 74 across 16 files → 0 in visible copy. (3) Writing Framework V4 applied to all copywriting (EN/ID). (4) OpenCode case study: complete rewrite with 11 sections, billing context, 3-tier model explanation, dynamic install count from VS Code Marketplace API, comparison charts (OpenCode vs z.ai), user reviews. (5) OpenCode logo integration: homepage card + case study header. (6) LinkedIn button icons + hover colors. (7) Middleware fix: excluded `/api/` from locale prefix. |
+| **Stopped At** | All sections polished. OpenCode case study fully written with dynamic data, charts, reviews. Zero errors across all pages. |
+| **Next Action** | → (a) Add favicon + OG image (currently 404). (b) Mobile QA across breakpoints. (c) Set `NEXT_PUBLIC_SITE_URL=https://ltmoerdani.com` for production. (d) Deploy to Vercel. (e) Pro Archery + MyArchery case study enrichment (similar depth to OpenCode). |
+| **Open Issues** | (1) `GET /favicon.ico 404` — no favicon yet. (2) Next.js 16 `middleware.ts` deprecation warning (still functional, monitor). (3) Pro Archery + MyArchery case studies still need enrichment to match OpenCode depth. |
 
 ---
 
 ## 🔥 ACTIVE TASKS
 
-### CONTENT-01 Finalize All Copy (EN/ID)
-**Status:** 🟡 In Progress
-**Priority:** P0 | **Est. remaining:** ~1-2 days
+### CONTENT-02 Real Case Study Data
+**Status:** 🟡 Partially Complete
+**Priority:** P0 | **Est. remaining:** ~2-3 days
 **Started:** 2026-07-05
 **Last touched:** 2026-07-05
-**Next Action:** → Audit all `<T en="..." id="..." />` usages. Ensure every user-facing string has both languages.
-**Blocked by:** -
-
-### CONTENT-02 Real Case Study Data
-**Status:** 🟡 Not Started
-**Priority:** P1 | **Est. remaining:** ~1-2 days
-**Next Action:** → Collect real stats, quotes, screenshots for MyArchery, OpenCode, Pro Archery.
+**Next Action:** → Enrich Pro Archery + MyArchery case studies to match OpenCode depth (dynamic data, charts, reviews).
 **Blocked by:** -
 
 ### SEO-01 Favicon + OG Image
@@ -49,13 +43,27 @@
 **Status:** 🟡 Not Started
 **Priority:** P1 | **Est. remaining:** ~2 hours
 **Next Action:** → Deploy to Vercel, configure ltmoerdani.com domain, set NEXT_PUBLIC_SITE_URL, HTTPS.
-**Blocked by:** CONTENT-01
+**Blocked by:** CONTENT-02
 
 ---
 
 ## ✅ COMPLETED (Recent)
 
-### 📅 2026-07-05
+### 📅 2026-07-05 — Session 2: Full Site Polish + OpenCode Case Study
+| ID | Tag | Task — Impact | Time |
+|----|-----|---------------|------|
+| UI-01 | `ui` | Hero heading fix — font `clamp(44px,6.4vw,96px)` → `clamp(32px,5vw,64px)`, forced 3-line block display, reduced hero height ~33% | ~15min |
+| CONTENT-03 | `content` | Em dash cleanup — 74 em dashes across 16 files → 0 in visible copy (koma, titik dua, titik baru, titik tengah, en dash) | ~30min |
+| CONTENT-04 | `content` | Writing Framework V4 copywriting — applied retrospective, friction, rhythm, author presence to all sections (EN/ID) | ~25min |
+| CONTENT-05 | `content` | OpenCode case study rewrite — 7 → 11 sections: billing context, 3-tier model, dynamic stats, comparison charts (OpenCode vs z.ai), user reviews | ~60min |
+| CONTENT-06 | `content` | Dynamic install count — API route + hook fetching from VS Code Marketplace API, 1hr cache, fallback 5,734 | ~20min |
+| UI-02 | `ui` | OpenCode logo integration — homepage card (70%, max 220px) + case study header (20vw, max 260px) with 2-column grid layout | ~15min |
+| UI-03 | `ui` | LinkedIn button icons — SVG icon + LinkedIn blue hover (#0A66C2) on hero + footer buttons | ~10min |
+| FIX-02 | `fix` | Middleware API exclusion — excluded `/api/` from locale prefix to fix 404 on `/api/installs` | ~5min |
+| DOC-02 | `docs` | OpenCode case study doc — `docs/case-studies/01-2026-07-05-opencode-case-study-rewrite.md` | ~10min |
+| DOC-03 | `docs` | Hero/em dash design doc — `docs/design/01-2026-07-05-hero-text-size-em-dash-cleanup.md` | ~10min |
+
+### 📅 2026-07-05 — Session 1: Docs + Server Fix
 | ID | Tag | Task — Impact | Time |
 |----|-----|---------------|------|
 | DOC-01 | `docs` | Docs cleanup — rewrote all 7 docs, removed Zertifico residue, aligned to ltmoerdani.com with next-intl architecture | ~45min |
@@ -82,5 +90,5 @@
 
 ---
 
-*Last updated: 2026-07-05*
+*Last updated: 2026-07-05 14:00*
 *Project: **ltmoerdani.com** — Personal portfolio*

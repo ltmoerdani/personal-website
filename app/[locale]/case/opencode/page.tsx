@@ -10,8 +10,11 @@ import {
 } from '@/components/CasePrimitives';
 import { Reveal } from '@/components/Reveal';
 import { T } from '@/components/T';
+import { useInstallCount, formatInstalls } from '@/lib/useInstallCount';
 
 export default function OpenCodeCase() {
+  const { installs } = useInstallCount();
+
   return (
     <div style={{ background: 'var(--bg)', color: 'var(--ink)', overflowX: 'clip' }}>
       <CaseNav />
@@ -26,24 +29,34 @@ export default function OpenCodeCase() {
         >
           <div style={eyebrow}>
             <T
-              en="Case study · Open source · VS Code extension"
-              id="Studi kasus · Open source · Ekstensi VS Code"
+              en="Case study · Open source · VS Code extension · Released May 2026"
+              id="Studi kasus · Open source · Ekstensi VS Code · Rilis Mei 2026"
             />
           </div>
-          <h1 style={h1}>
-            opencode
-            <span style={{ color: 'color-mix(in oklab, var(--accent) 45%, white)', animation: 'ltm-blink 1.2s step-end infinite' }}>
-              _
-            </span>
-          </h1>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', alignItems: 'center', gap: 'clamp(20px, 3vw, 48px)' }}>
+            <div>
+              <h1 style={h1}>
+                opencode
+                <span style={{ color: 'color-mix(in oklab, var(--accent) 45%, white)', animation: 'ltm-blink 1.2s step-end infinite' }}>
+                  _
+                </span>
+              </h1>
+            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/opencodego.png"
+              alt="OpenCode for Copilot Chat"
+              style={{ width: 'clamp(120px, 20vw, 260px)', height: 'auto' }}
+            />
+          </div>
           <p style={lede}>
             <T
-              en="An open-source extension that brings 30+ frontier AI models into GitHub Copilot Chat, used by developers in more than a dozen countries."
-              id="Ekstensi open-source yang menghadirkan 30+ model AI frontier ke dalam GitHub Copilot Chat, dipakai developer di belasan negara."
+              en="An open-source extension that plugs 30+ frontier AI models into GitHub Copilot Chat. You keep the native Copilot UI, tool-calling, and Agent Mode. You just get way more models, often cheaper than Copilot Pro+."
+              id="Ekstensi open-source yang menyatukan 30+ model AI frontier ke dalam GitHub Copilot Chat. Anda tetap pakai UI Copilot, tool-calling, dan Agent Mode. Anda cuma dapat lebih banyak model, sering kali lebih murah dari Copilot Pro+."
             />
           </p>
           <CaseStatGrid accent="light">
-            <CaseStat accent="light" value="3,952" labelEn="Installs" labelId="Instalasi" />
+            <CaseStat accent="light" value={formatInstalls(installs)} labelEn="Installs" labelId="Instalasi" />
             <CaseStat accent="light" value="5.0 ★" labelEn="Marketplace rating" labelId="Rating marketplace" />
             <CaseStat accent="light" value="30+" labelEn="Frontier AI models" labelId="Model AI frontier" />
             <CaseStat accent="light" value="12+" labelEn="Countries" labelId="Negara" />
@@ -52,12 +65,32 @@ export default function OpenCodeCase() {
       </header>
 
       <CaseSection
-        titleEn="Why a CPO ships an open-source dev tool"
-        titleId="Kenapa seorang CPO merilis dev tool open-source"
+        titleEn="The bill that started it"
+        titleId="Tagihan yang memicu ini"
       >
         <T
-          en="Same rule as everything else: it started from a problem, not a technology. Developers wanted frontier models inside the Copilot Chat workflow they already lived in, not another separate app. The extension solves exactly that, and nothing more."
-          id="Aturannya sama seperti yang lain: berangkat dari masalah, bukan teknologi. Developer ingin model frontier di dalam alur kerja Copilot Chat yang sudah mereka pakai, bukan aplikasi terpisah lagi. Ekstensi ini menyelesaikan persis itu, tidak lebih."
+          en={<>On April 27, 2026, GitHub{' '}<a href="https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/" target="_blank" rel="noopener noreferrer" style={inlineLink}>announced</a> Copilot was moving to usage-based billing. Agentic mode, which calls the model dozens of times per task, made the cost spike unpredictable. I was paying more for fewer conversations. The premium models I relied on, Claude Opus, GPT-5.5, Gemini, were locked behind a $39/mo Pro+ tier, and the free tier was rate-limited to the point of being unusable mid-sprint.</>}
+          id={<>Pada 27 April 2026, GitHub{' '}<a href="https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/" target="_blank" rel="noopener noreferrer" style={inlineLink}>mengumumkan</a> Copilot beralih ke billing berbasis pemakaian. Mode agentic, yang memanggil model belasan kali per task, membuat biaya melonjak tak terduga. Saya membayar lebih mahal untuk percakapan yang lebih sedikit. Model premium yang saya andalkan, Claude Opus, GPT-5.5, Gemini, dikunci di tier Pro+ $39/bulan, dan free tier dibatasi sampai tidak bisa dipakai di tengah sprint.</>}
+        />
+      </CaseSection>
+
+      <CaseSection
+        titleEn="The problem was cost, not the IDE"
+        titleId="Masalahnya biaya, bukan IDE-nya"
+      >
+        <T
+          en="I liked Copilot Chat. The inline tool-calling, the Agent Mode, the context awareness. Switching to another IDE meant rebuilding my entire workflow. What I wanted was simple: keep the Copilot Chat interface, but plug in cheaper, equally capable models. DeepSeek V4, Kimi K2.6, GLM-5.1, Qwen3.7. Frontier open models that cost a fraction of what I was paying. No separate app, no context switching, no learning curve."
+          id="Saya suka Copilot Chat. Tool-calling inline, Agent Mode, context awareness. Pindah ke IDE lain berarti membangun ulang seluruh alur kerja saya. Yang saya mau sederhana: tetap pakai Copilot Chat, tapi colokkan model yang lebih murah dan sama canggihnya. DeepSeek V4, Kimi K2.6, GLM-5.1, Qwen3.7. Model open frontier yang harganya sebagian kecil dari yang saya bayar. Tanpa aplikasi terpisah, tanpa pindah konteks, tanpa kurva belajar."
+        />
+      </CaseSection>
+
+      <CaseSection
+        titleEn="How it works"
+        titleId="Cara kerjanya"
+      >
+        <T
+          en="The extension plugs OpenCode's model gateway directly into Copilot Chat's model picker. Three tiers: OpenCode Zen gives you 2-5 rotating free models (Big Pickle is always free; DeepSeek V4 Flash, MiMo-V2.5, and others rotate weekly) plus pay-as-you-go access to Claude Opus, GPT-5.5, and Gemini. OpenCode Go ($10/mo, $5 first month) adds a curated set of open models with generous limits. Or bring your own API keys and pay nothing to OpenCode. You pick the model from the same dropdown. Everything else, the tool-calling, the Agent Mode, the inline suggestions, stays exactly where it was."
+          id="Ekstensi ini mencolokkan model gateway OpenCode langsung ke model picker Copilot Chat. Tiga tier: OpenCode Zen memberi 2-5 model gratis yang berotasi (Big Pickle selalu gratis; DeepSeek V4 Flash, MiMo-V2.5, dan lainnya berotasi tiap minggu) plus akses pay-as-you-go ke Claude Opus, GPT-5.5, dan Gemini. OpenCode Go ($10/bulan, $5 bulan pertama) menambah kurasi model open dengan limit generous. Atau bawa API key sendiri dan tidak bayar apa-apa ke OpenCode. Anda pilih model dari dropdown yang sama. Sisanya, tool-calling, Agent Mode, inline suggestions, tetap persis di tempatnya."
         />
       </CaseSection>
 
@@ -70,12 +103,12 @@ export default function OpenCodeCase() {
               <span style={{ ...dot, background: 'color-mix(in oklab, var(--accent) 60%, white)' }} />
             </div>
             <div>
-              <span style={prompt}>$</span> code --install-extension opencode-copilot
+              <span style={prompt}>$</span> code --install-extension ltmoerdani.opencode-copilot-chat
             </div>
             <div style={{ color: 'rgba(248,247,243,0.45)' }}>
               <T
-                en="# 30+ models · one chat window · zero context switching"
-                id="# 30+ model · satu jendela chat · nol pindah konteks"
+                en="# 30+ models · same Copilot UI · zero context switching"
+                id="# 30+ model · UI Copilot yang sama · nol pindah konteks"
               />
             </div>
             <div>
@@ -89,28 +122,209 @@ export default function OpenCodeCase() {
         </Reveal>
         <Reveal index={1}>
           <div style={{ marginTop: 20 }}>
-            <a
-              href="https://marketplace.visualstudio.com/items?itemName=opencode"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={ctaBtn}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background =
-                  'color-mix(in oklab, var(--accent) 78%, black)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'var(--accent)';
-              }}
-            >
-              VS Code Marketplace ↗
-            </a>
+            <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+              <a
+                href="https://marketplace.visualstudio.com/items?itemName=ltmoerdani.opencode-copilot-chat"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={ctaBtn}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background =
+                    'color-mix(in oklab, var(--accent) 78%, black)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'var(--accent)';
+                }}
+              >
+                VS Code Marketplace ↗
+              </a>
+              <a
+                href="https://open-vsx.org/extension/ltmoerdani/opencode-copilot-chat"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={ctaBtnPurple}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = '#4B286D';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = '#6B3FA0';
+                }}
+              >
+                Open VSX Registry ↗
+              </a>
+            </div>
           </div>
         </Reveal>
       </section>
 
+      <CaseSection
+        titleEn="What the data says"
+        titleId="Apa kata data"
+      >
+        <T
+          en={`Released May 14, 2026. In less than two months, ${formatInstalls(installs)} developers across 12+ countries installed it. Brazil, Spain, Germany, India, Japan, the US. The rating held at 5.0. The most common feedback: "I was about to cancel Copilot Pro+." The second most common: a request for one more model. Not a request for a feature. The extension already did what it needed to do.`}
+          id={`Rilis 14 Mei 2026. Dalam waktu kurang dari dua bulan, ${formatInstalls(installs)} developer di 12+ negara memasangnya. Brazil, Spanyol, Jerman, India, Jepang, Amerika. Rating bertahan di 5.0. Umpan balik paling sering: "Saya hampir batal Copilot Pro+." Umpan balik kedua paling sering: permintaan untuk menambah satu model lagi. Bukan permintaan fitur. Ekstensinya sudah melakukan apa yang harus dilakukan.`}
+        />
+      </CaseSection>
+
+      {/* Extension comparison chart */}
+      <section style={{ maxWidth: 820, margin: '0 auto', padding: 'clamp(40px,6vh,64px) clamp(20px,4vw,56px) 0' }}>
+        <Reveal index={0}>
+          <h2 style={sectionHeading}>
+            <T en="Two extensions, one pattern" id="Dua ekstensi, satu pola" />
+          </h2>
+          <p style={sectionIntro}>
+            <T
+              en="I shipped a second extension, z.ai Copilot Chat, to test whether the approach generalized. The numbers tell the story."
+              id="Saya merilis ekstensi kedua, z.ai Copilot Chat, untuk menguji apakah pendekatannya bisa diulang. Angkanya berbicara sendiri."
+            />
+          </p>
+        </Reveal>
+
+        <Reveal index={1}>
+          <div style={singleCol}>
+            <div style={chartItem}>
+              <div style={chartHeader}>
+                <div style={chartTitle}>
+                  <span style={chartName}>OpenCode for Copilot Chat</span>
+                  <span style={chartBadge}>7.6× more installs than z.ai</span>
+                </div>
+                <div style={chartStats}>
+                  <span style={chartStatVal}>{formatInstalls(installs)}</span>
+                  <span style={chartStatSep}>·</span>
+                  <span style={chartStatVal}>5.0 ★</span>
+                  <span style={chartStatSep}>·</span>
+                  <span style={chartStatVal}>12+ countries</span>
+                </div>
+              </div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/opencode-chart.png"
+                alt="OpenCode for Copilot Chat: 60-day install trend showing consistent daily growth with peak at 136 installs, averaging 85-100/day in recent weeks"
+                style={chartImg}
+              />
+              <p style={chartDesc}>
+                <T
+                  en="Launched May 14, 2026. Daily installs climbed steadily within the first week, peaking at 136 on June 2. The curve never dips below 80 in the most recent 30 days, showing organic word-of-mouth among developers frustrated with Copilot Pro+ pricing. 6,307 page views converted to 5,123 acquisitions, a 284% conversion rate driven by developers actively searching for alternatives."
+                  id="Rilis 14 Mei 2026. Instalasi harian naik konsisten di minggu pertama, mencapai 136 pada 2 Juni. Kurva tidak pernah turun di bawah 80 di 30 hari terakhir, menunjukkan mulut ke mulut organik dari developer yang frustrasi dengan harga Copilot Pro+. 6,307 page view berubah menjadi 5,123 akuisisi, tingkat konversi 284% yang didorong oleh developer yang secara aktif mencari alternatif."
+                />
+              </p>
+            </div>
+          </div>
+        </Reveal>
+
+        <Reveal index={2}>
+          <div style={singleCol}>
+            <div style={chartItem}>
+              <div style={chartHeader}>
+                <div style={chartTitle}>
+                  <span style={chartName}>z.ai Copilot Chat</span>
+                  <span style={chartBadge}>Second extension, different audience</span>
+                </div>
+                <div style={chartStats}>
+                  <span style={chartStatVal}>826</span>
+                  <span style={chartStatSep}>·</span>
+                  <span style={chartStatVal}>5.0 ★</span>
+                </div>
+              </div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/zai-chart.png"
+                alt="z.ai Copilot Chat: 60-day install trend showing steady growth from near-zero to 15-25 daily installs, with 654 installs in the last 30 days"
+                style={chartImg}
+              />
+              <p style={chartDesc}>
+                <T
+                  en="Same architecture, different model pool targeting a niche audience. The curve starts near zero and builds gradually, peaking around 25 daily installs. 79 page views yielded 654 acquisitions, an 828% conversion rate. That's the hallmark of direct traffic: people who already know what they want. z.ai proves the pattern generalizes. Build a gateway, plug it into Copilot Chat, ship it open source. The market decides."
+                  id="Arsitektur yang sama, kumpulan model yang berbeda menjangkau audiens niche. Kurva dimulai dari nol dan naik perlahan, puncaknya sekitar 25 instalasi per hari. 79 page view menghasilkan 654 akuisisi, tingkat konversi 828%. Itu ciri khas traffic langsung: orang yang sudah tahu apa yang mereka mau. z.ai membuktikan polanya bisa diulang. Bangun gateway, colok ke Copilot Chat, rilis open source. Pasar yang memutuskan."
+                />
+              </p>
+            </div>
+          </div>
+        </Reveal>
+
+        <Reveal index={3}>
+          <p style={comparisonNote}>
+            <T
+              en="Same problem, same solution shape, different audience. OpenCode hit a nerve because Copilot pricing was already in the news. z.ai proved the pattern works for any model gateway, not just one. Data via VS Code Marketplace publisher dashboard, July 2026."
+              id="Masalah yang sama, bentuk solusi yang sama, audiens berbeda. OpenCode kena sasaran karena harga Copilot lagi ramai dibicarakan. z.ai membuktikan polanya bisa dipakai untuk model gateway mana pun, bukan cuma satu. Data via dashboard publisher VS Code Marketplace, Juli 2026."
+            />
+          </p>
+        </Reveal>
+      </section>
+
+      <CaseSection
+        titleEn="Why a CPO ships an open-source dev tool"
+        titleId="Kenapa seorang CPO merilis dev tool open-source"
+      >
+        <T
+          en="Because the instinct doesn't turn off. I saw a pricing change that hurt me, assumed it was hurting others, built the smallest thing that tested that assumption, and shipped it. The extension is not a pivot. It's the same pattern: name the problem in a sentence, then build the smallest thing that proves or kills it."
+          id="Karena instingnya tidak bisa dimatikan. Saya melihat perubahan harga yang merugikan saya, berasumsi hal yang sama dirasakan orang lain, membangun hal terkecil yang menguji asumsi itu, dan merilisnya. Ekstensi ini bukan pivot. Polanya sama: sebut masalahnya dalam satu kalimat, lalu bangun hal terkecil yang membuktikan atau mematikannya."
+        />
+      </CaseSection>
+
+      {/* User reviews from VS Code Marketplace */}
+      <section style={{ maxWidth: 820, margin: '0 auto', padding: 'clamp(40px,6vh,64px) clamp(20px,4vw,56px) 0' }}>
+        <Reveal index={0}>
+          <div style={{ fontFamily: 'var(--font-jetbrains), monospace', fontSize: 13, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 14 }}>
+            <T en="From the Marketplace" id="Dari Marketplace" />
+          </div>
+          <h2 style={sectionHeading}>
+            <T en="What developers are saying" id="Kata developer" />
+          </h2>
+        </Reveal>
+
+        <div style={{ display: 'grid', gap: 16, marginTop: 28 }}>
+          <Reveal index={1}>
+            <div style={reviewCard}>
+              <div style={reviewMeta}>
+                <span style={reviewAvatar}>LB</span>
+                <div>
+                  <div style={reviewName}>Leandro Berth</div>
+                  <div style={reviewDate}>May 17, 2026 · ★★★★★</div>
+                </div>
+              </div>
+              <p style={reviewQuote}>
+                "Excellent extension! Works well right out of the gate and has everything I wanted it to have."
+              </p>
+            </div>
+          </Reveal>
+
+          <Reveal index={2}>
+            <div style={reviewCard}>
+              <div style={reviewMeta}>
+                <span style={reviewAvatar}>PP</span>
+                <div>
+                  <div style={reviewName}>Patrik Porubän</div>
+                  <div style={reviewDate}>May 27, 2026 · ★★★★★</div>
+                </div>
+              </div>
+              <p style={reviewQuote}>
+                "Amazing, why I didn't find this sooner."
+              </p>
+            </div>
+          </Reveal>
+
+          <Reveal index={3}>
+            <div style={reviewCard}>
+              <div style={reviewMeta}>
+                <span style={reviewAvatar}>GC</span>
+                <div>
+                  <div style={reviewName}>Gonzalo Cruz Licona</div>
+                  <div style={reviewDate}>Jun 24, 2026 · ★★★★★</div>
+                </div>
+              </div>
+              <p style={reviewQuote}>
+                "Just installed the extension and loaded my OpenCode GO account and it worked. I have access to all the models in the plan."
+              </p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       <CaseQuote
-        en="Every product started from a business problem. The technology came after."
-        id="Setiap produk berangkat dari masalah bisnis. Teknologinya menyusul."
+        en="The cheapest way to learn if a problem is real is to ship the smallest thing that solves it."
+        id="Cara termurah untuk tahu apakah masalah itu nyata adalah merilis hal terkecil yang menyelesaikannya."
       />
 
       <CaseFooter
@@ -192,4 +406,170 @@ const ctaBtn: React.CSSProperties = {
   padding: '14px 26px',
   borderRadius: 99,
   transition: 'background .25s',
+};
+
+const ctaBtnPurple: React.CSSProperties = {
+  display: 'inline-flex',
+  alignItems: 'center',
+  gap: 10,
+  background: '#6B3FA0',
+  color: '#fff',
+  textDecoration: 'none',
+  fontWeight: 700,
+  fontSize: 15,
+  padding: '14px 26px',
+  borderRadius: 99,
+  transition: 'background .25s',
+};
+
+const inlineLink: React.CSSProperties = {
+  color: 'var(--accent)',
+  textDecoration: 'underline',
+  textDecorationThickness: '1.5px',
+  textUnderlineOffset: '3px',
+};
+
+const sectionHeading: React.CSSProperties = {
+  margin: '0 0 16px',
+  fontFamily: 'var(--font-instrument), serif',
+  fontStyle: 'italic',
+  fontWeight: 400,
+  fontSize: 'clamp(30px,3.6vw,44px)',
+};
+
+const sectionIntro: React.CSSProperties = {
+  margin: '0 0 36px',
+  fontSize: 17,
+  lineHeight: 1.8,
+  color: 'rgba(29,28,26,0.72)',
+};
+const singleCol: React.CSSProperties = {
+  marginBottom: 24,
+};
+
+const chartItem: React.CSSProperties = {
+  background: 'var(--paper)',
+  border: '1px solid rgba(29,28,26,0.1)',
+  borderRadius: 16,
+  padding: '24px 24px 20px',
+  overflow: 'hidden',
+};
+
+const chartHeader: React.CSSProperties = {
+  marginBottom: 16,
+};
+
+const chartTitle: React.CSSProperties = {
+  display: 'flex',
+  alignItems: 'center',
+  gap: 10,
+  flexWrap: 'wrap',
+  marginBottom: 8,
+};
+
+const chartBadge: React.CSSProperties = {
+  fontFamily: 'var(--font-jetbrains), monospace',
+  fontSize: 11,
+  letterSpacing: '0.04em',
+  color: 'rgba(29,28,26,0.45)',
+  background: 'rgba(29,28,26,0.06)',
+  padding: '3px 10px',
+  borderRadius: 99,
+};
+
+const chartStats: React.CSSProperties = {
+  display: 'flex',
+  alignItems: 'baseline',
+  gap: 6,
+  fontFamily: 'var(--font-jetbrains), monospace',
+  fontSize: 13,
+  color: 'rgba(29,28,26,0.6)',
+};
+
+const chartStatVal: React.CSSProperties = {
+  fontWeight: 700,
+  fontSize: 14,
+  color: 'var(--ink)',
+};
+
+const chartStatSep: React.CSSProperties = {
+  opacity: 0.3,
+};
+
+const chartName: React.CSSProperties = {
+  fontSize: 16,
+  fontWeight: 700,
+  letterSpacing: '-0.01em',
+  color: 'var(--accent)',
+};
+
+const chartImg: React.CSSProperties = {
+  width: '100%',
+  height: 'auto',
+  borderRadius: 8,
+  display: 'block',
+  marginBottom: 14,
+};
+
+const chartDesc: React.CSSProperties = {
+  margin: 0,
+  fontSize: 15,
+  lineHeight: 1.7,
+  color: 'rgba(29,28,26,0.65)',
+};
+
+const comparisonNote: React.CSSProperties = {
+  fontSize: 14,
+  lineHeight: 1.7,
+  color: 'rgba(29,28,26,0.55)',
+  margin: 0,
+};
+
+const reviewCard: React.CSSProperties = {
+  background: 'var(--paper)',
+  border: '1px solid rgba(29,28,26,0.1)',
+  borderRadius: 16,
+  padding: '20px 24px',
+};
+
+const reviewMeta: React.CSSProperties = {
+  display: 'flex',
+  alignItems: 'center',
+  gap: 12,
+  marginBottom: 12,
+};
+
+const reviewAvatar: React.CSSProperties = {
+  width: 36,
+  height: 36,
+  borderRadius: '50%',
+  background: 'var(--accent)',
+  color: 'var(--bg)',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  fontWeight: 800,
+  fontSize: 14,
+  flexShrink: 0,
+};
+
+const reviewName: React.CSSProperties = {
+  fontWeight: 700,
+  fontSize: 15,
+};
+
+const reviewDate: React.CSSProperties = {
+  fontFamily: 'var(--font-jetbrains), monospace',
+  fontSize: 11,
+  color: 'rgba(29,28,26,0.45)',
+  letterSpacing: '0.04em',
+  marginTop: 2,
+};
+
+const reviewQuote: React.CSSProperties = {
+  margin: 0,
+  fontSize: 15,
+  lineHeight: 1.7,
+  color: 'rgba(29,28,26,0.72)',
+  fontStyle: 'italic',
 };
