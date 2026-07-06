@@ -27,5 +27,5 @@ export const config = {
   //  - Next.js internals: /_next, /favicon.ico, /__nextjs_*
   //  - Files with an extension in the final segment (images, fonts, etc.)
   //  - API routes (don't need locale prefix)
-  matcher: ['/((?!_next|_vercel|api|favicon\\.ico|.*\\..*).*)'],
+  matcher: ['/((?!_next|_vercel|api|favicon\\.ico|jual-tanah-bogor|.*\\..*).*)'],
 };

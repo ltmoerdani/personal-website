@@ -1,7 +1,7 @@
 # 🧠 WORKLOG — ltmoerdani.com
 
 **Project:** ltmoerdani.com — Personal portfolio (Laksmana Tri Moerdani, Fractional CPO)
-**Updated:** 2026-07-06 | **Status:** In development
+**Updated:** 2026-07-07 | **Status:** In development
 
 ---
 
@@ -9,11 +9,11 @@
 
 | Field | Value |
 |-------|-------|
-| **Last Session** | 2026-07-06 — MyArchery case study visual polish, asset integration, theme consistency, store badges |
-| **Worked On** | **MYARCHERY VISUAL POLISH.** (1) Renamed all assets to descriptive kebab-case filenames. (2) Added 6 representative on-site photos to "Built from inside the sport" gallery. (3) Restructured feature cards: merged card 01 (Live Scoring) + card 06 (Jakarta Series Ranking) with their respective images into full-width cards. (4) Reordered cards 06-07 for logical flow. (5) Added Google Play + App Store badges below mobile scoring flow. (6) Applied MyArchery blue theme (#0d47a3) to contact card, CTA button, and CaseQuote border. (7) Removed MyArchery logo from partner logo strip. (8) Fixed hydration error (`<div>` inside `<p>` from CaseSection wrapper). (9) Fixed image cache busting via versioned filenames (query strings rejected by localPatterns). |
-| **Stopped At** | All visual polish complete. MyArchery case study fully themed and image-rich. Documentation created. |
-| **Next Action** | → (a) Add favicon + OG image (currently 404). (b) Mobile QA across breakpoints. (c) Set `NEXT_PUBLIC_SITE_URL=https://ltmoerdani.com` for production. (d) Deploy to Vercel. (e) Pro Archery case study enrichment. |
-| **Open Issues** | (1) `GET /favicon.ico 404` — no favicon yet. (2) Next.js 16 `middleware.ts` deprecation warning (still functional, monitor). (3) Pro Archery case study still needs enrichment to match MyArchery/OpenCode depth. |
+| **Last Session** | 2026-07-07 — Jual Tanah Bogor standalone landing page (full build, committed to feat/ads) |
+| **Worked On** | **JUAL TANAH BOGOR LANDING PAGE.** (1) Created standalone `app/jual-tanah-bogor/` route outside i18n. (2) Hero with panoramic photo background + glassmorphism stats card + summary aside. (3) Photo gallery: 6 field photos renamed to descriptive filenames, first photo full-width panorama, remaining in grid, all click-to-zoom with lightbox modal. (4) Concept visualization section: 4 growth scenarios (Villa, Airbnb, Studio, Taman) with stacked before/after images, zoomable. (5) Copywriting audit (Writing Framework V4): rewrote scenario descriptions for voice consistency, normalized mixed EN/ID diction. (6) Unified all section widths to 1180px. (7) Fixed image cache issue (.next/cache/images). (8) Committed to `feat/ads` branch, pushed to GitHub. |
+| **Stopped At** | Landing page complete and committed. Documentation created. |
+| **Next Action** | → (a) Add favicon + OG image (currently 404). (b) Mobile QA across breakpoints for tanah-bogor page. (c) Set `NEXT_PUBLIC_SITE_URL=https://ltmoerdani.com` for production. (d) Deploy to Vercel. (e) Pro Archery case study enrichment. (f) Merge `feat/ads` to main when ready. |
+| **Open Issues** | (1) `GET /favicon.ico 404` — no favicon yet. (2) Next.js 16 `middleware.ts` deprecation warning (still functional, monitor). (3) Pro Archery case study still needs enrichment. (4) Branch `feat/ads` not yet merged to main. |
 
 ---
 
@@ -48,6 +48,22 @@
 ---
 
 ## ✅ COMPLETED (Recent)
+
+### 📅 2026-07-07 — Session 5: Jual Tanah Bogor Landing Page
+| ID | Tag | Task — Impact | Time |
+|----|-----|---------------|------|
+| ADS-01 | `content` | Standalone landing page — `app/jual-tanah-bogor/` route with own layout, metadata, outside i18n. Excluded from locale middleware | ~30min |
+| ADS-02 | `ui` | Hero with photo background — panoramic image as full-bleed background, dual gradient overlay, 2-column grid (title+stats / summary aside), glassmorphism cards | ~25min |
+| ADS-03 | `ui` | Photo gallery — 6 field photos renamed to descriptive kebab-case, first photo full-width (21/9), remaining 4 in grid (4/3), all click-to-zoom with shared lightbox modal | ~30min |
+| ADS-04 | `content` | Narrative sections — Bismillah (personal story), Detail Properti (spec table), Kontur (descriptive imagery), Lokasi & Akses (Google Maps embed), Mengapa Langsung, Kenapa Cepat, CTA | ~30min |
+| ADS-05 | `ui` | Concept visualization section — 4 growth scenarios (Villa, Airbnb, Studio, Taman), 1 card per row, before/after images stacked vertically, both zoomable | ~30min |
+| ADS-06 | `content` | Copywriting audit (Writing Framework V4) — rewrote all scenario descriptions for voice consistency with personal narrative tone. Removed marketing buzzwords, added source attributions | ~20min |
+| ADS-07 | `content` | Diction normalization — 9 mixed EN/ID terms normalized (short-stay→sewa harian, host→pemilik, resort-style→bergaya resor, landscape→lanskap, natural→alami, etc.) | ~10min |
+| ADS-08 | `fix` | Layout consistency — unified all section maxWidth to 1180px, removed per-paragraph maxWidth constraints | ~10min |
+| FIX-06 | `fix` | Image cache issue — replaced `01-hero-panoramic-overview.jpg` not updating. Cleared `.next/` + `.next/cache/images`, restarted dev server | ~10min |
+| GIT-01 | `infra` | Git commit + push — committed 9 files to `feat/ads` branch (8fa0ee8), pushed to GitHub | ~5min |
+| DOC-06 | `docs` | Landing page doc — `docs/case-studies/03-2026-07-07-tanah-bogor-landing-page.md` (full timeline, technical decisions, copywriting framework, lessons) | ~20min |
+| DOC-07 | `docs` | Image cache bugfix doc — `docs/bug-fixes/02-2026-07-07-nextjs-image-cache-replacement.md` (root cause, resolution, key insight) | ~10min |
 
 ### 📅 2026-07-06 — Session 4: MyArchery Visual Polish
 | ID | Tag | Task — Impact | Time |
@@ -114,5 +130,5 @@
 
 ---
 
-*Last updated: 2026-07-06 15:20*
+*Last updated: 2026-07-07*
 *Project: **ltmoerdani.com** — Personal portfolio*

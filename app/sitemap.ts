@@ -10,6 +10,15 @@ import { locales, defaultLocale, siteBaseUrl } from '@/i18n/config';
  */
 const routes = ['', '/case/myarchery', '/case/opencode', '/case/pro-archery'];
 
+/** Standalone pages outside the i18n routing (no locale prefix). */
+const standaloneRoutes = [
+  {
+    url: '/jual-tanah-bogor',
+    priority: 0.9,
+    changeFrequency: 'weekly' as const,
+  },
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
 
@@ -32,6 +41,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
       });
     }
+  }
+
+  for (const page of standaloneRoutes) {
+    entries.push({
+      url: `${siteBaseUrl}${page.url}`,
+      lastModified: new Date(),
+      changeFrequency: page.changeFrequency,
+      priority: page.priority,
+    });
   }
 
   return entries;
