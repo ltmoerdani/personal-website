@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import { Reveal } from './Reveal';
 import { Counter } from './Counter';
@@ -102,13 +103,23 @@ function ProArcheryCard() {
 function MyArcheryCard() {
   return (
     <Link href="/case/myarchery" style={caseLink}>
-      <div style={placeholderBox}>
-        <div style={hatch} />
-        <div style={{ fontFamily: 'var(--font-archivo), sans-serif', fontWeight: 900, fontSize: 'clamp(48px,5vw,72px)', letterSpacing: '-0.04em', lineHeight: 1, color: 'var(--accent)', position: 'relative' }}>
-          <Counter target={8000} suffix="+" fallback="8,000+" />
+      <div style={myarcheryVisualBox}>
+        <Image
+          src="/myarchery-hero-kids-archers.png"
+          alt="MyArchery event visual with young archers"
+          fill
+          sizes="(max-width: 900px) 100vw, 560px"
+          style={myarcheryVisualImage}
+        />
+        <div style={myarcheryVisualOverlay} />
+        <div style={myarcheryStatBadge}>
+          <span style={myarcheryStatValue}>
+            <Counter target={8000} suffix="+" fallback="8,000+" />
+          </span>
+          <span style={myarcheryStatLabel}>archers</span>
         </div>
         <div style={caption}>
-          <T en="[ screenshot: event scoring interface ]" id="[ screenshot: antarmuka skoring event ]" />
+          <T en="[ event visual: MyArchery home ]" id="[ visual event: MyArchery home ]" />
         </div>
       </div>
       <h3 style={caseTitle}>MyArchery.id</h3>
@@ -230,25 +241,49 @@ function BookCard() {
       rel="noopener noreferrer"
       style={{
         gridColumn: '1 / -1',
-        border: '1.5px dashed color-mix(in oklab, var(--accent) 55%, transparent)',
+        border: '1.5px dashed #E8C547',
         borderRadius: 20,
-        padding: '26px 30px',
+        padding: '20px 24px',
         background: 'transparent',
         color: 'var(--ink)',
         display: 'flex',
         alignItems: 'center',
-        gap: 20,
+        gap: 16,
         flexWrap: 'wrap',
-        transition: 'background .3s',
+        transition: 'background .3s, box-shadow .3s',
+        boxShadow: '0 2px 12px -6px rgba(232,197,71,0.2)',
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.background = 'color-mix(in oklab, var(--accent) 7%, var(--bg))';
+        e.currentTarget.style.background = 'color-mix(in oklab, #E8C547 8%, var(--bg))';
+        e.currentTarget.style.boxShadow = '0 4px 24px -8px rgba(232,197,71,0.35)';
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.background = 'transparent';
+        e.currentTarget.style.boxShadow = '0 2px 12px -6px rgba(232,197,71,0.2)';
       }}
     >
-      <span style={{ fontFamily: 'var(--font-instrument), serif', fontStyle: 'italic', fontSize: 26, color: 'var(--accent)' }}>+</span>
+      {/* Ebook cover thumbnail */}
+      <div
+        style={{
+          width: 64,
+          height: 64,
+          borderRadius: 10,
+          overflow: 'hidden',
+          flexShrink: 0,
+        }}
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/ebook-validasi-ide-bisnis.webp"
+          alt="Cara Validasi Ide Bisnis dalam Waktu Cepat"
+          style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+        />
+      </div>
+
+      <span style={{ fontFamily: 'var(--font-instrument), serif', fontStyle: 'italic', fontSize: 22, color: '#E8C547', lineHeight: 1 }}>
+        +
+      </span>
+
       <div style={{ flex: 1, minWidth: 260 }}>
         <h3 style={{ margin: 0, fontSize: 18, fontWeight: 800 }}>
           Cara Validasi Ide Bisnis dalam Waktu Cepat
@@ -260,7 +295,8 @@ function BookCard() {
           />
         </p>
       </div>
-      <span style={{ fontFamily: 'var(--font-jetbrains), monospace', fontSize: '12.5px' }}>
+
+      <span style={{ fontFamily: 'var(--font-jetbrains), monospace', fontSize: '12px', color: 'rgba(29,28,26,0.45)' }}>
         validasiidebisnis.com ↗
       </span>
     </a>
@@ -355,6 +391,58 @@ const placeholderBox: React.CSSProperties = {
   alignItems: 'center',
   justifyContent: 'center',
   gap: 10,
+};
+
+const myarcheryVisualBox: React.CSSProperties = {
+  aspectRatio: '16 / 10',
+  borderRadius: 20,
+  overflow: 'hidden',
+  border: '1.5px solid rgba(29,28,26,0.12)',
+  background: 'color-mix(in oklab, var(--accent) 16%, var(--bg))',
+  position: 'relative',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'flex-end',
+  paddingBottom: 16,
+};
+
+const myarcheryVisualImage: React.CSSProperties = {
+  objectFit: 'cover',
+  objectPosition: 'center',
+};
+
+const myarcheryVisualOverlay: React.CSSProperties = {
+  position: 'absolute',
+  inset: 0,
+  background:
+    'linear-gradient(180deg, rgba(7,31,71,0.06) 0%, rgba(7,31,71,0.72) 80%, rgba(7,31,71,0.84) 100%)',
+};
+
+const myarcheryStatBadge: React.CSSProperties = {
+  position: 'relative',
+  zIndex: 2,
+  display: 'inline-flex',
+  alignItems: 'baseline',
+  gap: 8,
+  fontFamily: 'var(--font-archivo), sans-serif',
+};
+
+const myarcheryStatValue: React.CSSProperties = {
+  fontWeight: 900,
+  fontSize: 'clamp(42px,4.6vw,64px)',
+  letterSpacing: '-0.04em',
+  lineHeight: 1,
+  color: '#fff',
+  textShadow: '0 8px 20px rgba(7,31,71,0.42)',
+};
+
+const myarcheryStatLabel: React.CSSProperties = {
+  fontFamily: 'var(--font-jetbrains), monospace',
+  fontSize: 11,
+  letterSpacing: '0.12em',
+  textTransform: 'uppercase',
+  color: 'rgba(248,247,243,0.86)',
 };
 
 const hatch: React.CSSProperties = {

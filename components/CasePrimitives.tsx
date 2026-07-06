@@ -121,7 +121,7 @@ const sectionBody: React.CSSProperties = {
 };
 
 /** Pull quote at the end of a case study. */
-export function CaseQuote({ en, id }: { en: ReactNode; id: ReactNode }) {
+export function CaseQuote({ en, id, accentColor }: { en: ReactNode; id: ReactNode; accentColor?: string }) {
   return (
     <section
       style={{
@@ -131,7 +131,7 @@ export function CaseQuote({ en, id }: { en: ReactNode; id: ReactNode }) {
       }}
     >
       <Reveal index={0}>
-        <div style={{ borderLeft: '3px solid var(--accent)', paddingLeft: 28 }}>
+        <div style={{ borderLeft: `3px solid ${accentColor || 'var(--accent)'}`, paddingLeft: 28 }}>
           <p
             style={{
               margin: 0,

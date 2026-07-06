@@ -100,7 +100,7 @@ export function Nav() {
         </div>
 
         {/* Mobile: lang toggle + hamburger */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+        <div className="ltm-nav-mobile-right">
           <div className="ltm-mobile-controls">
             <LangToggle />
           </div>

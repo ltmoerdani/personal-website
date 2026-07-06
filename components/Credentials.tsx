@@ -45,8 +45,8 @@ const credentials = [
   {
     titleEn: 'Languages',
     titleId: 'Bahasa',
-    noteEn: 'Indonesian (native) · English (professional) · Japanese (elementary)',
-    noteId: 'Indonesia (native) · Inggris (profesional) · Jepang (dasar)',
+    noteEn: 'Indonesian (native) · English (professional)',
+    noteId: 'Indonesia (native) · Inggris (profesional)',
   },
 ];
 
@@ -65,9 +65,18 @@ export function Credentials() {
       >
         <Reveal index={0}>
           <div>
-            <h3 style={colHeading}>
-              <T en="Recognition" id="Penghargaan" />
-            </h3>
+            <div style={recognitionHeadingWrap}>
+              <span style={recognitionBadge} aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="8" r="4" />
+                  <path d="M9.4 12.6 7 21l5-2.4L17 21l-2.4-8.4" />
+                  <path d="m10.9 8 1 .7 1.2-.2-.3 1.2.7 1-1.2.1-.7 1-.6-1-1.2-.1.7-1-.3-1.2 1.2.2z" fill="currentColor" stroke="none" />
+                </svg>
+              </span>
+              <h3 style={colHeading}>
+                <T en="Recognition" id="Penghargaan" />
+              </h3>
+            </div>
             <div style={{ display: 'grid', gap: 0 }}>
               {awards.map((a, i) => (
                 <AwardRow key={a.year + a.title} award={a} last={i === awards.length - 1} />
@@ -146,4 +155,23 @@ const colHeading: React.CSSProperties = {
   fontStyle: 'italic',
   fontWeight: 400,
   fontSize: 30,
+};
+
+const recognitionHeadingWrap: React.CSSProperties = {
+  display: 'flex',
+  alignItems: 'center',
+  gap: 10,
+};
+
+const recognitionBadge: React.CSSProperties = {
+  width: 28,
+  height: 28,
+  borderRadius: '50%',
+  display: 'inline-flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  color: 'var(--accent)',
+  background: 'color-mix(in oklab, var(--accent) 12%, var(--bg))',
+  border: '1px solid color-mix(in oklab, var(--accent) 32%, transparent)',
+  marginBottom: 20,
 };

@@ -9,11 +9,11 @@
 
 | Field | Value |
 |-------|-------|
-| **Last Session** | 2026-07-06 — ID localization naturalization, em dash cleanup in ID copy, documentation |
-| **Worked On** | **ID LOCALIZATION NATURALIZATION.** (1) Audited all ID copy across 10 files vs EN source. (2) Applied Writing Framework V4 to restructure ID translations — not word-for-word, but semantic equivalence with structural freedom. (3) Calibrated register: founder-voice ("nggak", "ngasih", "beneran") in narrative sections, professional-neutral in labels/metadata. (4) Replaced EN idioms with ID equivalents ("drifted apart" → "meleset", "numbers tell the story" → "Angkanya yang menjawab"). (5) Zero em dashes in user-facing ID copy. (6) Fixed JSX syntax errors introduced during bulk replacement (3 files: `bodyId:` vs `id="` mismatches). (7) Documentation: `docs/architecture/04-2026-07-06-id-localization-naturalization.md`. |
-| **Stopped At** | All ID copy naturalized. Browser QA passed on all 4 ID routes. Zero errors. Doc created. |
-| **Next Action** | → (a) Add favicon + OG image (currently 404). (b) Mobile QA across breakpoints. (c) Set `NEXT_PUBLIC_SITE_URL=https://ltmoerdani.com` for production. (d) Deploy to Vercel. (e) Pro Archery + MyArchery case study enrichment (similar depth to OpenCode). |
-| **Open Issues** | (1) `GET /favicon.ico 404` — no favicon yet. (2) Next.js 16 `middleware.ts` deprecation warning (still functional, monitor). (3) Pro Archery + MyArchery case studies still need enrichment to match OpenCode depth. |
+| **Last Session** | 2026-07-06 — MyArchery case study visual polish, asset integration, theme consistency, store badges |
+| **Worked On** | **MYARCHERY VISUAL POLISH.** (1) Renamed all assets to descriptive kebab-case filenames. (2) Added 6 representative on-site photos to "Built from inside the sport" gallery. (3) Restructured feature cards: merged card 01 (Live Scoring) + card 06 (Jakarta Series Ranking) with their respective images into full-width cards. (4) Reordered cards 06-07 for logical flow. (5) Added Google Play + App Store badges below mobile scoring flow. (6) Applied MyArchery blue theme (#0d47a3) to contact card, CTA button, and CaseQuote border. (7) Removed MyArchery logo from partner logo strip. (8) Fixed hydration error (`<div>` inside `<p>` from CaseSection wrapper). (9) Fixed image cache busting via versioned filenames (query strings rejected by localPatterns). |
+| **Stopped At** | All visual polish complete. MyArchery case study fully themed and image-rich. Documentation created. |
+| **Next Action** | → (a) Add favicon + OG image (currently 404). (b) Mobile QA across breakpoints. (c) Set `NEXT_PUBLIC_SITE_URL=https://ltmoerdani.com` for production. (d) Deploy to Vercel. (e) Pro Archery case study enrichment. |
+| **Open Issues** | (1) `GET /favicon.ico 404` — no favicon yet. (2) Next.js 16 `middleware.ts` deprecation warning (still functional, monitor). (3) Pro Archery case study still needs enrichment to match MyArchery/OpenCode depth. |
 
 ---
 
@@ -23,8 +23,8 @@
 **Status:** 🟡 Partially Complete
 **Priority:** P0 | **Est. remaining:** ~2-3 days
 **Started:** 2026-07-05
-**Last touched:** 2026-07-05
-**Next Action:** → Enrich Pro Archery + MyArchery case studies to match OpenCode depth (dynamic data, charts, reviews).
+**Last touched:** 2026-07-06
+**Next Action:** → Enrich Pro Archery case study to match MyArchery/OpenCode depth (dynamic data, charts, reviews).
 **Blocked by:** -
 
 ### SEO-01 Favicon + OG Image
@@ -48,6 +48,20 @@
 ---
 
 ## ✅ COMPLETED (Recent)
+
+### 📅 2026-07-06 — Session 4: MyArchery Visual Polish
+| ID | Tag | Task — Impact | Time |
+|----|-----|---------------|------|
+| UI-04 | `ui` | Asset renaming — renamed all MyArchery images to descriptive kebab-case filenames (7 files), updated all code references | ~15min |
+| UI-05 | `ui` | Header branding — changed to #0d47a3, white metadata text, logo in white block, left-aligned, scaled up | ~15min |
+| UI-06 | `ui` | Inside-sport gallery — added 6 on-site photos to "Built from inside the sport" section with responsive grid (220px min) | ~20min |
+| UI-07 | `ui` | Feature cards restructure — merged card 01 (Live Scoring) + card 06 (Jakarta Series Ranking) with images into full-width cards. Added `emphasize` prop. Reordered 06-07. Removed duplicate leaderboard image from release timeline | ~25min |
+| UI-08 | `ui` | Store badges — downloaded official Google Play + App Store badges, added below mobile scoring flow, 150×46px each, centered | ~15min |
+| UI-09 | `ui` | Theme consistency — contact card border/bg → #0d47a3, CTA button → #0d47a3, CaseQuote border → #0d47a3 (added `accentColor` prop to CasePrimitives.tsx) | ~10min |
+| UI-10 | `ui` | Logo strip cleanup — removed MyArchery logo from partner/vendor logo strip | ~5min |
+| FIX-04 | `fix` | Hydration error fix — moved gallery grid from CaseSection child to standalone `<section>` to avoid `<div>` inside `<p>` wrapper | ~5min |
+| FIX-05 | `fix` | Cache busting — dashboard image: versioned filename (-v2.png) instead of query string. Google Play badge: versioned copy + cleared .next/cache | ~10min |
+| DOC-05 | `docs` | Case study doc — `docs/case-studies/02-2026-07-06-myarchery-visual-polish.md` (full timeline, files, lessons learned) | ~20min |
 
 ### 📅 2026-07-06 — Session 3: ID Localization Naturalization
 | ID | Tag | Task — Impact | Time |
@@ -100,5 +114,5 @@
 
 ---
 
-*Last updated: 2026-07-06 01:25*
+*Last updated: 2026-07-06 15:20*
 *Project: **ltmoerdani.com** — Personal portfolio*
