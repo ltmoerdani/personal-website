@@ -1,8 +1,176 @@
 'use client';
 
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Reveal } from '@/components/Reveal';
+
+const visitorLocations = [
+  'Jakarta Selatan',
+  'Depok',
+  'Bekasi',
+  'Tangerang',
+  'Jakarta Barat',
+  'Bogor',
+  'Cibubur',
+  'Sentul',
+  'Cibinong',
+  'Jakarta Timur',
+  'Tangerang Selatan',
+  'Bekasi Barat',
+  'BSD City',
+  'Cilebut',
+  'Cibitung',
+] as const;
+
+const viewerActions = [
+  'sedang melihat halaman ini',
+  'sedang melihat halaman ini',
+  'sedang melihat halaman ini',
+  'baru saja membuka halaman ini',
+  'baru saja membuka halaman ini',
+] as const;
+
+function SocialProofNotification() {
+  const [isVisible, setIsVisible] = useState(false);
+  const [currentNotif, setCurrentNotif] = useState({ location: '', action: '', minutes: 0 });
+  const [viewerCount, setViewerCount] = useState(3);
+
+  const generateNotif = useCallback(() => {
+    const location = visitorLocations[Math.floor(Math.random() * visitorLocations.length)];
+    const action = viewerActions[Math.floor(Math.random() * viewerActions.length)];
+    const minutes = Math.floor(Math.random() * 12) + 1;
+    setCurrentNotif({ location, action, minutes });
+    setViewerCount((prev) => {
+      const delta = Math.floor(Math.random() * 3) - 1;
+      return Math.max(2, Math.min(11, prev + delta));
+    });
+  }, []);
+
+  useEffect(() => {
+    const initialDelay = 6000;
+    const showDuration = 4500;
+    const randomHide = () => 25000 + Math.random() * 35000;
+
+    const cycle = (isFirst: boolean) => {
+      setTimeout(() => {
+        generateNotif();
+        setIsVisible(true);
+        setTimeout(() => {
+          setIsVisible(false);
+          setTimeout(() => cycle(false), randomHide());
+        }, showDuration);
+      }, isFirst ? initialDelay : 0);
+    };
+
+    cycle(true);
+    const countInterval = setInterval(() => {
+      setViewerCount((prev) => {
+        const delta = Math.floor(Math.random() * 3) - 1;
+        return Math.max(2, Math.min(11, prev + delta));
+      });
+    }, 30000);
+
+    return () => clearInterval(countInterval);
+  }, [generateNotif]);
+
+  return (
+    <div
+      style={{
+        position: 'fixed',
+        bottom: 20,
+        left: 20,
+        zIndex: 150,
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 8,
+        pointerEvents: 'none',
+      }}
+    >
+      <div
+        style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: 8,
+          padding: '7px 13px',
+          borderRadius: 999,
+          background: 'rgba(46,93,75,0.92)',
+          color: '#fff',
+          fontFamily: 'var(--font-jetbrains), monospace',
+          fontSize: 11.5,
+          letterSpacing: '0.04em',
+          boxShadow: '0 4px 16px rgba(46,93,75,0.25)',
+          backdropFilter: 'blur(8px)',
+          alignSelf: 'flex-start',
+          transition: 'opacity 0.4s var(--ease)',
+          opacity: isVisible ? 1 : 0.7,
+        }}
+      >
+        <span
+          style={{
+            width: 7,
+            height: 7,
+            borderRadius: '50%',
+            background: '#25D366',
+            display: 'inline-block',
+            animation: 'ltm-pulse 2s ease-in-out infinite',
+          }}
+        />
+        <strong style={{ fontWeight: 700 }}>{viewerCount} orang</strong> sedang melihat halaman ini
+      </div>
+
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: 10,
+          padding: '11px 14px',
+          borderRadius: 12,
+          background: 'rgba(255,255,255,0.97)',
+          border: '1px solid rgba(29,28,26,0.1)',
+          boxShadow: '0 8px 28px rgba(29,28,26,0.12)',
+          maxWidth: 320,
+          transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+          opacity: isVisible ? 1 : 0,
+          transition: 'transform 0.45s var(--ease), opacity 0.45s var(--ease)',
+          alignSelf: 'flex-start',
+          pointerEvents: isVisible ? 'auto' : 'none',
+        }}
+      >
+        <div
+          style={{
+            width: 36,
+            height: 36,
+            borderRadius: '50%',
+            background: 'rgba(46,93,75,0.12)',
+            color: 'var(--accent)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: 15,
+            fontWeight: 800,
+            flexShrink: 0,
+            fontFamily: 'var(--font-archivo), sans-serif',
+          }}
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7Zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5Z" fill="currentColor"/>
+          </svg>
+        </div>
+        <div style={{ display: 'grid', gap: 2 }}>
+          <div style={{ fontSize: 13.5, fontWeight: 700, color: 'var(--ink)', lineHeight: 1.3 }}>
+            Pengunjung dari {currentNotif.location}
+          </div>
+          <div style={{ fontSize: 12.5, color: 'rgba(29,28,26,0.6)', lineHeight: 1.4 }}>
+            {currentNotif.action}
+          </div>
+          <div style={{ fontSize: 11, fontFamily: 'var(--font-jetbrains), monospace', color: 'rgba(29,28,26,0.4)' }}>
+            {currentNotif.minutes} menit yang lalu
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function Nav() {
   return (
@@ -669,6 +837,8 @@ export default function JualTanahBogorPage() {
       </section>
 
       <Footer />
+
+      <SocialProofNotification />
     </div>
   );
 }
