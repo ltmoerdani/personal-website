@@ -59,7 +59,7 @@ export function Testimonials() {
       <Reveal index={0}>
         <div style={{ display: 'flex', alignItems: 'baseline', gap: 18, marginBottom: 36, flexWrap: 'wrap' }}>
           <h2 style={heading}>
-            <T en="What founders say" id="Kata para founder" />
+            <T en="What founders say" id="Apa kata founder" />
           </h2>
           <span style={{ fontFamily: 'var(--font-jetbrains), monospace', fontSize: '12.5px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--accent)' }}>
             <T en="Via Fiverr · Business plans for startups · 5.0 ★" id="Via Fiverr · Business plan untuk startup · 5.0 ★" />

@@ -20,7 +20,7 @@ const phases = [
     bodyEn:
       '12,000+ SKUs. The foundation everything else depends on. Live since mid-2025.',
     bodyId:
-      '12.000+ SKU. Fondasi yang menopang semuanya. Live sejak pertengahan 2025.',
+      '12.000+ SKU. Fondasi semua fase berikutnya. Live sejak pertengahan 2025.',
   },
   {
     num: '02',
@@ -29,7 +29,7 @@ const phases = [
     bodyEn:
       'Infrastructure handling Rp10M+ in monthly transactions across stores.',
     bodyId:
-      'Infrastruktur yang menangani transaksi Rp10 juta+ per bulan lintas toko.',
+      'Infrastruktur yang menangani Rp10 juta+ transaksi per bulan lintas toko.',
   },
   {
     num: '03',
@@ -38,7 +38,7 @@ const phases = [
     bodyEn:
       'The operational flow between what\u2019s in the warehouse and what the store can sell.',
     bodyId:
-      'Alur operasional antara isi gudang dan apa yang bisa dijual toko.',
+      'Alur operasional antara stok di gudang dan yang bisa dijual di etalase.',
   },
   {
     num: '04',
@@ -47,7 +47,7 @@ const phases = [
     bodyEn:
       'What the business asked for first \u2014 shipping last, on purpose. Launches September 2026.',
     bodyId:
-      'Yang pertama diminta bisnis \u2014 sengaja dirilis terakhir. Meluncur September 2026.',
+      'Ini yang pertama diminta bisnis, tapi sengaja saya rilis paling akhir. Meluncur September 2026.',
     featured: true,
   },
 ];
@@ -103,7 +103,7 @@ export default function ProArcheryCase() {
       >
         <T
           en="I initially wanted to start with the consumer platform, since that's what the business was asking for. It took two months of looking at the inventory mess to realize the consumer platform would just expose the same chaos with a nicer interface."
-          id="Awalnya saya ingin mulai dari platform konsumen, karena itu yang diminta bisnis. Butuh dua bulan bergelut dengan kekacauan inventori untuk sadar bahwa platform konsumen hanya akan memamerkan kekacauan yang sama dengan tampilan lebih bagus."
+          id="Awalnya saya mau mulai dari platform konsumen, karena itu yang diminta bisnis. Tapi setelah dua bulan bergelut dengan kekacauan inventori, saya sadar: platform konsumen cuma akan memamerkan kekacauan yang sama dengan tampilan yang lebih bagus."
         />
       </CaseSection>
 

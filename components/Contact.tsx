@@ -24,8 +24,8 @@ export function Contact() {
               }
               id={
                 <>
-                  Kalau keputusan produk dan hasil bisnis Anda diam-diam mulai berjalan sendiri-sendiri, dan belum ada yang bilang terus terang, percakapan itu{' '}
-                  <AccentWord>terbuka</AccentWord>.
+                  Kalau keputusan produk dan hasil bisnis Anda sudah mulai meleset, dan belum ada yang berani bilang terus terang, saya{' '}
+                  <AccentWord>terbuka</AccentWord> untuk obrolan itu.
                 </>
               }
             />

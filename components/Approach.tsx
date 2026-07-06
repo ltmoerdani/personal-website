@@ -26,7 +26,7 @@ const steps: Step[] = [
     bodyEn:
       "At Pro Archery I wanted the consumer platform first. Two months with the inventory mess showed it would only expose the same chaos prettied up. Each phase has to work before the next begins.",
     bodyId:
-      'Di Pro Archery saya ingin platform konsumen duluan. Dua bulan bergelut dengan inventori menunjukkan itu hanya akan menutupi kekacauan yang sama dengan tampilan lebih rapi. Tiap fase harus jalan sebelum fase berikutnya.',
+      'Di Pro Archery saya awalnya ingin mulai dari platform konsumen. Tapi dua bulan bergelut dengan inventori bikin saya sadar: itu cuma menutupi kekacauan yang sama dengan tampilan lebih rapi. Tiap fase harus jalan dulu sebelum fase berikutnya.',
   },
   {
     num: '03',
@@ -35,7 +35,7 @@ const steps: Step[] = [
     bodyEn:
       "The failures I've watched weren't process failures. The product owner was never forced to define what the business actually needed, in words a CFO would sign off on. That definition is the job.",
     bodyId:
-      'Kegagalan yang saya saksikan bukan kegagalan proses. Pemilik produk tidak pernah dipaksa mendefinisikan apa yang bisnis sebenarnya butuhkan, dalam kata-kata yang berani diteken CFO. Definisi itulah pekerjaannya.',
+      'Kegagalan yang saya lihat bukan soal proses. Pemilik produknya nggak pernah dipaksa nulis apa yang bisnis sebenarnya butuh, dalam bahasa yang berani diteken CFO. Itulah pekerjaan yang sebenarnya.',
   },
 ];
 

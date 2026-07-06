@@ -1,7 +1,7 @@
 # 🧠 WORKLOG — ltmoerdani.com
 
 **Project:** ltmoerdani.com — Personal portfolio (Laksmana Tri Moerdani, Fractional CPO)
-**Updated:** 2026-07-05 | **Status:** In development
+**Updated:** 2026-07-06 | **Status:** In development
 
 ---
 
@@ -9,9 +9,9 @@
 
 | Field | Value |
 |-------|-------|
-| **Last Session** | 2026-07-05 — Hero fix, em dash cleanup, OpenCode case study rewrite, dynamic install count |
-| **Worked On** | **FULL SITE POLISH + OPENCODE CASE STUDY.** (1) Hero heading: font `clamp(44px,6.4vw,96px)` → `clamp(32px,5vw,64px)`, forced 3-line block display. (2) Zero em dashes: 74 across 16 files → 0 in visible copy. (3) Writing Framework V4 applied to all copywriting (EN/ID). (4) OpenCode case study: complete rewrite with 11 sections, billing context, 3-tier model explanation, dynamic install count from VS Code Marketplace API, comparison charts (OpenCode vs z.ai), user reviews. (5) OpenCode logo integration: homepage card + case study header. (6) LinkedIn button icons + hover colors. (7) Middleware fix: excluded `/api/` from locale prefix. |
-| **Stopped At** | All sections polished. OpenCode case study fully written with dynamic data, charts, reviews. Zero errors across all pages. |
+| **Last Session** | 2026-07-06 — ID localization naturalization, em dash cleanup in ID copy, documentation |
+| **Worked On** | **ID LOCALIZATION NATURALIZATION.** (1) Audited all ID copy across 10 files vs EN source. (2) Applied Writing Framework V4 to restructure ID translations — not word-for-word, but semantic equivalence with structural freedom. (3) Calibrated register: founder-voice ("nggak", "ngasih", "beneran") in narrative sections, professional-neutral in labels/metadata. (4) Replaced EN idioms with ID equivalents ("drifted apart" → "meleset", "numbers tell the story" → "Angkanya yang menjawab"). (5) Zero em dashes in user-facing ID copy. (6) Fixed JSX syntax errors introduced during bulk replacement (3 files: `bodyId:` vs `id="` mismatches). (7) Documentation: `docs/architecture/04-2026-07-06-id-localization-naturalization.md`. |
+| **Stopped At** | All ID copy naturalized. Browser QA passed on all 4 ID routes. Zero errors. Doc created. |
 | **Next Action** | → (a) Add favicon + OG image (currently 404). (b) Mobile QA across breakpoints. (c) Set `NEXT_PUBLIC_SITE_URL=https://ltmoerdani.com` for production. (d) Deploy to Vercel. (e) Pro Archery + MyArchery case study enrichment (similar depth to OpenCode). |
 | **Open Issues** | (1) `GET /favicon.ico 404` — no favicon yet. (2) Next.js 16 `middleware.ts` deprecation warning (still functional, monitor). (3) Pro Archery + MyArchery case studies still need enrichment to match OpenCode depth. |
 
@@ -48,6 +48,16 @@
 ---
 
 ## ✅ COMPLETED (Recent)
+
+### 📅 2026-07-06 — Session 3: ID Localization Naturalization
+| ID | Tag | Task — Impact | Time |
+|----|-----|---------------|------|
+| I18N-01 | `i18n` | ID copy naturalization — audited 10 files, restructured EN→ID translations from word-for-word to semantic equivalence (Writing Framework V4 applied: register calibration, idiom substitution, sentence restructuring) | ~40min |
+| I18N-02 | `i18n` | Register calibration — founder-voice ("nggak", "ngasih", "beneran") in narrative sections, professional-neutral in labels/metadata. Section-specific: Hero (professional), Timeline (reflective), Case studies (confessional), Contact (warm-direct) | ~15min |
+| I18N-03 | `i18n` | EN idiom → ID equivalent mapping — "drifted apart"→"meleset", "hit a nerve"→"pas sasaran", "numbers tell the story"→"Angkanya yang menjawab", "equally capable"→"tak kalah canggih", "learning curve"→"perlu belajar dari nol" | ~10min |
+| CONTENT-07 | `content` | Em dash cleanup (ID) — removed all em dashes in user-facing ID copy across messages/id.json + pro-archery phase 04. Replaced with koma, titik dua, "tapi/melainkan" | ~5min |
+| FIX-03 | `fix` | JSX syntax fix — 3 files had `id:` (object syntax) used in JSX prop context after bulk replacement. Fixed: opencode (2 instances), pro-archery (3 instances), myarchery (2 instances) | ~10min |
+| DOC-04 | `docs` | ID localization doc — `docs/architecture/04-2026-07-06-id-localization-naturalization.md` (3-layer approach, anti-patterns, lessons for future localization) | ~15min |
 
 ### 📅 2026-07-05 — Session 2: Full Site Polish + OpenCode Case Study
 | ID | Tag | Task — Impact | Time |
@@ -90,5 +100,5 @@
 
 ---
 
-*Last updated: 2026-07-05 14:00*
+*Last updated: 2026-07-06 01:25*
 *Project: **ltmoerdani.com** — Personal portfolio*

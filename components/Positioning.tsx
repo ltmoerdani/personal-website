@@ -15,7 +15,7 @@ const pillars: Pillar[] = [
     num: '01',
     title: 'Fractional CPO',
     en: 'Inside organizations, not advising from a slide deck. Leading product at Pro Archery: roadmap, team, priorities. Decisions that move revenue.',
-    id: 'Di dalam organisasi, bukan memberi saran dari slide deck. Memimpin produk di Pro Archery: roadmap, tim, prioritas. Keputusan yang menggerakkan revenue.',
+    id: 'Di dalam organisasi, bukan sekadar ngasih saran dari slide deck. Memimpin produk di Pro Archery: roadmap, tim, prioritas. Keputusan yang menggerakkan revenue.',
   },
   {
     num: '02',
@@ -27,7 +27,7 @@ const pillars: Pillar[] = [
     num: '03',
     title: 'Founder consulting',
     en: 'Turning a raw concept into something that survives a real conversation with an investor. A few focused sessions, not months. Rated 5.0.',
-    id: 'Mengubah konsep mentah jadi sesuatu yang lolos percakapan sungguhan dengan investor. Beberapa sesi fokus, bukan berbulan-bulan. Rating 5.0.',
+    id: 'Mengubah konsep mentah jadi materi yang siap dilontarkan ke investor. Beberapa sesi fokus, bukan berbulan-bulan. Rating 5.0.',
   },
 ];
 

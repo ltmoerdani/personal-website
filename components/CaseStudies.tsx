@@ -181,7 +181,7 @@ function BlazzCard() {
       <p style={caseBody}>
         <T
           en="WhatsApp-native SaaS for Indonesian SMEs. Built where business actually happens: inside the chat, not in a slide deck."
-          id="SaaS berbasis WhatsApp untuk UKM Indonesia. Dibangun di tempat bisnis benar-benar terjadi: di dalam chat, bukan di slide deck."
+          id="SaaS WhatsApp untuk UKM Indonesia. Dibangun di tempat bisnis beneran terjadi: di dalam chat, bukan di slide deck."
         />
       </p>
       <Tags>
@@ -210,7 +210,7 @@ function JakiCard() {
       <p style={caseBody}>
         <T
           en="Road and bridge condition monitoring for Indonesia's national roads authority. A bridge that goes unreported stays broken."
-          id="Pemantauan kondisi jalan dan jembatan untuk Ditjen Bina Marga. Jembatan yang tidak terlaporkan tetap rusak."
+          id="Pemantauan kondisi jalan dan jembatan untuk Ditjen Bina Marga. Jembatan yang nggak dilaporkan ya tetap rusak."
         />
       </p>
       <Tags>

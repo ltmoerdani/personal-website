@@ -62,14 +62,14 @@ export default function MyArcheryCase() {
       <CaseSection titleEn="Built from inside the sport" titleId="Dibangun dari dalam olahraganya">
         <T
           en="This isn't a builder guessing what archers need. I hold a Grade C archery judge license and serve as Wakabid Media & Database at Perpani Jakarta Timur, the city-level archery federation. The domain expertise is institutionally verified, not a personal claim."
-          id="Ini bukan builder yang menebak-nebak kebutuhan pemanah. Saya pemegang lisensi juri panahan Grade C dan menjabat Wakabid Media & Database di Perpani Jakarta Timur, federasi panahan tingkat kota. Keahlian domainnya terverifikasi institusi, bukan klaim personal."
+          id="Ini bukan builder yang asal nebak kebutuhan pemanah. Saya pemegang lisensi juri panahan Grade C dan menjabat sebagai Wakabid Media & Database di Perpani Jakarta Timur, federasi panahan tingkat kota. Keahlian domainnya terverifikasi institusi, bukan klaim personal."
         />
       </CaseSection>
 
       <CaseSection titleEn="Business problem first" titleId="Masalah bisnis dulu">
         <T
           en="Clubs ran events on spreadsheets, WhatsApp groups, and paper scoresheets. Every one of my products started from a business problem like this one, the technology came after, the same order every time. Today 8,000+ active users run their events on the platform."
-          id="Klub menjalankan event lewat spreadsheet, grup WhatsApp, dan lembar skor kertas. Semua produk saya berangkat dari masalah bisnis seperti ini, teknologinya menyusul, urutannya selalu sama. Kini 8.000+ pengguna aktif menjalankan event mereka di platform ini."
+          id="Dulu klub menjalankan event lewat spreadsheet, grup WhatsApp, dan lembar skor kertas. Semua produk saya berangkat dari masalah bisnis seperti ini, teknologinya menyusil, urutannya selalu sama. Kini 8.000+ pengguna aktif menjalankan event mereka di platform ini."
         />
       </CaseSection>
 

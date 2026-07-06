@@ -74,13 +74,30 @@ export default function OpenCodeCase() {
         />
       </CaseSection>
 
+      {/* GitHub Copilot pricing screenshot */}
+      <section style={{ maxWidth: 820, margin: '0 auto', padding: '0 clamp(20px,4vw,56px)' }}>
+        <Reveal index={0}>
+          <figure style={{ margin: 0 }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/github-copilot-price.png"
+              alt="GitHub Copilot pricing tiers: Free, Pro ($10/mo), Pro+ ($39/mo), Enterprise ($39/user/mo) — the announcement that triggered usage-based billing changes"
+              style={{ width: '100%', height: 'auto', borderRadius: 16, border: '1px solid rgba(29,28,26,0.1)' }}
+            />
+            <figcaption style={{ fontFamily: 'var(--font-jetbrains), monospace', fontSize: 12, color: 'rgba(29,28,26,0.45)', marginTop: 10, textAlign: 'center' }}>
+              <T en="GitHub Copilot pricing tiers, April 2026" id="Tier harga GitHub Copilot, April 2026" />
+            </figcaption>
+          </figure>
+        </Reveal>
+      </section>
+
       <CaseSection
         titleEn="The problem was cost, not the IDE"
         titleId="Masalahnya biaya, bukan IDE-nya"
       >
         <T
           en="I liked Copilot Chat. The inline tool-calling, the Agent Mode, the context awareness. Switching to another IDE meant rebuilding my entire workflow. What I wanted was simple: keep the Copilot Chat interface, but plug in cheaper, equally capable models. DeepSeek V4, Kimi K2.6, GLM-5.1, Qwen3.7. Frontier open models that cost a fraction of what I was paying. No separate app, no context switching, no learning curve."
-          id="Saya suka Copilot Chat. Tool-calling inline, Agent Mode, context awareness. Pindah ke IDE lain berarti membangun ulang seluruh alur kerja saya. Yang saya mau sederhana: tetap pakai Copilot Chat, tapi colokkan model yang lebih murah dan sama canggihnya. DeepSeek V4, Kimi K2.6, GLM-5.1, Qwen3.7. Model open frontier yang harganya sebagian kecil dari yang saya bayar. Tanpa aplikasi terpisah, tanpa pindah konteks, tanpa kurva belajar."
+          id="Saya suka Copilot Chat. Tool-calling inline, Agent Mode, context awareness, semua enak dipakai. Pindah ke IDE lain berarti membangun ulang seluruh alur kerja saya. Yang saya mau sebenarnya sederhana: tetap pakai Copilot Chat, tapi colok model yang lebih murah dan tak kalah canggih. DeepSeek V4, Kimi K2.6, GLM-5.1, Qwen3.7. Model open frontier yang harganya sebagian kecil dari yang saya bayar. Tanpa aplikasi terpisah, tanpa pindah-pindah konteks, tanpa perlu belajar dari nol."
         />
       </CaseSection>
 
@@ -159,11 +176,11 @@ export default function OpenCodeCase() {
 
       <CaseSection
         titleEn="What the data says"
-        titleId="Apa kata data"
+        titleId="Angkanya seperti ini"
       >
         <T
           en={`Released May 14, 2026. In less than two months, ${formatInstalls(installs)} developers across 12+ countries installed it. Brazil, Spain, Germany, India, Japan, the US. The rating held at 5.0. The most common feedback: "I was about to cancel Copilot Pro+." The second most common: a request for one more model. Not a request for a feature. The extension already did what it needed to do.`}
-          id={`Rilis 14 Mei 2026. Dalam waktu kurang dari dua bulan, ${formatInstalls(installs)} developer di 12+ negara memasangnya. Brazil, Spanyol, Jerman, India, Jepang, Amerika. Rating bertahan di 5.0. Umpan balik paling sering: "Saya hampir batal Copilot Pro+." Umpan balik kedua paling sering: permintaan untuk menambah satu model lagi. Bukan permintaan fitur. Ekstensinya sudah melakukan apa yang harus dilakukan.`}
+          id={`Rilis 14 Mei 2026. Belum genap dua bulan, ${formatInstalls(installs)} developer di 12+ negara sudah memasang. Brazil, Spanyol, Jerman, India, Jepang, Amerika. Rating bertahan di 5.0. Umpan balik yang paling sering masuk: "Saya hampir batal Copilot Pro+." Yang kedua paling sering: minta tambah satu model lagi. Bukan minta fitur. Ekstensinya sudah menjalankan fungsinya dengan baik.`}
         />
       </CaseSection>
 
@@ -176,7 +193,7 @@ export default function OpenCodeCase() {
           <p style={sectionIntro}>
             <T
               en="I shipped a second extension, z.ai Copilot Chat, to test whether the approach generalized. The numbers tell the story."
-              id="Saya merilis ekstensi kedua, z.ai Copilot Chat, untuk menguji apakah pendekatannya bisa diulang. Angkanya berbicara sendiri."
+              id="Saya merilis ekstensi kedua, z.ai Copilot Chat, untuk menguji apakah pendekatannya bisa diulang. Angkanya yang menjawab."
             />
           </p>
         </Reveal>
@@ -206,7 +223,7 @@ export default function OpenCodeCase() {
               <p style={chartDesc}>
                 <T
                   en="Launched May 14, 2026. Daily installs climbed steadily within the first week, peaking at 136 on June 2. The curve never dips below 80 in the most recent 30 days, showing organic word-of-mouth among developers frustrated with Copilot Pro+ pricing. 6,307 page views converted to 5,123 acquisitions, a 284% conversion rate driven by developers actively searching for alternatives."
-                  id="Rilis 14 Mei 2026. Instalasi harian naik konsisten di minggu pertama, mencapai 136 pada 2 Juni. Kurva tidak pernah turun di bawah 80 di 30 hari terakhir, menunjukkan mulut ke mulut organik dari developer yang frustrasi dengan harga Copilot Pro+. 6,307 page view berubah menjadi 5,123 akuisisi, tingkat konversi 284% yang didorong oleh developer yang secara aktif mencari alternatif."
+                  id="Rilis 14 Mei 2026. Instalasi harian naik konsisten di minggu pertama, puncaknya 136 pada 2 Juni. Dalam 30 hari terakhir kurvanya nggak pernah turun di bawah 80, tanda mulut-ke-mulut organik dari developer yang muak dengan harga Copilot Pro+. 6.307 page view berubah jadi 5.123 akuisisi, konversi 284% yang didorong developer yang memang lagi cari alternatif."
                 />
               </p>
             </div>
@@ -236,7 +253,7 @@ export default function OpenCodeCase() {
               <p style={chartDesc}>
                 <T
                   en="Same architecture, different model pool targeting a niche audience. The curve starts near zero and builds gradually, peaking around 25 daily installs. 79 page views yielded 654 acquisitions, an 828% conversion rate. That's the hallmark of direct traffic: people who already know what they want. z.ai proves the pattern generalizes. Build a gateway, plug it into Copilot Chat, ship it open source. The market decides."
-                  id="Arsitektur yang sama, kumpulan model yang berbeda menjangkau audiens niche. Kurva dimulai dari nol dan naik perlahan, puncaknya sekitar 25 instalasi per hari. 79 page view menghasilkan 654 akuisisi, tingkat konversi 828%. Itu ciri khas traffic langsung: orang yang sudah tahu apa yang mereka mau. z.ai membuktikan polanya bisa diulang. Bangun gateway, colok ke Copilot Chat, rilis open source. Pasar yang memutuskan."
+              id="Arsitektur yang sama, kumpulan model yang berbeda menjangkau audiens niche. Kurva dimulai dari nol dan naik perlahan, puncaknya sekitar 25 instalasi per hari. 79 page view menghasilkan 654 akuisisi, tingkat konversi 828%. Itu ciri khas direct traffic: orang yang sudah tahu apa yang mereka cari. z.ai membuktikan polinya bisa diulang. Bangun gateway, colok ke Copilot Chat, rilis open source. Biarkan pasar yang memutuskan."
                 />
               </p>
             </div>
@@ -247,7 +264,7 @@ export default function OpenCodeCase() {
           <p style={comparisonNote}>
             <T
               en="Same problem, same solution shape, different audience. OpenCode hit a nerve because Copilot pricing was already in the news. z.ai proved the pattern works for any model gateway, not just one. Data via VS Code Marketplace publisher dashboard, July 2026."
-              id="Masalah yang sama, bentuk solusi yang sama, audiens berbeda. OpenCode kena sasaran karena harga Copilot lagi ramai dibicarakan. z.ai membuktikan polanya bisa dipakai untuk model gateway mana pun, bukan cuma satu. Data via dashboard publisher VS Code Marketplace, Juli 2026."
+              id="Masalah yang sama, bentuk solusi yang sama, audiensnya beda. OpenCode pas sasaran karena harga Copilot lagi ramai dibicarakan. z.ai membuktikan polinya bisa dipakai untuk gateway model mana pun, bukan cuma satu. Data via dashboard publisher VS Code Marketplace, Juli 2026."
             />
           </p>
         </Reveal>
@@ -259,7 +276,7 @@ export default function OpenCodeCase() {
       >
         <T
           en="Because the instinct doesn't turn off. I saw a pricing change that hurt me, assumed it was hurting others, built the smallest thing that tested that assumption, and shipped it. The extension is not a pivot. It's the same pattern: name the problem in a sentence, then build the smallest thing that proves or kills it."
-          id="Karena instingnya tidak bisa dimatikan. Saya melihat perubahan harga yang merugikan saya, berasumsi hal yang sama dirasakan orang lain, membangun hal terkecil yang menguji asumsi itu, dan merilisnya. Ekstensi ini bukan pivot. Polanya sama: sebut masalahnya dalam satu kalimat, lalu bangun hal terkecil yang membuktikan atau mematikannya."
+          id="Karena instingnya memang nggak bisa dimatikan begitu saja. Saya lihat perubahan harga yang merugikan saya, saya pikir orang lain pasti merasakan hal sama, lalu membangun hal terkecil yang bisa menguji asumsi itu, dan merilisnya. Ekstensi ini bukan pivot. Polinya sama: sebut masalahnya dalam satu kalimat, lalu bangun hal terkecil yang membuktikan atau mematikan asumsi itu."
         />
       </CaseSection>
 
@@ -324,7 +341,7 @@ export default function OpenCodeCase() {
 
       <CaseQuote
         en="The cheapest way to learn if a problem is real is to ship the smallest thing that solves it."
-        id="Cara termurah untuk tahu apakah masalah itu nyata adalah merilis hal terkecil yang menyelesaikannya."
+        id="Cara termurah untuk memastikan sebuah masalah itu nyata: rilis hal terkecil yang menyelesaikannya."
       />
 
       <CaseFooter

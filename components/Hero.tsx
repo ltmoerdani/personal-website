@@ -108,9 +108,9 @@ export function Hero() {
               }
               id={
                 <>
-                  Fractional CPO dan co-founder Reka Cipta Digital. Dua puluh tahun di
-                  dunia digital, sebagian besar belajar dengan cara yang tidak mudah
-                  keputusan produk mana yang benar-benar bertahan.
+                  Fractional CPO dan co-founder Reka Cipta Digital. Dua puluh tahun
+                  di dunia digital, sebagian besarnya habis untuk belajar mana
+                  keputusan produk yang benar-benar bertahan dan mana yang tidak.
                 </>
               }
             />

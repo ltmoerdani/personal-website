@@ -39,25 +39,25 @@ const entries: Entry[] = [
     period: '2015 – 18',
     role: 'Project Manager · Trimedia Global Kreasi',
     en: "What this period quietly built became RCD's operating model: small teams, clear ownership, no ambiguity about what done looks like.",
-    id: 'Periode ini diam-diam membentuk model kerja RCD: tim kecil, kepemilikan jelas, tanpa ambigu soal apa artinya selesai.',
+    id: 'Periode ini diam-diam jadi fondasi cara kerja RCD: tim kecil, kepemilikan jelas, semua paham apa artinya selesai.',
   },
   {
     period: '2014 – 15',
     role: 'Founder · Photomobs',
     en: "Learned more about product-market fit from what didn't sell than from what did.",
-    id: 'Belajar lebih banyak soal product-market fit dari barang yang tidak laku ketimbang yang laku.',
+    id: 'Lebih banyak belajar product-market fit dari produk yang nggak laku ketimbang yang laku.',
   },
   {
     period: '2009 – 11',
     role: 'Database Engineer · McDermott International',
     en: 'Offshore engineering, Batam & Thailand. Where the habit of thinking in systems started.',
-    id: 'Offshore engineering, Batam & Thailand. Tempat kebiasaan berpikir sistem dimulai.',
+    id: 'Offshore engineering, Batam & Thailand. Dari sinilah kebiasaan berpikir sistemik bermula.',
   },
   {
     period: '2007 – 09',
     role: 'Web Designer & Instructor · Batavianet / BINUS Center',
     en: "First lesson worth keeping: explaining technical work clearly to people who aren't technical is its own skill.",
-    id: 'Pelajaran pertama yang layak disimpan: menjelaskan pekerjaan teknis dengan jernih ke orang non-teknis adalah keahlian tersendiri.',
+    id: 'Pelajaran pertama yang sampai sekarang saya pegang: menjelaskan hal teknis dengan jelas ke orang non-teknis itu keahlian tersendiri.',
   },
 ];
 
