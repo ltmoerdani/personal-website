@@ -60,7 +60,7 @@ export function CaseStudies() {
 function ProArcheryCard() {
   return (
     <Reveal index={0}>
-      <Link href="/case/pro-archery" style={{ ...featuredCard, display: 'grid', gridTemplateColumns: '1.3fr 1fr', gap: 32 }}>
+      <Link href="/case/pro-archery" className="ltm-featured-card-grid" style={featuredCard}>
         <div>
           <div style={featuredEyebrow}>
             <span style={dot} />
@@ -83,7 +83,7 @@ function ProArcheryCard() {
             </Tag>
           </div>
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 26, borderLeft: '1px solid rgba(248,247,243,0.15)', paddingLeft: 32 }}>
+        <div className="ltm-featured-card-stats">
           <StatBlock
             value={<Counter target={12000} suffix="+" fallback="12,000+" />}
             labelEn="SKUs under management"

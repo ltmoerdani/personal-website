@@ -13,14 +13,7 @@ export function Hero() {
         margin: '0 auto',
       }}
     >
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr auto',
-          gap: 'clamp(24px,5vw,80px)',
-          alignItems: 'center',
-        }}
-      >
+      <div className="ltm-hero-grid">
         <div>
           <div
             style={{
@@ -166,11 +159,8 @@ export function Hero() {
         </div>
 
         <div
+          className="ltm-hero-photo-wrap"
           style={{
-            position: 'relative',
-            width: 'clamp(220px,24vw,340px)',
-            aspectRatio: '1',
-            justifySelf: 'center',
             animation: 'ltm-fade 1.2s 0.3s both',
           }}
         >

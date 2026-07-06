@@ -47,7 +47,10 @@ export async function generateMetadata({
   const { locale } = await params;
   const active = (hasLocale(locales, locale) ? locale : defaultLocale) as Locale;
 
-  const title = 'Laksmana (Oci) Tri Moerdani · Fractional CPO';
+  const title =
+    active === 'id'
+      ? 'Fractional CPO & co-founder Reka Cipta Digital · Oci Moerdani'
+      : 'Fractional CPO & co-founder of Reka Cipta Digital · Oci Moerdani';
   const description =
     active === 'id'
       ? 'Fractional CPO dan co-founder Reka Cipta Digital. Dua puluh tahun di dunia digital, membantu perusahaan membangun produk yang tepat, bukan sekadar sebuah produk.'

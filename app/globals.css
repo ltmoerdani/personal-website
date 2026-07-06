@@ -61,3 +61,128 @@ html[data-photoshape='square'] #ltm-photo { border-radius: 24px; }
   transition-delay: calc(var(--reveal-index, 0) * 110ms);
 }
 [data-reveal].is-visible { opacity: 1; transform: none; }
+
+/* ─── Responsive layout classes ─────────────────────────── */
+
+/* Nav */
+.ltm-nav-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 2.5vw, 28px);
+}
+.ltm-nav-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--ink);
+  padding: 6px;
+  line-height: 1;
+  align-items: center;
+  justify-content: center;
+}
+.ltm-mobile-controls {
+  display: none;
+}
+.ltm-nav-mobile-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  top: 62px;
+  background: rgba(248, 247, 243, 0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 85;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+}
+.ltm-nav-mobile-overlay.open { display: flex; }
+
+/* Hero */
+.ltm-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: clamp(24px, 5vw, 80px);
+  align-items: center;
+}
+.ltm-hero-photo-wrap {
+  position: relative;
+  width: clamp(220px, 24vw, 340px);
+  aspect-ratio: 1;
+  justify-self: center;
+}
+
+/* Rating */
+.ltm-rating-grid {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: clamp(28px, 6vw, 90px);
+  align-items: center;
+}
+
+/* ─── Mobile breakpoint (< 640px) ───────────────────────── */
+@media (max-width: 639px) {
+  /* Nav: hide desktop links, show hamburger */
+  .ltm-nav-links { display: none; }
+  .ltm-nav-hamburger { display: flex; }
+  .ltm-mobile-controls { display: flex; }
+
+  /* Hero: single column, photo stacks below text */
+  .ltm-hero-grid { grid-template-columns: 1fr; }
+  .ltm-hero-photo-wrap {
+    width: clamp(160px, 52vw, 220px);
+    order: 2;
+    margin: 8px auto 0;
+  }
+}
+
+/* ─── Tablet breakpoint (640px – 767px) ─────────────────── */
+@media (min-width: 640px) and (max-width: 767px) {
+  .ltm-hero-grid { gap: clamp(16px, 3vw, 32px); }
+  .ltm-hero-photo-wrap { width: clamp(180px, 28vw, 260px); }
+}
+
+/* ─── Rating: stack on mobile ────────────────────────────── */
+@media (max-width: 639px) {
+  .ltm-rating-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+}
+
+/* ─── Featured case study card (Pro Archery) ─────────────── */
+.ltm-featured-card-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 32px;
+}
+.ltm-featured-card-stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 26px;
+  border-left: 1px solid rgba(248,247,243,0.15);
+  padding-left: 32px;
+}
+
+@media (max-width: 767px) {
+  .ltm-featured-card-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .ltm-featured-card-stats {
+    border-left: none;
+    border-top: 1px solid rgba(248,247,243,0.15);
+    padding-left: 0;
+    padding-top: 24px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 20px 32px;
+  }
+}

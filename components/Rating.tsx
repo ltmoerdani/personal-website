@@ -5,14 +5,9 @@ import { T } from './T';
 export function Rating() {
   return (
     <section
+      className="ltm-rating-grid"
       style={{
-        maxWidth: 1280,
-        margin: '0 auto',
         padding: 'clamp(72px,11vh,130px) clamp(20px,4vw,56px)',
-        display: 'grid',
-        gridTemplateColumns: 'auto 1fr',
-        gap: 'clamp(28px,6vw,90px)',
-        alignItems: 'center',
       }}
     >
       <Reveal index={0}>
