@@ -203,6 +203,18 @@ function Footer() {
         <a href="/" style={{ fontFamily: 'var(--font-jetbrains), monospace', fontSize: 13, color: 'var(--ink)', textDecoration: 'none' }}>
           &larr; ltmoerdani.com
         </a>
+        <nav style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
+          <a href="/#contact" style={{ fontFamily: 'var(--font-jetbrains), monospace', fontSize: 12, color: 'rgba(29,28,26,0.5)', textDecoration: 'none' }}>Tentang Saya</a>
+          <a href="/#case-studies" style={{ fontFamily: 'var(--font-jetbrains), monospace', fontSize: 12, color: 'rgba(29,28,26,0.5)', textDecoration: 'none' }}>Portfolio</a>
+          <a
+            href="https://wa.me/62811801641?text=Halo%2C%20saya%20tertarik%20dengan%20tanah%20di%20Aryawidura%20Residence"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ fontFamily: 'var(--font-jetbrains), monospace', fontSize: 12, color: 'var(--accent)', textDecoration: 'none' }}
+          >
+            WhatsApp &rarr;
+          </a>
+        </nav>
       </div>
     </footer>
   );
@@ -424,7 +436,7 @@ export default function JualTanahBogorPage() {
             Bismillahirrahmanirrahim
           </h2>
           <p style={{ margin: 0, fontSize: 17, lineHeight: 1.8, color: 'rgba(29,28,26,0.72)' }}>
-            Tanah ini milik Bapak. Dulu Bapak dan Ibu menyimpannya untuk rumah pensiun. Rumah yang akan mereka bangun bersama, di tempat yang tenang setelah puluhan tahun bekerja.
+            Tanah ini milik Bapak. Dulu Bapak dan Ibu menyimpannya untuk rumah pensiun. Rumah yang akan mereka bangun bersama, di tempat yang tenang setelah puluhan tahun bekerja. Sebidang tanah di Bogor yang mereka pilih bersama, bukan sembarang tanah.
           </p>
           <p style={{ margin: '20px 0 0', fontSize: 17, lineHeight: 1.8, color: 'rgba(29,28,26,0.72)' }}>
             Kemudian Ibu berpulang. Rencana itu tidak sekadar berhenti. Ia menjadi sesuatu yang tidak bisa kami lanjutkan tanpanya. Saya masih ingat percakapan terakhir kami tentang tanah ini, berdiri di level atas, Ibu menunjuk ke mana foyer akan diletakkan. Percakapan yang berbeda jenisnya. Kami putuskan untuk menjual. Saya menjual atas nama Bapak, langsung tanpa perantara.
@@ -437,7 +449,7 @@ export default function JualTanahBogorPage() {
           <div style={{ marginBottom: 18 }}>
             <h2 style={{ ...sty.sectTitle, marginBottom: 8 }}>Foto Lapangan</h2>
             <p style={{ ...sty.para, margin: 0 }}>
-              Semua foto dari folder tanah-bogor saya tampilkan langsung di halaman ini supaya pembaca bisa melihat kontur, akses, dan konteks lingkungan tanpa harus buka file terpisah.
+              Foto-foto ini saya ambil langsung di lokasi. Biar Anda bisa lihat kontur, akses, dan kondisi sekitarnya tanpa harus datang dulu.
             </p>
           </div>
         </Reveal>
@@ -608,10 +620,10 @@ export default function JualTanahBogorPage() {
 
       {/* ─── KONTUR ─────────────────────────────────────── */}
       <section style={sty.sec}>
-        <Reveal index={0}><h2 style={sty.sectTitle}>Kontur Split-Level yang Langka</h2></Reveal>
+        <Reveal index={0}><h2 style={sty.sectTitle}>Kontur Split-Level yang Langka di Bogor</h2></Reveal>
         <Reveal index={1}>
           <p style={{ ...sty.para, marginTop: 16 }}>
-            Tanah ini turun dalam dua level alami. Anda masuk dari jalan atas, dan tanah turun perlahan. Talud sudah ada, beton yang telah menyatu dengan lereng. Dari teras bawah Anda melihat ke atas ke kanopi: bambu dan pohon matoa dari lahan tetangga menjuntai melewati pagar. Sore hari bayangan bergerak melintasi rumput dalam lengkungan lambat. Siapa pun yang membangun di sini tidak perlu banyak memotong. Tanah ini sudah tahu bentuk yang diinginkannya.
+            Tanah ini turun dalam dua level alami. Anda masuk dari jalan atas, dan tanah turun perlahan. Talud sudah ada, beton yang telah menyatu dengan lereng. Dari teras bawah Anda melihat ke atas ke kanopi: bambu dan pohon matoa dari lahan tetangga menjuntai melewati pagar. Sore hari bayangan bergerak melintasi rumput dalam lengkungan lambat. Siapa pun yang membangun di sini tidak perlu banyak memotong. Tanah ini sudah tahu bentuk yang diinginkannya. Di Tegal Gundil, kavling dengan kontur asli seperti ini makin langka. Kebanyakan sudah diratakan jadi kotak standar.
           </p>
         </Reveal>
       </section>
@@ -797,7 +809,7 @@ export default function JualTanahBogorPage() {
           <div style={{ background: 'var(--paper)', border: '1px solid rgba(29,28,26,0.1)', borderRadius: 16, padding: 'clamp(24px, 3vw, 36px)' }}>
             <h2 style={sty.sectTitle}>Kenapa Tidak Bisa Menunggu Lama</h2>
             <p style={{ ...sty.para, marginTop: 16 }}>
-              Tanah dengan kontur split-level otentik makin sulit ditemukan di Tegal Gundil. Kebanyakan kavling di sini sudah diratakan, dipotong, dibentuk ulang jadi persegi standar. Milik kami masih punya terasering aslinya: level atas yang kena sinar pagi pertama, level bawah yang teduh oleh pohon dari lahan tetangga.
+              Tanah dengan kontur split-level otentik makin sulit ditemukan di Tegal Gundil. Kebanyakan kavling di Bogor sudah diratakan, dipotong, dibentuk ulang jadi persegi standar. Milik kami masih punya terasering aslinya: level atas yang kena sinar pagi pertama, level bawah yang teduh oleh pohon dari lahan tetangga. Untuk investasi tanah di Bogor, kontur seperti ini punya nilai jual tersendiri.
             </p>
             <p style={{ ...sty.para, marginTop: 16 }}>
               Begitu kami buka ke agen, harganya akan berbeda. Untuk saat ini, harga ini khusus untuk pembeli langsung yang melihat dan mengenali nilai tanah ini.
@@ -834,6 +846,65 @@ export default function JualTanahBogorPage() {
             Selama iklan ini masih tayang, tanah yang saya jual masih tersedia.
           </p>
         </Reveal>
+      </section>
+
+      {/* ─── FAQ (SEO) ──────────────────────────────────── */}
+      <section style={{ maxWidth: 1180, margin: '0 auto', padding: '0 clamp(20px,4vw,56px) clamp(40px,6vh,64px)' }}>
+        <Reveal index={0}>
+          <h2 style={sty.sectTitle}>Pertanyaan yang Sering Ditanyakan</h2>
+        </Reveal>
+        <div style={{ display: 'grid', gap: 16, marginTop: 20 }}>
+          <Reveal index={1}>
+            <div style={{ background: 'var(--paper)', border: '1px solid rgba(29,28,26,0.1)', borderRadius: 14, padding: 24 }}>
+              <h3 style={{ margin: '0 0 8px', fontFamily: 'var(--font-archivo), sans-serif', fontSize: 16, fontWeight: 800 }}>
+                Apakah tanah ini siap bangun?
+              </h3>
+              <p style={{ margin: 0, fontSize: 14.5, lineHeight: 1.65, color: 'rgba(29,28,26,0.72)' }}>
+                Ya. Talud penahan tanah sudah ada dan menyatu dengan lereng. Kontur split-level justru memudahkan zonasi bangunan: level atas untuk area publik, level bawah untuk area privat. Pekerjaan cut and fill minimal.
+              </p>
+            </div>
+          </Reveal>
+          <Reveal index={2}>
+            <div style={{ background: 'var(--paper)', border: '1px solid rgba(29,28,26,0.1)', borderRadius: 14, padding: 24 }}>
+              <h3 style={{ margin: '0 0 8px', fontFamily: 'var(--font-archivo), sans-serif', fontSize: 16, fontWeight: 800 }}>
+                Berapa harga per meter persegi?
+              </h3>
+              <p style={{ margin: 0, fontSize: 14.5, lineHeight: 1.65, color: 'rgba(29,28,26,0.72)' }}>
+                Harga total Rp 3 Miliar untuk 549 M², atau sekitar Rp 5,46 juta per m². Harga ini below market untuk kawasan Tegal Gundil yang sudah berkembang. Nego wajar untuk pembeli serius.
+              </p>
+            </div>
+          </Reveal>
+          <Reveal index={3}>
+            <div style={{ background: 'var(--paper)', border: '1px solid rgba(29,28,26,0.1)', borderRadius: 14, padding: 24 }}>
+              <h3 style={{ margin: '0 0 8px', fontFamily: 'var(--font-archivo), sans-serif', fontSize: 16, fontWeight: 800 }}>
+                Bagaimana akses menuju lokasi?
+              </h3>
+              <p style={{ margin: 0, fontSize: 14.5, lineHeight: 1.65, color: 'rgba(29,28,26,0.72)' }}>
+                Lokasi di Aryawidura Residence, Tegal Gundil, Bogor 16152. Akses mudah via Tol BORR (Bogor Outer Ring Road) dan Tol Jagorawi. Dekat Mall Jambu Dua, RS Azra, dan Terminal Bus Bogor.
+              </p>
+            </div>
+          </Reveal>
+          <Reveal index={4}>
+            <div style={{ background: 'var(--paper)', border: '1px solid rgba(29,28,26,0.1)', borderRadius: 14, padding: 24 }}>
+              <h3 style={{ margin: '0 0 8px', fontFamily: 'var(--font-archivo), sans-serif', fontSize: 16, fontWeight: 800 }}>
+                Apakah bisa untuk investasi Airbnb atau guest house?
+              </h3>
+              <p style={{ margin: 0, fontSize: 14.5, lineHeight: 1.65, color: 'rgba(29,28,26,0.72)' }}>
+                Sangat cocok. Kontur split-level memberi pemisahan alami antara area tamu dan area host. Lokasi satu jam dari Jakarta via tol, permintaan penginapan di Bogor terus tumbuh. Lahan ini punya daya tarik visual yang sulit ditemukan di kavling datar biasa.
+              </p>
+            </div>
+          </Reveal>
+          <Reveal index={5}>
+            <div style={{ background: 'var(--paper)', border: '1px solid rgba(29,28,26,0.1)', borderRadius: 14, padding: 24 }}>
+              <h3 style={{ margin: '0 0 8px', fontFamily: 'var(--font-archivo), sans-serif', fontSize: 16, fontWeight: 800 }}>
+                Apakah dijual dengan perantara atau calo?
+              </h3>
+              <p style={{ margin: 0, fontSize: 14.5, lineHeight: 1.65, color: 'rgba(29,28,26,0.72)' }}>
+                Tidak. Saya menjual atas nama Bapak sebagai pemilik langsung. Tidak ada agen, tidak ada calo, tidak ada markup. Harga yang tertera adalah harga dari pemilik.
+              </p>
+            </div>
+          </Reveal>
+        </div>
       </section>
 
       <Footer />
