@@ -109,8 +109,57 @@ const areaItems = [
   'Dekat mata air dan kolam pemancingan untuk bersantai',
 ];
 
+const growthScenarios = [
+  {
+    icon: '🏡',
+    title: 'Villa Pribadi',
+    body:
+      'Anda bisa jadikan level atas sebagai ruang keluarga terbuka dengan view hijau, lalu level bawah sebagai area kamar yang teduh dan privat. Pola ini cocok untuk rumah akhir pekan maupun rumah tinggal permanen. Dengan talud yang sudah ada, tahap persiapan lahan lebih cepat daripada mulai dari kontur datar yang harus dibentuk ulang.',
+    afterSrc: '/tanah-bogor/Villa-Pribadi.png',
+    afterAlt: 'Konsep visual sesudah: villa pribadi di lahan split-level',
+    afterCaption:
+      'Villa dua level yang menyatu dengan kontur, area komunal di atas dan area istirahat di bawah, dirancang untuk suasana tenang dan privat.',
+  },
+  {
+    icon: '🛏️',
+    title: 'Airbnb & Guest House',
+    body:
+      'Konsep ini kuat untuk pasar sewa harian: tamu mendapat pengalaman menginap yang berbeda, pemilik tetap punya area operasional sendiri. Lokasi dekat BORR dan Jagorawi memberi akses cepat untuk tamu dari Jakarta. Kontur split-level memberi nilai visual yang sering jadi alasan utama tamu memilih properti dibanding penginapan standar.',
+    afterSrc: '/tanah-bogor/aibnb.png',
+    afterAlt: 'Konsep visual sesudah: Airbnb dan guest house di lahan split-level',
+    afterCaption:
+      'Kompleks guest house bertingkat dengan area rekreasi terbuka, menghadirkan pengalaman menginap bergaya resor yang fotogenik dan mudah dipasarkan.',
+  },
+  {
+    icon: '💼',
+    title: 'Studio atau Workspace',
+    body:
+      'Lahan ini juga realistis untuk studio kreatif, kantor konsultan, atau ruang kerja campuran. Area atas bisa dipakai untuk lobi, rapat, dan penerimaan tamu, sementara level bawah menjadi ruang produksi atau ruang fokus. Pemisahan ini membuat alur kerja rapi tanpa perlu renovasi besar.',
+    afterSrc: '/tanah-bogor/workshop.png',
+    afterAlt: 'Konsep visual sesudah: studio dan workspace di lahan split-level',
+    afterCaption:
+      'Workspace bertingkat dengan zona kolaborasi di atas dan zona kerja fokus di bawah, memaksimalkan kontur untuk fungsi bisnis yang efisien.',
+  },
+  {
+    icon: '🌿',
+    title: 'Taman & Gazebo',
+    body:
+      'Jika Anda ingin properti yang lebih kontemplatif, konsep taman bertingkat bisa jadi pilihan paling indah. Gazebo, jalur setapak, kolam kecil, dan titik duduk di tiap level membuat lahan ini terasa seperti retreat pribadi. Ini cocok untuk Anda yang ingin menikmati nilai lahan sekaligus kualitas hidup.',
+    afterSrc: '/tanah-bogor/taman-gazebo.png',
+    afterAlt: 'Konsep visual sesudah: taman bertingkat dan gazebo di lahan split-level',
+    afterCaption:
+      'Landscape retreat dengan taman bertingkat, elemen air, dan gazebo santai, menonjolkan karakter alami split-level sebagai ruang healing harian.',
+  },
+] as const;
+
+type PreviewPhoto = {
+  src: string;
+  alt: string;
+  caption: string;
+};
+
 export default function JualTanahBogorPage() {
-  const [selectedPhoto, setSelectedPhoto] = useState<(typeof galleryPhotos)[number] | null>(null);
+  const [selectedPhoto, setSelectedPhoto] = useState<PreviewPhoto | null>(null);
 
   useEffect(() => {
     if (!selectedPhoto) return undefined;
@@ -154,7 +203,7 @@ export default function JualTanahBogorPage() {
               Tanah Split-Level &middot; 549 M&sup2; SHM di Aryawidura Residence
             </h1>
             <p style={{ fontSize: 'clamp(16px, 2.2vw, 21px)', lineHeight: 1.65, color: 'rgba(248,247,243,0.88)', maxWidth: 700, marginTop: 24 }}>
-              Tegal Gundil, Kota Bogor. Sertifikat Hak Milik, kontur split-level dengan terasering natural, dan talud yang sudah ada. Lahan ini masih menyimpan bentuk aslinya.
+              Tegal Gundil, Kota Bogor. Sertifikat Hak Milik, kontur split-level dengan terasering alami, dan talud yang sudah ada. Lahan ini masih menyimpan bentuk aslinya.
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(150px,1fr))', gap: 1, background: 'rgba(248,247,243,0.14)', border: '1px solid rgba(248,247,243,0.15)', borderRadius: 18, overflow: 'hidden', marginTop: 36, backdropFilter: 'blur(10px)', boxShadow: '0 24px 80px rgba(0,0,0,0.24)' }}>
               {heroFacts.map((fact) => (
@@ -219,7 +268,7 @@ export default function JualTanahBogorPage() {
         <Reveal index={0}>
           <div style={{ marginBottom: 18 }}>
             <h2 style={{ ...sty.sectTitle, marginBottom: 8 }}>Foto Lapangan</h2>
-            <p style={{ ...sty.para, maxWidth: 760, margin: 0 }}>
+            <p style={{ ...sty.para, margin: 0 }}>
               Semua foto dari folder tanah-bogor saya tampilkan langsung di halaman ini supaya pembaca bisa melihat kontur, akses, dan konteks lingkungan tanpa harus buka file terpisah.
             </p>
           </div>
@@ -381,7 +430,7 @@ export default function JualTanahBogorPage() {
               <div style={sty.dr}><span style={sty.dl}>Sertifikat</span><span style={sty.dv}>SHM &minus; 2 unit, atas dan bawah</span></div>
               <div style={sty.dr}><span style={sty.dl}>Harga</span><span style={sty.dv}>Rp 3 Miliar (sekitar Rp 5,46 jt/m&sup2;)</span></div>
               <div style={sty.dr}><span style={sty.dl}>Negosiasi</span><span style={sty.dv}>Nego wajar</span></div>
-              <div style={sty.dr}><span style={sty.dl}>Kontur</span><span style={sty.dv}>Split-level, terasering natural</span></div>
+              <div style={sty.dr}><span style={sty.dl}>Kontur</span><span style={sty.dv}>Split-level, terasering alami</span></div>
               <div style={sty.dr}><span style={sty.dl}>Talud</span><span style={sty.dv}>Sudah ada</span></div>
               <div style={sty.dr}><span style={sty.dl}>Lokasi</span><span style={sty.dv}>Aryawidura Residence, Tegal Gundil, Bogor 16152</span></div>
             </div>
@@ -396,6 +445,129 @@ export default function JualTanahBogorPage() {
           <p style={{ ...sty.para, marginTop: 16 }}>
             Tanah ini turun dalam dua level alami. Anda masuk dari jalan atas, dan tanah turun perlahan. Talud sudah ada, beton yang telah menyatu dengan lereng. Dari teras bawah Anda melihat ke atas ke kanopi: bambu dan pohon matoa dari lahan tetangga menjuntai melewati pagar. Sore hari bayangan bergerak melintasi rumput dalam lengkungan lambat. Siapa pun yang membangun di sini tidak perlu banyak memotong. Tanah ini sudah tahu bentuk yang diinginkannya.
           </p>
+        </Reveal>
+      </section>
+
+      {/* ─── BAYANGKAN ───────────────────────────────────── */}
+      <section style={sty.sec}>
+        <Reveal index={0}>
+          <h2 style={sty.sectTitle}>Apa yang Bisa Tumbuh di Lahan Ini</h2>
+          <p style={{ ...sty.para, marginTop: 12 }}>
+            Saya bukan arsitek. Tapi saya sudah berdiri di tanah ini berkali-kali, di pagi hari dan sore hari, dan saya tahu dua level itu bukan masalah. Dua level itu adalah rencana yang sudah setengah jadi. Taludnya sudah berdiri, artinya separuh pekerjaan tanah selesai. Saya bicara dengan dua kontraktor lokal dan satu arsitek yang pernah bangun di kavling sebelah. Ini yang mereka bilang masuk akal untuk 549 M&sup2; di lokasi ini.
+            Apa yang Anda bayangkan, bisa Anda wujudkan di lanskap split-level ini.
+          </p>
+        </Reveal>
+        <div style={{ display: 'grid', gap: 20, marginTop: 28 }}>
+          {growthScenarios.map((scenario, index) => (
+            <Reveal key={scenario.title} index={index + 1}>
+              <article style={{ background: 'var(--paper)', border: '1px solid rgba(29,28,26,0.1)', borderRadius: 16, padding: 24 }}>
+                <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginBottom: 8 }}>
+                  <div style={{ fontSize: 28 }}>{scenario.icon}</div>
+                  <h3 style={{ margin: 0, fontFamily: 'var(--font-archivo), sans-serif', fontSize: 20, fontWeight: 800 }}>{scenario.title}</h3>
+                </div>
+                <p style={{ margin: 0, fontSize: 15, lineHeight: 1.72, color: 'rgba(29,28,26,0.72)' }}>
+                  {scenario.body}
+                </p>
+
+                <div style={{ display: 'grid', gap: 12, marginTop: 18 }}>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setSelectedPhoto({
+                        src: '/tanah-bogor/02-front-plot-wide.jpg',
+                        alt: `Foto kondisi sebelum: ${scenario.title}`,
+                        caption: `${scenario.title} · Sebelum`,
+                      })
+                    }
+                    aria-label={`Preview foto sebelum ${scenario.title}`}
+                    style={{
+                      position: 'relative',
+                      display: 'block',
+                      width: '100%',
+                      padding: 0,
+                      border: '1px solid rgba(29,28,26,0.1)',
+                      borderRadius: 14,
+                      overflow: 'hidden',
+                      background: '#fff',
+                      cursor: 'zoom-in',
+                      textAlign: 'left',
+                    }}
+                  >
+                    <div style={{ position: 'relative', aspectRatio: '21 / 7' }}>
+                      <Image
+                        src="/tanah-bogor/02-front-plot-wide.jpg"
+                        alt={`Foto kondisi sebelum: ${scenario.title}`}
+                        fill
+                        sizes="100vw"
+                        style={{ objectFit: 'cover' }}
+                      />
+                      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.08) 100%)' }} />
+                      <div style={{ position: 'absolute', top: 12, right: 12, display: 'inline-flex', alignItems: 'center', gap: 8, padding: '7px 10px', borderRadius: 999, background: 'rgba(8,18,15,0.72)', color: '#fff', fontFamily: 'var(--font-jetbrains), monospace', fontSize: 11.5, letterSpacing: '0.08em', textTransform: 'uppercase', backdropFilter: 'blur(10px)' }}>
+                        <ZoomIcon />
+                        Klik untuk zoom
+                      </div>
+                    </div>
+                    <div style={{ padding: '10px 12px', fontSize: 12.5, fontFamily: 'var(--font-jetbrains), monospace', letterSpacing: '0.04em', textTransform: 'uppercase', color: 'rgba(29,28,26,0.52)' }}>
+                      Sebelum (kondisi saat ini)
+                    </div>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setSelectedPhoto({
+                        src: scenario.afterSrc,
+                        alt: scenario.afterAlt,
+                        caption: `${scenario.title} · Sesudah (konsep)`,
+                      })
+                    }
+                    aria-label={`Preview foto sesudah ${scenario.title}`}
+                    style={{
+                      position: 'relative',
+                      display: 'block',
+                      width: '100%',
+                      padding: 0,
+                      border: '1px solid rgba(29,28,26,0.1)',
+                      borderRadius: 14,
+                      overflow: 'hidden',
+                      background: '#fff',
+                      cursor: 'zoom-in',
+                      textAlign: 'left',
+                    }}
+                  >
+                    <div style={{ position: 'relative', aspectRatio: '21 / 7' }}>
+                      <Image
+                        src={scenario.afterSrc}
+                        alt={scenario.afterAlt}
+                        fill
+                        sizes="100vw"
+                        style={{ objectFit: 'cover' }}
+                      />
+                      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.08) 100%)' }} />
+                      <div style={{ position: 'absolute', top: 12, right: 12, display: 'inline-flex', alignItems: 'center', gap: 8, padding: '7px 10px', borderRadius: 999, background: 'rgba(8,18,15,0.72)', color: '#fff', fontFamily: 'var(--font-jetbrains), monospace', fontSize: 11.5, letterSpacing: '0.08em', textTransform: 'uppercase', backdropFilter: 'blur(10px)' }}>
+                        <ZoomIcon />
+                        Klik untuk zoom
+                      </div>
+                    </div>
+                    <div style={{ padding: '10px 12px', display: 'grid', gap: 6 }}>
+                      <div style={{ fontSize: 12.5, fontFamily: 'var(--font-jetbrains), monospace', letterSpacing: '0.04em', textTransform: 'uppercase', color: 'rgba(29,28,26,0.52)' }}>
+                        Sesudah (konsep)
+                      </div>
+                      <div style={{ fontSize: 14, lineHeight: 1.55, color: 'rgba(29,28,26,0.72)' }}>{scenario.afterCaption}</div>
+                      <div style={{ fontSize: 11.5, fontFamily: 'var(--font-jetbrains), monospace', letterSpacing: '0.04em', textTransform: 'uppercase', color: 'rgba(29,28,26,0.45)' }}>
+                        Caption visual: Gemini 3.1 Flash
+                      </div>
+                    </div>
+                  </button>
+                </div>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+        <Reveal index={5}>
+          <div style={{ marginTop: 24, padding: '20px 24px', background: 'rgba(46,93,75,0.06)', border: '1px solid rgba(46,93,75,0.18)', borderRadius: 14, fontSize: 14.5, lineHeight: 1.7, color: 'rgba(29,28,26,0.72)' }}>
+            <strong style={{ color: 'var(--accent)' }}>Catatan jujur:</strong> Saya bukan arsitek atau kontraktor. Yang saya tulis di atas datang dari percakapan dengan tiga orang yang profesinya berkaitan dengan bangun di area ini. Posisi talud, arah matahari, dan ketinggian level itu nyata, saya sudah ukur sendiri. Tapi untuk denah yang bisa diajukan ke kecamatan, datang dengan arsitek Anda sendiri. Saya akan ada di lokasi.
+          </div>
         </Reveal>
       </section>
 
