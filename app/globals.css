@@ -82,7 +82,18 @@ html[data-photoshape='square'] #ltm-photo { border-radius: 24px; }
   }
 
   .land-social-proof {
-    display: none !important;
+    left: 12px !important;
+    right: 12px;
+    bottom: 12px !important;
+    align-items: flex-start;
+  }
+
+  .land-social-proof-card {
+    max-width: calc(100vw - 24px) !important;
+  }
+
+  .land-social-proof-count {
+    max-width: calc(100vw - 24px);
   }
 }
 

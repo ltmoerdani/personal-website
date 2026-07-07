@@ -9,11 +9,11 @@
 
 | Field | Value |
 |-------|-------|
-| **Last Session** | 2026-07-07 — Jual Tanah Bogor standalone landing page (full build, committed to feat/ads) |
-| **Worked On** | **JUAL TANAH BOGOR LANDING PAGE.** (1) Created standalone `app/jual-tanah-bogor/` route outside i18n. (2) Hero with panoramic photo background + glassmorphism stats card + summary aside. (3) Photo gallery: 6 field photos renamed to descriptive filenames, first photo full-width panorama, remaining in grid, all click-to-zoom with lightbox modal. (4) Concept visualization section: 4 growth scenarios (Villa, Airbnb, Studio, Taman) with stacked before/after images, zoomable. (5) Copywriting audit (Writing Framework V4): rewrote scenario descriptions for voice consistency, normalized mixed EN/ID diction. (6) Unified all section widths to 1180px. (7) Fixed image cache issue (.next/cache/images). (8) Committed to `feat/ads` branch, pushed to GitHub. |
-| **Stopped At** | Landing page complete and committed. Documentation created. |
-| **Next Action** | → (a) Add favicon + OG image (currently 404). (b) Mobile QA across breakpoints for tanah-bogor page. (c) Set `NEXT_PUBLIC_SITE_URL=https://ltmoerdani.com` for production. (d) Deploy to Vercel. (e) Pro Archery case study enrichment. (f) Merge `feat/ads` to main when ready. |
-| **Open Issues** | (1) `GET /favicon.ico 404` — no favicon yet. (2) Next.js 16 `middleware.ts` deprecation warning (still functional, monitor). (3) Pro Archery case study still needs enrichment. (4) Branch `feat/ads` not yet merged to main. |
+| **Last Session** | 2026-07-07 — Jual Tanah Bogor responsive fixes + root layout HTML tags fix + social proof rework |
+| **Worked On** | **JUAL TANAH BOGOR RESPONSIVE + ROOT LAYOUT.** (1) Responsive hero: stack 1-col on mobile/tablet, heading resize, facts grid 2-col, detail rows stack vertical. (2) Root layout fix: added `<html>`+`<body>`+fonts+globals.css to `app/layout.tsx`; stripped `<html>`/`<body>` from 3 nested layouts (locale, jual-tanah-bogor, not-found). (3) Social proof: restored visibility on mobile/tablet (adaptive layout, not hidden), restructured card-above-count via `column-reverse`, animation enter from top (`translateY(-16px)`). All verified via Playwright DOM inspection across 3 viewports. |
+| **Stopped At** | Responsive + root layout + social proof all fixed and visually verified. Documentation created. |
+| **Next Action** | → (a) Add favicon + OG image (currently 404). (b) Commit Session 6 changes to `feat/ads`. (c) Set `NEXT_PUBLIC_SITE_URL=https://ltmoerdani.com` for production. (d) Deploy to Vercel. (e) Pro Archery case study enrichment. (f) Merge `feat/ads` to main when ready. |
+| **Open Issues** | (1) `GET /favicon.ico 404` — no favicon yet. (2) Next.js 16 `middleware.ts` deprecation warning (still functional, monitor). (3) Pro Archery case study still needs enrichment. (4) Branch `feat/ads` not yet merged to main. (5) Session 6 changes not yet committed. |
 
 ---
 
@@ -48,6 +48,14 @@
 ---
 
 ## ✅ COMPLETED (Recent)
+
+### 📅 2026-07-07 — Session 6: Responsive Fixes + Root Layout HTML Tags
+| ID | Tag | Task — Impact | Time |
+|----|-----|---------------|------|
+| FIX-07 | `fix` | Responsive hero layout — hero grid stack 1-col on mobile/tablet via `land-hero-shell` CSS class + media queries. Heading resize `clamp(28px,10vw,44px)`, facts grid 2-col, detail rows stack vertical | ~20min |
+| FIX-08 | `fix` | Root layout HTML tags — Next.js 16 runtime error "Missing `<html>` and `<body>` tags". Added `<html>`+`<body>`+fonts+globals.css to `app/layout.tsx`. Stripped `<html>`/`<body>` from `app/[locale]/layout.tsx`, `app/jual-tanah-bogor/layout.tsx`, `app/[locale]/not-found.tsx` (4 files) | ~15min |
+| FIX-09 | `fix` | Social proof notification — restored visibility on mobile/tablet (was hidden via `display:none` over-correction). Restructured card-above-count via `flexDirection: column-reverse`. Animation enter from top (`translateY(-16px)` instead of `translateY(20px)`) | ~15min |
+| DOC-08 | `docs` | Bug fix documentation — `docs/bug-fixes/03-2026-07-07-jual-tanah-responsive-and-root-layout.md` (3 bugs, timeline, key insights, verification matrix) | ~20min |
 
 ### 📅 2026-07-07 — Session 5: Jual Tanah Bogor Landing Page
 | ID | Tag | Task — Impact | Time |

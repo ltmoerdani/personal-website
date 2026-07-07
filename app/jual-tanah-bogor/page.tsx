@@ -82,7 +82,7 @@ function SocialProofNotification() {
         left: 20,
         zIndex: 150,
         display: 'flex',
-        flexDirection: 'column',
+        flexDirection: 'column-reverse',
         gap: 8,
         pointerEvents: 'none',
       }}
@@ -132,7 +132,7 @@ function SocialProofNotification() {
           border: '1px solid rgba(29,28,26,0.1)',
           boxShadow: '0 8px 28px rgba(29,28,26,0.12)',
           maxWidth: 320,
-          transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+          transform: isVisible ? 'translateY(0)' : 'translateY(-16px)',
           opacity: isVisible ? 1 : 0,
           transition: 'transform 0.45s var(--ease), opacity 0.45s var(--ease)',
           alignSelf: 'flex-start',
