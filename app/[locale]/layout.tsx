@@ -1,10 +1,8 @@
 import type { Metadata } from 'next';
-import { Archivo, Instrument_Serif, JetBrains_Mono } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 
-import '../globals.css';
 import {
   locales,
   defaultLocale,
@@ -12,28 +10,6 @@ import {
   siteBaseUrl,
   type Locale,
 } from '@/i18n/config';
-
-const archivo = Archivo({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800', '900'],
-  display: 'swap',
-  variable: '--font-archivo',
-});
-
-const instrument = Instrument_Serif({
-  subsets: ['latin'],
-  weight: ['400'],
-  style: ['normal', 'italic'],
-  display: 'swap',
-  variable: '--font-instrument',
-});
-
-const jetbrains = JetBrains_Mono({
-  subsets: ['latin'],
-  weight: ['400', '500', '700'],
-  display: 'swap',
-  variable: '--font-jetbrains',
-});
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -99,15 +75,8 @@ export default async function LocaleLayout({
   setRequestLocale(active);
 
   return (
-    <html
-      lang={localeHtmlLang[active]}
-      data-scroll-behavior="smooth"
-      className={`${archivo.variable} ${instrument.variable} ${jetbrains.variable}`}
-      suppressHydrationWarning
-    >
-      <body>
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
-      </body>
-    </html>
+    <div lang={localeHtmlLang[active]}>
+      <NextIntlClientProvider>{children}</NextIntlClientProvider>
+    </div>
   );
 }

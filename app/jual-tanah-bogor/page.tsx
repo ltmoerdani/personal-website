@@ -75,18 +75,20 @@ function SocialProofNotification() {
 
   return (
     <div
+      className="land-social-proof"
       style={{
         position: 'fixed',
         bottom: 20,
         left: 20,
         zIndex: 150,
         display: 'flex',
-        flexDirection: 'column',
+        flexDirection: 'column-reverse',
         gap: 8,
         pointerEvents: 'none',
       }}
     >
       <div
+        className="land-social-proof-count"
         style={{
           display: 'inline-flex',
           alignItems: 'center',
@@ -119,6 +121,7 @@ function SocialProofNotification() {
       </div>
 
       <div
+        className="land-social-proof-card"
         style={{
           display: 'flex',
           alignItems: 'center',
@@ -129,7 +132,7 @@ function SocialProofNotification() {
           border: '1px solid rgba(29,28,26,0.1)',
           boxShadow: '0 8px 28px rgba(29,28,26,0.12)',
           maxWidth: 320,
-          transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+          transform: isVisible ? 'translateY(0)' : 'translateY(-16px)',
           opacity: isVisible ? 1 : 0,
           transition: 'transform 0.45s var(--ease), opacity 0.45s var(--ease)',
           alignSelf: 'flex-start',
@@ -374,18 +377,18 @@ export default function JualTanahBogorPage() {
           />
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(8,18,15,0.28) 0%, rgba(8,18,15,0.56) 45%, rgba(8,18,15,0.82) 100%), radial-gradient(120% 120% at 20% 0%, rgba(46,93,75,0.18) 0%, rgba(46,93,75,0) 58%)' }} />
         </div>
-        <div style={{ position: 'relative', zIndex: 1, maxWidth: 1180, margin: '0 auto', padding: 'clamp(64px,10vh,120px) clamp(20px,4vw,56px) clamp(40px,7vh,72px)', display: 'grid', gridTemplateColumns: 'minmax(0, 1.3fr) minmax(280px, 0.7fr)', gap: 24, alignItems: 'end' }}>
-          <div>
+        <div className="land-hero-shell" style={{ position: 'relative', zIndex: 1, maxWidth: 1180, margin: '0 auto', padding: 'clamp(64px,10vh,120px) clamp(20px,4vw,56px) clamp(40px,7vh,72px)', display: 'grid', gridTemplateColumns: 'minmax(0, 1.3fr) minmax(280px, 0.7fr)', gap: 24, alignItems: 'end' }}>
+          <div className="land-hero-content">
             <div style={{ fontFamily: 'var(--font-jetbrains), monospace', fontSize: 11.5, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(248,247,243,0.68)', marginBottom: 16 }}>
               Jual tanah &middot; Bogor, Indonesia
             </div>
-            <h1 style={{ fontFamily: 'var(--font-instrument), serif', fontStyle: 'italic', fontSize: 'clamp(34px, 5vw, 58px)', lineHeight: 1.05, fontWeight: 400, maxWidth: 760, textWrap: 'balance' as const }}>
+            <h1 className="land-hero-title" style={{ fontFamily: 'var(--font-instrument), serif', fontStyle: 'italic', fontSize: 'clamp(34px, 5vw, 58px)', lineHeight: 1.05, fontWeight: 400, maxWidth: 760, textWrap: 'balance' as const }}>
               Tanah Split-Level &middot; 549 M&sup2; SHM di Aryawidura Residence
             </h1>
-            <p style={{ fontSize: 'clamp(16px, 2.2vw, 21px)', lineHeight: 1.65, color: 'rgba(248,247,243,0.88)', maxWidth: 700, marginTop: 24 }}>
+            <p className="land-hero-lead" style={{ fontSize: 'clamp(16px, 2.2vw, 21px)', lineHeight: 1.65, color: 'rgba(248,247,243,0.88)', maxWidth: 700, marginTop: 24 }}>
               Tegal Gundil, Kota Bogor. Sertifikat Hak Milik, kontur split-level dengan terasering alami, dan talud yang sudah ada. Lahan ini masih menyimpan bentuk aslinya.
             </p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(150px,1fr))', gap: 1, background: 'rgba(248,247,243,0.14)', border: '1px solid rgba(248,247,243,0.15)', borderRadius: 18, overflow: 'hidden', marginTop: 36, backdropFilter: 'blur(10px)', boxShadow: '0 24px 80px rgba(0,0,0,0.24)' }}>
+            <div className="land-hero-facts" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(150px,1fr))', gap: 1, background: 'rgba(248,247,243,0.14)', border: '1px solid rgba(248,247,243,0.15)', borderRadius: 18, overflow: 'hidden', marginTop: 36, backdropFilter: 'blur(10px)', boxShadow: '0 24px 80px rgba(0,0,0,0.24)' }}>
               {heroFacts.map((fact) => (
                 <div key={fact.label} style={{ background: 'rgba(12,23,19,0.7)', padding: 24, minHeight: 114 }}>
                   <div style={{ fontWeight: 900, fontSize: 'clamp(26px, 4vw, 36px)', letterSpacing: '-0.04em', color: 'color-mix(in oklab, var(--accent) 52%, white)' }}>
@@ -399,7 +402,7 @@ export default function JualTanahBogorPage() {
             </div>
           </div>
 
-          <aside style={{ background: 'rgba(248,247,243,0.08)', border: '1px solid rgba(248,247,243,0.14)', borderRadius: 20, padding: 20, backdropFilter: 'blur(14px)', boxShadow: '0 24px 80px rgba(0,0,0,0.18)' }}>
+          <aside className="land-hero-aside" style={{ background: 'rgba(248,247,243,0.08)', border: '1px solid rgba(248,247,243,0.14)', borderRadius: 20, padding: 20, backdropFilter: 'blur(14px)', boxShadow: '0 24px 80px rgba(0,0,0,0.18)' }}>
             <div style={{ fontFamily: 'var(--font-jetbrains), monospace', fontSize: 11, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(248,247,243,0.62)', marginBottom: 12 }}>
               Ringkasan cepat
             </div>
@@ -606,13 +609,13 @@ export default function JualTanahBogorPage() {
           <div style={sty.statCard}>
             <h2 style={sty.sectTitle}>Detail Properti</h2>
             <div style={{ marginTop: 20 }}>
-              <div style={sty.dr}><span style={sty.dl}>Luas Tanah</span><span style={sty.dv}>549 M&sup2; (2 sertifikat)</span></div>
-              <div style={sty.dr}><span style={sty.dl}>Sertifikat</span><span style={sty.dv}>SHM &minus; 2 unit, atas dan bawah</span></div>
-              <div style={sty.dr}><span style={sty.dl}>Harga</span><span style={sty.dv}>Rp 3 Miliar (sekitar Rp 5,46 jt/m&sup2;)</span></div>
-              <div style={sty.dr}><span style={sty.dl}>Negosiasi</span><span style={sty.dv}>Nego wajar</span></div>
-              <div style={sty.dr}><span style={sty.dl}>Kontur</span><span style={sty.dv}>Split-level, terasering alami</span></div>
-              <div style={sty.dr}><span style={sty.dl}>Talud</span><span style={sty.dv}>Sudah ada</span></div>
-              <div style={sty.dr}><span style={sty.dl}>Lokasi</span><span style={sty.dv}>Aryawidura Residence, Tegal Gundil, Bogor 16152</span></div>
+              <div className="land-detail-row" style={sty.dr}><span style={sty.dl}>Luas Tanah</span><span className="land-detail-value" style={sty.dv}>549 M&sup2; (2 sertifikat)</span></div>
+              <div className="land-detail-row" style={sty.dr}><span style={sty.dl}>Sertifikat</span><span className="land-detail-value" style={sty.dv}>SHM &minus; 2 unit, atas dan bawah</span></div>
+              <div className="land-detail-row" style={sty.dr}><span style={sty.dl}>Harga</span><span className="land-detail-value" style={sty.dv}>Rp 3 Miliar (sekitar Rp 5,46 jt/m&sup2;)</span></div>
+              <div className="land-detail-row" style={sty.dr}><span style={sty.dl}>Negosiasi</span><span className="land-detail-value" style={sty.dv}>Nego wajar</span></div>
+              <div className="land-detail-row" style={sty.dr}><span style={sty.dl}>Kontur</span><span className="land-detail-value" style={sty.dv}>Split-level, terasering alami</span></div>
+              <div className="land-detail-row" style={sty.dr}><span style={sty.dl}>Talud</span><span className="land-detail-value" style={sty.dv}>Sudah ada</span></div>
+              <div className="land-detail-row" style={sty.dr}><span style={sty.dl}>Lokasi</span><span className="land-detail-value" style={sty.dv}>Aryawidura Residence, Tegal Gundil, Bogor 16152</span></div>
             </div>
           </div>
         </Reveal>
