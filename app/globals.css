@@ -54,6 +54,71 @@ html[data-photoshape='square'] #ltm-photo { border-radius: 24px; }
 @keyframes ltm-pulse   { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.3); } }
 @keyframes ltm-fade    { from { opacity: 0; } to { opacity: 1; } }
 
+/* Jual Tanah Bogor landing page */
+.land-hero-shell {
+  grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+}
+
+.land-hero-aside {
+  width: 100%;
+  max-width: 380px;
+  justify-self: end;
+}
+
+@media (max-width: 1023px) {
+  .land-hero-shell {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+    align-items: start !important;
+  }
+
+  .land-hero-content {
+    max-width: 100%;
+  }
+
+  .land-hero-aside {
+    max-width: none;
+    justify-self: stretch;
+  }
+
+  .land-social-proof {
+    display: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .land-hero-shell {
+    padding-top: 52px !important;
+    padding-bottom: 28px !important;
+  }
+
+  .land-hero-title {
+    font-size: clamp(28px, 10vw, 44px) !important;
+    line-height: 1.08 !important;
+    text-wrap: pretty;
+  }
+
+  .land-hero-lead {
+    margin-top: 18px !important;
+  }
+
+  .land-hero-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    margin-top: 28px !important;
+  }
+
+  .land-detail-row {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 6px;
+  }
+
+  .land-detail-value {
+    text-align: left !important;
+  }
+
+}
+
 /* Scroll reveal — elements start hidden, fade up when .is-visible is added */
 [data-reveal] {
   opacity: 0;
