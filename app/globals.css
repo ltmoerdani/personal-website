@@ -270,3 +270,87 @@ html[data-photoshape='square'] #ltm-photo { border-radius: 24px; }
     gap: 20px 32px;
   }
 }
+
+/* ─── Blog / writing prose ──────────────────────────────── */
+.ltm-prose {
+  font-size: 17px;
+  line-height: 1.85;
+  color: rgba(29,28,26,0.82);
+}
+.ltm-prose > * + * { margin-top: 1.1em; }
+.ltm-prose h2 {
+  font-family: var(--font-instrument), serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(26px, 3.2vw, 36px);
+  line-height: 1.2;
+  margin-top: 1.8em;
+  margin-bottom: 0.3em;
+  color: var(--ink);
+}
+.ltm-prose h3 {
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: 1.5em;
+  margin-bottom: 0.2em;
+  color: var(--ink);
+}
+.ltm-prose p { margin: 0; }
+.ltm-prose a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.ltm-prose ul, .ltm-prose ol {
+  padding-left: 1.4em;
+  margin: 0;
+}
+.ltm-prose li { margin-top: 0.5em; }
+.ltm-prose li:first-child { margin-top: 0; }
+.ltm-prose code {
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 0.88em;
+  background: rgba(29,28,26,0.06);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+.ltm-prose pre {
+  background: var(--ink);
+  color: var(--bg);
+  padding: 20px 24px;
+  border-radius: 12px;
+  overflow-x: auto;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.ltm-prose pre code {
+  background: none;
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+}
+.ltm-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+.ltm-prose th, .ltm-prose td {
+  border: 1px solid rgba(29,28,26,0.12);
+  padding: 10px 14px;
+  text-align: left;
+}
+.ltm-prose th {
+  background: rgba(29,28,26,0.04);
+  font-weight: 600;
+}
+.ltm-prose img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+.ltm-prose blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 18px;
+  font-style: italic;
+  color: rgba(29,28,26,0.6);
+}
