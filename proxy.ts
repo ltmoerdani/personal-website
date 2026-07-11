@@ -2,7 +2,7 @@ import createMiddleware from 'next-intl/middleware';
 import { defaultLocale, locales } from './i18n/config';
 
 /**
- * Locale negotiation middleware.
+ * Locale negotiation proxy (Next.js 16 renamed "middleware" to "proxy").
  *
  *  - Prefixed routes are always required: `/en/...` and `/id/...`.
  *  - Visiting `/` negotiates the locale via the `Accept-Language` header and

@@ -2,7 +2,7 @@
  * Central i18n configuration.
  *
  * Consumed by:
- *  - middleware.ts        → locale negotiation + prefix enforcement
+ *  - proxy.ts             → locale negotiation + prefix enforcement
  *  - i18n/request.ts       → server-side message loader
  *  - app/[locale]/layout.tsx → <html lang>, metadata alternates
  *

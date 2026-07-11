@@ -115,7 +115,7 @@ This part confuses people, so it gets its own section.
 The locale lives in the URL. `/en/case/opencode` is English, `/id/case/opencode` is Bahasa Indonesia. There is no runtime language toggle in the navbar. The decision is architectural: URL-driven locale is better for SEO, better for link sharing, and produces a smaller payload because only the matching language ships to the browser.
 
 ```
-middleware.ts        →  negotiates locale (Accept-Language + cookie)
+proxy.ts            →  negotiates locale (Accept-Language + cookie)
 app/[locale]/        →  renders the matching language
 components/T.tsx     →  <T en="Work" id="Karya" />  renders only one
 ```
@@ -149,7 +149,7 @@ ltmoerdani/
 ├── messages/               # en.json, id.json
 ├── docs/                   # architecture, worklog, bug fixes
 ├── prototype/              # HTML reference designs (v1–v4)
-├── middleware.ts           # locale routing
+├── proxy.ts               # locale routing
 ├── next.config.js
 └── tsconfig.json           # @/* path alias
 ```
