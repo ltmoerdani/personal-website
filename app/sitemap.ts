@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { locales, defaultLocale, siteBaseUrl } from '@/i18n/config';
+import { getSortedPosts } from '@/lib/blog';
 
 /**
  * Sitemap entries for all locale-prefixed routes.
@@ -8,7 +9,7 @@ import { locales, defaultLocale, siteBaseUrl } from '@/i18n/config';
  * alternates so search engines understand the relationship between the
  * English and Indonesian versions.
  */
-const routes = ['', '/case/myarchery', '/case/opencode', '/case/pro-archery'];
+const routes = ['', '/writing', '/case/myarchery', '/case/opencode', '/case/pro-archery'];
 
 /** Standalone pages outside the i18n routing (no locale prefix). */
 const standaloneRoutes = [
@@ -50,6 +51,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: page.changeFrequency,
       priority: page.priority,
     });
+  }
+
+  // Individual blog posts — emitted per locale. Posts with a canonical URL
+  // (syndicated) are still included so crawlers discover them and follow the
+  // canonical hint emitted by the page metadata.
+  for (const post of getSortedPosts()) {
+    const lastModified = new Date(post.date);
+    for (const locale of locales) {
+      entries.push({
+        url: `${siteBaseUrl}/${locale}/writing/${post.slug}`,
+        lastModified,
+        changeFrequency: 'monthly',
+        priority: 0.7,
+      });
+    }
   }
 
   return entries;

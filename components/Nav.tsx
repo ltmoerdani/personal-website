@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { Link } from '@/i18n/navigation';
 import { LangToggle } from './LangToggle';
 import { T } from './T';
 
@@ -96,6 +97,20 @@ export function Nav() {
               <T en={item.en} id={item.id} />
             </a>
           ))}
+          <Link
+            href="/writing"
+            style={navItem}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.color = 'var(--accent)';
+              e.currentTarget.style.borderBottomColor = 'var(--accent)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.color = 'var(--ink)';
+              e.currentTarget.style.borderBottomColor = 'transparent';
+            }}
+          >
+            <T en="Writing" id="Tulisan" />
+          </Link>
           <LangToggle />
         </div>
 
@@ -140,6 +155,15 @@ export function Nav() {
             <T en={item.en} id={item.id} />
           </a>
         ))}
+        <Link
+          href="/writing"
+          style={mobileNavItem}
+          onClick={closeMenu}
+          onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--accent)'; }}
+          onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--ink)'; }}
+        >
+          <T en="Writing" id="Tulisan" />
+        </Link>
       </div>
     </>
   );

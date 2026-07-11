@@ -23,7 +23,7 @@ export function CaseStudies() {
             <T en="Case studies" id="Studi kasus" />
           </h2>
           <span style={{ fontFamily: 'var(--font-jetbrains), monospace', fontSize: 15, color: 'var(--accent)' }}>
-            (06)
+            (07)
           </span>
           <p style={{ margin: '0 0 0 auto', maxWidth: 380, fontSize: '14.5px', lineHeight: 1.6, color: 'rgba(29,28,26,0.6)' }}>
             <T
@@ -38,10 +38,13 @@ export function CaseStudies() {
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(340px,1fr))', gap: '40px 28px' }}>
         <Reveal index={0}>
-          <MyArcheryCard />
+          <CampaignForgeCard />
         </Reveal>
         <Reveal index={1}>
           <OpenCodeCard />
+        </Reveal>
+        <Reveal index={0}>
+          <MyArcheryCard />
         </Reveal>
         <Reveal index={0}>
           <BlazzCard />
@@ -54,6 +57,38 @@ export function CaseStudies() {
         </Reveal>
       </div>
     </section>
+  );
+}
+
+function CampaignForgeCard() {
+  return (
+    <Link href="/case/campaign-forge" style={caseLink}>
+      <div style={{ ...placeholderBox, background: '#0a0a0a' }}>
+        <svg width="48" height="48" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ flexShrink: 0 }}>
+          <rect width="22" height="22" rx="6" fill="#3B82F6" />
+          <path d="M13 3.5L5.5 12H10.5L9.5 18.5L16.5 10H11.5L13 3.5Z" fill="white" />
+        </svg>
+        <div style={{ fontFamily: 'var(--font-jetbrains), monospace', fontSize: 12, letterSpacing: '0.06em', color: '#3B82F6', position: 'absolute', bottom: 12, left: 0, right: 0, textAlign: 'center' }}>
+          brief → 3 assets · 1 click deploy
+        </div>
+      </div>
+      <h3 style={caseTitle}>
+        Campaign<span style={{ color: '#3B82F6' }}>Forge</span>
+      </h3>
+      <p style={caseBody}>
+        <T
+          en="Turns one brief into 5 ad copies, a self-hostable landing page, and a 3-email sequence — then deploys to Meta, Vercel, and Brevo in one click. Built in two weeks."
+          id="Mengubah satu brief jadi 5 ad copy, landing page yang bisa self-host, dan 3 email sequence — lalu deploy ke Meta, Vercel, dan Brevo dalam satu klik. Dibangun dua minggu."
+        />
+      </p>
+      <Tags>
+        <Tag>AI tool</Tag>
+        <Tag>
+          <T en="Affiliate" id="Affiliate" />
+        </Tag>
+        <Tag>Next.js</Tag>
+      </Tags>
+    </Link>
   );
 }
 

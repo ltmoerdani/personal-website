@@ -346,6 +346,7 @@ export default function OpenCodeCase() {
 
       <CaseFooter
         prev={{ href: '/case/myarchery', en: 'Prev: MyArchery.id', id: 'Sebelumnya: MyArchery.id' }}
+        next={{ href: '/case/campaign-forge', en: 'Next: CampaignForge', id: 'Berikutnya: CampaignForge' }}
       />
     </div>
   );
