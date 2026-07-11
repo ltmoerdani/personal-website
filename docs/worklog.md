@@ -1,7 +1,7 @@
 # 🧠 WORKLOG — ltmoerdani.com
 
 **Project:** ltmoerdani.com — Personal portfolio (Laksmana Tri Moerdani, Fractional CPO)
-**Updated:** 2026-07-07 | **Status:** In development
+**Updated:** 2026-07-12 | **Status:** In development
 
 ---
 
@@ -9,11 +9,11 @@
 
 | Field | Value |
 |-------|-------|
-| **Last Session** | 2026-07-07 — Jual Tanah Bogor responsive fixes + root layout HTML tags fix + social proof rework |
-| **Worked On** | **JUAL TANAH BOGOR RESPONSIVE + ROOT LAYOUT.** (1) Responsive hero: stack 1-col on mobile/tablet, heading resize, facts grid 2-col, detail rows stack vertical. (2) Root layout fix: added `<html>`+`<body>`+fonts+globals.css to `app/layout.tsx`; stripped `<html>`/`<body>` from 3 nested layouts (locale, jual-tanah-bogor, not-found). (3) Social proof: restored visibility on mobile/tablet (adaptive layout, not hidden), restructured card-above-count via `column-reverse`, animation enter from top (`translateY(-16px)`). All verified via Playwright DOM inspection across 3 viewports. |
-| **Stopped At** | Responsive + root layout + social proof all fixed and visually verified. Documentation created. |
-| **Next Action** | → (a) Add favicon + OG image (currently 404). (b) Commit Session 6 changes to `feat/ads`. (c) Set `NEXT_PUBLIC_SITE_URL=https://ltmoerdani.com` for production. (d) Deploy to Vercel. (e) Pro Archery case study enrichment. (f) Merge `feat/ads` to main when ready. |
-| **Open Issues** | (1) `GET /favicon.ico 404` — no favicon yet. (2) Next.js 16 `middleware.ts` deprecation warning (still functional, monitor). (3) Pro Archery case study still needs enrichment. (4) Branch `feat/ads` not yet merged to main. (5) Session 6 changes not yet committed. |
+| **Last Session** | 2026-07-12 — CampaignForge case study: new page + homepage card + 7 screenshots |
+| **Worked On** | **CAMPAIGNFORGE CASE STUDY.** (1) New case study page `app/[locale]/case/campaign-forge/page.tsx` — 9 narrative sections, 6 screenshots, bilingual EN/ID, stats grid, CaseQuote. (2) Homepage card in `CaseStudies.tsx` — `CampaignForgeCard()`, counter `(06)`→`(07)`. (3) 7 screenshots captured from live CampaignForge dev server (landing, problem, showcase, app form, impact, how-it-works, stack). (4) OpenCode footer nav updated with next→CampaignForge. (5) Card positioning iterated 4× (featured full-width → span 2 → span 2 normal → final: normal 1-column card, 3 per row). (6) Card order: swapped OpenCode/MyArchery positions. All verified via Playwright DOM inspection. |
+| **Stopped At** | Case study page live, all content bilingual, screenshots captured, card positioned as normal grid card. Documentation created. |
+| **Next Action** | → (a) Add favicon + OG image (currently 404). (b) Commit Session 7 changes. (c) Set `NEXT_PUBLIC_SITE_URL=https://ltmoerdani.com` for production. (d) Deploy to Vercel. (e) Pro Archery case study enrichment. (f) Merge to main when ready. |
+| **Open Issues** | (1) `GET /favicon.ico 404` — no favicon yet. (2) Next.js 16 `middleware.ts` deprecation warning (still functional, monitor). (3) Pro Archery case study still needs enrichment. (4) Branch not yet merged to main. (5) Session 7 changes not yet committed. |
 
 ---
 
@@ -48,6 +48,18 @@
 ---
 
 ## ✅ COMPLETED (Recent)
+
+### 📅 2026-07-12 — Session 7: CampaignForge Case Study
+| ID | Tag | Task — Impact | Time |
+|----|-----|---------------|------|
+| CASE-01 | `case-study` | New case study page — `app/[locale]/case/campaign-forge/page.tsx`. 9 narrative sections (invitation, gap, message match, pipeline, deploy hub, operator data, what happened next, decisions, stack). Bilingual EN/ID via `<T>`. Header dark theme with CampaignForge blue accent `#3B82F6`. Stats grid: 5hrs→min, 3 platforms, 96% consistency, 2 wks | ~45min |
+| CASE-02 | `screenshot` | 7 screenshots from live CampaignForge dev server — captured at 1440×900 viewport: landing hero, problem section, solution showcase, app form, impact metrics, how-it-works, stack transparency. Saved to `public/campaignforge-*.png` | ~20min |
+| CASE-03 | `ui` | Homepage card — `CampaignForgeCard()` in `CaseStudies.tsx`. Normal card style (same as OpenCode/MyArchery). Visual box: dark `#0a0a0a` bg with SVG lightning bolt logo. Tags: AI tool, Affiliate, Next.js. Counter updated `(06)`→`(07)` | ~15min |
+| CASE-04 | `ui` | Card positioning iterations — 4 attempts: (1) featured full-width outside grid, (2) featured span 2 inside grid, (3) normal span 2 with aspectRatio override, (4) FINAL: normal 1-column card, 3 per row, 405px height matching all others | ~25min |
+| CASE-05 | `ui` | Card order swap — swapped OpenCode and MyArchery positions. Final: CampaignForge, OpenCode, MyArchery (row 1) / Blazz, JAKI, Validasi (row 2) | ~2min |
+| CASE-06 | `nav` | OpenCode footer nav — added `next` prop to `CaseFooter` in opencode page → CampaignForge | ~2min |
+| DOC-09 | `docs` | Case study documentation — `docs/case-studies/04-2026-07-11-campaignforge-case-study.md` (narrative framing, file structure, screenshot list, card iterations, technical details, regression watch) | ~20min |
+| DOC-10 | `docs` | Worklog update — Session 7 handoff + completed tasks table | ~10min |
 
 ### 📅 2026-07-07 — Session 6: Responsive Fixes + Root Layout HTML Tags
 | ID | Tag | Task — Impact | Time |
