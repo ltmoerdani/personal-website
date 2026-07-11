@@ -140,7 +140,7 @@ function MyArcheryCard() {
     <Link href="/case/myarchery" style={caseLink}>
       <div style={myarcheryVisualBox}>
         <Image
-          src="/myarchery-hero-kids-archers.png"
+          src="/case-studies/myarchery/myarchery-hero-kids-archers.png"
           alt="MyArchery event visual with young archers"
           fill
           sizes="(max-width: 900px) 100vw, 560px"
@@ -185,7 +185,7 @@ function OpenCodeCard() {
       <div style={{ ...placeholderBox, background: 'var(--ink)' }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/opencodego.png"
+          src="/case-studies/opencode/opencodego.png"
           alt="OpenCode for Copilot Chat"
           style={{ width: '55%', maxWidth: 160, height: 'auto', objectFit: 'contain' }}
         />

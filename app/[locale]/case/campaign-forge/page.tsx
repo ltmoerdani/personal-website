@@ -65,7 +65,7 @@ export default function CampaignForgeCase() {
           <figure style={{ margin: 0 }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/campaignforge-landing.png"
+              src="/case-studies/campaignforge/campaignforge-landing.png"
               alt="CampaignForge landing page — hero with pitch metrics: 5 hrs to minutes, 2× throughput, 96% angle match"
               style={{ width: '100%', height: 'auto', borderRadius: 16, border: '1px solid rgba(29,28,26,0.1)' }}
             />
@@ -102,7 +102,7 @@ export default function CampaignForgeCase() {
           <figure style={{ margin: 0 }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/campaignforge-problem.png"
+              src="/case-studies/campaignforge/campaignforge-problem.png"
               alt="CampaignForge problem section — three pain cards: copywriter bottleneck, LP dev time, message drift"
               style={{ width: '100%', height: 'auto', borderRadius: 16, border: '1px solid rgba(29,28,26,0.1)' }}
             />
@@ -129,7 +129,7 @@ export default function CampaignForgeCase() {
           <figure style={{ margin: 0 }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/campaignforge-showcase.png"
+              src="/case-studies/campaignforge/campaignforge-showcase.png"
               alt="CampaignForge solution section — faux app frame showing generated output with 4 tabs"
               style={{ width: '100%', height: 'auto', borderRadius: 16, border: '1px solid rgba(29,28,26,0.1)' }}
             />
@@ -156,7 +156,7 @@ export default function CampaignForgeCase() {
           <figure style={{ margin: 0 }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/campaignforge-app-idle.png"
+              src="/case-studies/campaignforge/campaignforge-app-idle.png"
               alt="CampaignForge app — brief form with 5 fields and sample topic picker"
               style={{ width: '100%', height: 'auto', borderRadius: 16, border: '1px solid rgba(29,28,26,0.1)' }}
             />
@@ -183,7 +183,7 @@ export default function CampaignForgeCase() {
           <figure style={{ margin: 0 }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/campaignforge-impact.png"
+              src="/case-studies/campaignforge/campaignforge-impact.png"
               alt="CampaignForge impact section — before/after comparison showing 50 hours saved per month"
               style={{ width: '100%', height: 'auto', borderRadius: 16, border: '1px solid rgba(29,28,26,0.1)' }}
             />
@@ -210,7 +210,7 @@ export default function CampaignForgeCase() {
           <figure style={{ margin: 0 }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/campaignforge-stack.png"
+              src="/case-studies/campaignforge/campaignforge-stack.png"
               alt="CampaignForge how-it-works page — under the hood section showing each vendor, role, and why it was picked"
               style={{ width: '100%', height: 'auto', borderRadius: 16, border: '1px solid rgba(29,28,26,0.1)' }}
             />
@@ -257,7 +257,7 @@ export default function CampaignForgeCase() {
           <figure style={{ margin: 0 }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/campaignforge-howitworks.png"
+              src="/case-studies/campaignforge/campaignforge-howitworks.png"
               alt="CampaignForge how-it-works page — setup guide with 4 steps and honest MVP status badges"
               style={{ width: '100%', height: 'auto', borderRadius: 16, border: '1px solid rgba(29,28,26,0.1)' }}
             />

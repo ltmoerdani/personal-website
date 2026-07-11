@@ -44,7 +44,7 @@ export default function OpenCodeCase() {
             </div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/opencodego.png"
+              src="/case-studies/opencode/opencodego.png"
               alt="OpenCode for Copilot Chat"
               style={{ width: 'clamp(120px, 20vw, 260px)', height: 'auto' }}
             />
@@ -80,7 +80,7 @@ export default function OpenCodeCase() {
           <figure style={{ margin: 0 }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/github-copilot-price.png"
+              src="/case-studies/opencode/github-copilot-price.png"
               alt="GitHub Copilot pricing tiers: Free, Pro ($10/mo), Pro+ ($39/mo), Enterprise ($39/user/mo) — the announcement that triggered usage-based billing changes"
               style={{ width: '100%', height: 'auto', borderRadius: 16, border: '1px solid rgba(29,28,26,0.1)' }}
             />
@@ -216,7 +216,7 @@ export default function OpenCodeCase() {
               </div>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/opencode-chart.png"
+                src="/case-studies/opencode/opencode-chart.png"
                 alt="OpenCode for Copilot Chat: 60-day install trend showing consistent daily growth with peak at 136 installs, averaging 85-100/day in recent weeks"
                 style={chartImg}
               />
@@ -246,7 +246,7 @@ export default function OpenCodeCase() {
               </div>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/zai-chart.png"
+                src="/case-studies/opencode/zai-chart.png"
                 alt="z.ai Copilot Chat: 60-day install trend showing steady growth from near-zero to 15-25 daily installs, with 654 installs in the last 30 days"
                 style={chartImg}
               />

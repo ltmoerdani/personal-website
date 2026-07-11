@@ -130,7 +130,7 @@ export default function MyArcheryCase() {
           <div style={headerTopRow}>
             <div style={headerLogoBlock}>
               <Image
-                src="/myarchery-logo.svg"
+                src="/case-studies/myarchery/myarchery-logo.svg"
                 alt="MyArchery logo"
                 width={340}
                 height={340}
@@ -166,7 +166,7 @@ export default function MyArcheryCase() {
           <Reveal index={0}>
             <figure style={inlineMediaFigureLight}>
               <Image
-                src="/myarchery-inside-sport-judge-portrait.png"
+                src="/case-studies/myarchery/myarchery-inside-sport-judge-portrait.png"
                 alt="Portrait during on-site judging duty at an archery event"
                 width={768}
                 height={768}
@@ -180,7 +180,7 @@ export default function MyArcheryCase() {
           <Reveal index={1}>
             <figure style={inlineMediaFigureLight}>
               <Image
-                src="/myarchery-inside-sport-field-operations-view.png"
+                src="/case-studies/myarchery/myarchery-inside-sport-field-operations-view.png"
                 alt="Field operations view from judge and organizer desk during competition day"
                 width={768}
                 height={768}
@@ -194,7 +194,7 @@ export default function MyArcheryCase() {
           <Reveal index={2}>
             <figure style={inlineMediaFigureLight}>
               <Image
-                src="/myarchery-inside-sport-target-line-judging.png"
+                src="/case-studies/myarchery/myarchery-inside-sport-target-line-judging.png"
                 alt="Judge at the target line validating arrows and recording results"
                 width={768}
                 height={768}
@@ -208,7 +208,7 @@ export default function MyArcheryCase() {
           <Reveal index={3}>
             <figure style={inlineMediaFigureLight}>
               <Image
-                src="/myarchery-inside-sport-judge-lane-19.png"
+                src="/case-studies/myarchery/myarchery-inside-sport-judge-lane-19.png"
                 alt="Judge lane assignment during live competition session"
                 width={768}
                 height={768}
@@ -222,7 +222,7 @@ export default function MyArcheryCase() {
           <Reveal index={4}>
             <figure style={inlineMediaFigureLight}>
               <Image
-                src="/myarchery-inside-sport-laptop-ops-desk.png"
+                src="/case-studies/myarchery/myarchery-inside-sport-laptop-ops-desk.png"
                 alt="Operating laptop desk during live event execution"
                 width={1200}
                 height={1600}
@@ -236,7 +236,7 @@ export default function MyArcheryCase() {
           <Reveal index={5}>
             <figure style={inlineMediaFigureLight}>
               <Image
-                src="/myarchery-inside-sport-laptop-printer-station.png"
+                src="/case-studies/myarchery/myarchery-inside-sport-laptop-printer-station.png"
                 alt="Laptop and printer station used to support field logistics"
                 width={1245}
                 height={1622}
@@ -282,7 +282,7 @@ export default function MyArcheryCase() {
         <Reveal index={0}>
           <figure style={inlineMediaFigureLight}>
             <Image
-              src="/myarchery-dashboard-scoring-suite-v2.png"
+              src="/case-studies/myarchery/myarchery-dashboard-scoring-suite-v2.png"
               alt="MyArchery organizer dashboard and scoring suite used in live competitions"
               width={1460}
               height={1450}
@@ -326,7 +326,7 @@ export default function MyArcheryCase() {
           <Reveal index={releases.length + 1}>
             <figure style={posterInlineCard}>
               <Image
-                src="/myarchery-poster-jakarta-series-2022.png"
+                src="/case-studies/myarchery/myarchery-poster-jakarta-series-2022.png"
                 alt="Jakarta Series 2022 competition campaign poster"
                 width={640}
                 height={850}
@@ -337,7 +337,7 @@ export default function MyArcheryCase() {
           <Reveal index={releases.length + 2}>
             <figure style={posterInlineCard}>
               <Image
-                src="/myarchery-poster-west-java-league-2023.png"
+                src="/case-studies/myarchery/myarchery-poster-west-java-league-2023.png"
                 alt="West Java Archery League 2023 campaign poster"
                 width={640}
                 height={850}
@@ -406,7 +406,7 @@ export default function MyArcheryCase() {
               titleId="Skoring Langsung"
               bodyEn="Real-time scores on TV screens configurable per category and session. Officials input via mobile. Scan QR, verify archer, enter per-arrow score, submit. The scoreboard updates while the next archer is still shooting."
               bodyId="Skor real-time di layar TV, bisa diatur per kategori dan per sesi. Official input via mobile. Scan QR, verifikasi atlet, input skor per rambahan, submit. Papan skor update saat pemanah berikutnya masih membidik."
-              mediaSrc="/myarchery-live-score-operations.png"
+              mediaSrc="/case-studies/myarchery/myarchery-live-score-operations.png"
               mediaAlt="Live score control room and on-site operations"
               mediaCaptionEn="Live score control plus venue-side operations"
               mediaCaptionId="Kontrol live score plus operasi di venue"
@@ -446,7 +446,7 @@ export default function MyArcheryCase() {
               titleId="Pemeringkatan Jakarta Series"
               bodyEn="Multi-event series leaderboard across 4-series Jakarta 2022 competition. Accessible via web and mobile. Athletes track their standing across the season without asking the organizer for updates."
               bodyId="Leaderboard multi-event lintas 4 seri kompetisi Jakarta 2022. Bisa diakses via web dan mobile. Atlet melacak peringkat mereka sepanjang musim tanpa harus nanya penyelenggara."
-              mediaSrc="/myarchery-series-leaderboard.png"
+              mediaSrc="/case-studies/myarchery/myarchery-series-leaderboard.png"
               mediaAlt="Jakarta Series ranking and leaderboard experience across laptop and mobile"
               mediaCaptionEn="Leaderboard layer that made multi-series competition traceable"
               mediaCaptionId="Lapisan leaderboard yang membuat kompetisi multi-series bisa dilacak"
@@ -473,7 +473,7 @@ export default function MyArcheryCase() {
             <div>
               <figure style={inlineMediaFigureLight}>
                 <Image
-                  src="/myarchery-mobile-scoring-flow.png"
+                  src="/case-studies/myarchery/myarchery-mobile-scoring-flow.png"
                   alt="Mobile workflow from login, QR check-in, to score submission"
                   width={2048}
                   height={737}
@@ -492,7 +492,7 @@ export default function MyArcheryCase() {
                   style={storeBadgeLink}
                 >
                   <Image
-                    src="/google-play-badge-v2.png"
+                    src="/case-studies/myarchery/google-play-badge.png"
                     alt="Get it on Google Play"
                     width={2000}
                     height={593}
@@ -507,7 +507,7 @@ export default function MyArcheryCase() {
                   style={storeBadgeLink}
                 >
                   <Image
-                    src="/app-store-badge.svg"
+                    src="/case-studies/myarchery/app-store-badge.svg"
                     alt="Download on the App Store"
                     width={250}
                     height={83}
@@ -531,7 +531,7 @@ export default function MyArcheryCase() {
         <Reveal index={0}>
           <figure style={inlineMediaFigureLight}>
             <Image
-              src="/myarchery-partner-campaign.png"
+              src="/case-studies/myarchery/myarchery-partner-campaign.png"
               alt="MyArchery partner campaign with club and vendor brands"
               width={2048}
               height={1024}
@@ -545,27 +545,27 @@ export default function MyArcheryCase() {
         <div style={logoStripGrid}>
           <Reveal index={1}>
             <figure style={logoStripCard}>
-              <Image src="/grand-triumph-logo.svg" alt="Grand Triumph event logo" width={340} height={340} style={logoStripImage} />
+              <Image src="/case-studies/myarchery/grand-triumph-logo.svg" alt="Grand Triumph event logo" width={340} height={340} style={logoStripImage} />
             </figure>
           </Reveal>
           <Reveal index={2}>
             <figure style={logoStripCard}>
-              <Image src="/perpani-jawa-barat-logo.png" alt="Perpani Jawa Barat emblem" width={600} height={600} style={logoStripImage} />
+              <Image src="/case-studies/myarchery/perpani-jawa-barat-logo.png" alt="Perpani Jawa Barat emblem" width={600} height={600} style={logoStripImage} />
             </figure>
           </Reveal>
           <Reveal index={3}>
             <figure style={logoStripCard}>
-              <Image src="/perpani-jakarta-timur-logo.png" alt="Perpani Jakarta Timur emblem" width={2048} height={2048} style={logoStripImage} />
+              <Image src="/case-studies/myarchery/perpani-jakarta-timur-logo.png" alt="Perpani Jakarta Timur emblem" width={2048} height={2048} style={logoStripImage} />
             </figure>
           </Reveal>
           <Reveal index={4}>
             <figure style={logoStripCard}>
-              <Image src="/perpani-kebumen-logo.png" alt="Perpani Kebumen emblem" width={1080} height={1080} style={logoStripImage} />
+              <Image src="/case-studies/myarchery/perpani-kebumen-logo.png" alt="Perpani Kebumen emblem" width={1080} height={1080} style={logoStripImage} />
             </figure>
           </Reveal>
           <Reveal index={5}>
             <figure style={logoStripCard}>
-              <Image src="/perpani-dki-jakarta-logo.jpg" alt="Perpani DKI Jakarta emblem" width={256} height={256} style={logoStripImage} />
+              <Image src="/case-studies/myarchery/perpani-dki-jakarta-logo.jpg" alt="Perpani DKI Jakarta emblem" width={256} height={256} style={logoStripImage} />
             </figure>
           </Reveal>
         </div>
