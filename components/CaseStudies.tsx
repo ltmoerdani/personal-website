@@ -12,47 +12,61 @@ export function CaseStudies() {
     <section
       id="work"
       style={{
-        maxWidth: 1280,
+        maxWidth: 1100,
         margin: '0 auto',
-        padding: '0 clamp(20px,4vw,56px) clamp(64px,10vh,120px)',
+        padding: '0 clamp(20px,6vw,120px) clamp(64px,12vh,160px)',
       }}
     >
       <Reveal index={0}>
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: 18, marginBottom: 40, flexWrap: 'wrap' }}>
-          <h2 style={sectionTitle}>
-            <T en="Case studies" id="Studi kasus" />
+        <div style={{ marginBottom: 64 }}>
+          <h2
+            style={{
+              fontSize: 'clamp(28px,4vw,44px)',
+              lineHeight: 1.12,
+              fontWeight: 400,
+              fontStyle: 'italic',
+              fontFamily: 'var(--font-eb-garamond), serif',
+              letterSpacing: '-0.01em',
+            }}
+          >
+            <T en="Selected work" id="Karya terpilih" />
           </h2>
-          <span style={{ fontFamily: 'var(--font-jetbrains), monospace', fontSize: 15, color: 'var(--accent)' }}>
-            (07)
-          </span>
-          <p style={{ margin: '0 0 0 auto', maxWidth: 380, fontSize: '14.5px', lineHeight: 1.6, color: 'rgba(29,28,26,0.6)' }}>
+          <p
+            style={{
+              marginTop: 16,
+              maxWidth: 520,
+              color: 'var(--muted)',
+              fontSize: 'clamp(1.125rem, 1.05rem + 0.3vw, 1.3125rem)',
+            }}
+          >
             <T
-              en="Every one of these started from a business problem. The technology came after."
+              en="Every one started from a business problem. The technology came after."
               id="Semuanya berangkat dari masalah bisnis. Teknologinya menyusul."
             />
           </p>
         </div>
       </Reveal>
 
-      <ProArcheryCard />
-
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(340px,1fr))', gap: '40px 28px' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 48 }}>
         <Reveal index={0}>
+          <ProArcheryCard />
+        </Reveal>
+        <Reveal index={1}>
           <CampaignForgeCard />
         </Reveal>
-        <Reveal index={1}>
+        <Reveal index={2}>
           <OpenCodeCard />
         </Reveal>
-        <Reveal index={0}>
+        <Reveal index={3}>
           <MyArcheryCard />
         </Reveal>
-        <Reveal index={0}>
+        <Reveal index={4}>
           <BlazzCard />
         </Reveal>
-        <Reveal index={1}>
+        <Reveal index={5}>
           <JakiCard />
         </Reveal>
-        <Reveal index={2}>
+        <Reveal index={6}>
           <BookCard />
         </Reveal>
       </div>

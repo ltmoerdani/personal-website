@@ -6,15 +6,15 @@ import { T } from './T';
 export function Contact() {
   return (
     <footer id="contact" style={{ background: 'var(--ink)', color: 'var(--bg)' }}>
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: 'clamp(80px,13vh,150px) clamp(20px,4vw,56px) 40px' }}>
+      <div style={{ maxWidth: 1100, margin: '0 auto', padding: 'clamp(80px,13vh,150px) clamp(20px,6vw,120px) 40px' }}>
         <Reveal index={0}>
-          <div style={{ fontFamily: 'var(--font-jetbrains), monospace', fontSize: 13, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'color-mix(in oklab, var(--accent) 50%, white)', marginBottom: 20 }}>
-            <T en="One last thing" id="Satu hal terakhir" />
+          <div style={{ fontFamily: 'var(--font-jetbrains), monospace', fontSize: 12, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(222,218,211,0.6)', marginBottom: 20 }}>
+            <T en="Contact" id="Kontak" />
           </div>
         </Reveal>
 
         <Reveal index={0}>
-          <h2 style={{ margin: 0, fontFamily: 'var(--font-instrument), serif', fontStyle: 'italic', fontWeight: 400, fontSize: 'clamp(34px,4.6vw,66px)', lineHeight: 1.15, letterSpacing: '-0.015em', maxWidth: 940, textWrap: 'balance' }}>
+          <h2 style={{ margin: 0, fontFamily: 'var(--font-eb-garamond), serif', fontStyle: 'italic', fontWeight: 400, fontSize: 'clamp(34px,5vw,64px)', lineHeight: 1.12, letterSpacing: '-0.01em', maxWidth: 820, textWrap: 'balance' }}>
             <T
               en={
                 <>

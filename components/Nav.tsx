@@ -6,13 +6,10 @@ import { LangToggle } from './LangToggle';
 import { T } from './T';
 
 const navItem: React.CSSProperties = {
-  fontFamily: 'var(--font-jetbrains), monospace',
-  fontSize: 12,
-  letterSpacing: '0.08em',
-  textTransform: 'uppercase',
-  color: 'var(--ink)',
-  borderBottom: '1px solid transparent',
-  transition: 'color .2s, border-color .2s',
+  fontFamily: 'var(--font-eb-garamond), serif',
+  fontSize: 'clamp(1rem, 0.98rem + 0.1vw, 1.0625rem)',
+  color: 'var(--muted)',
+  transition: 'color 180ms var(--ease-out)',
 };
 
 const mobileNavItem: React.CSSProperties = {
@@ -47,31 +44,30 @@ export function Nav() {
           alignItems: 'center',
           justifyContent: 'space-between',
           gap: 24,
-          padding: '18px clamp(20px,4vw,56px)',
-          background: 'rgba(248,247,243,0.85)',
-          backdropFilter: 'blur(12px)',
-          borderBottom: '1px solid rgba(29,28,26,0.08)',
+          padding: '16px clamp(20px,6vw,120px)',
+          background: 'rgba(222,218,211,0.9)',
+          backdropFilter: 'blur(10px)',
         }}
       >
         <a href="#top" style={{ display: 'flex', alignItems: 'baseline', gap: 2 }}>
           <span
             style={{
-              fontFamily: 'var(--font-instrument), serif',
+              fontFamily: 'var(--font-eb-garamond), serif',
               fontStyle: 'italic',
-              fontSize: 24,
-              color: 'var(--accent)',
+              fontSize: 22,
+              color: 'var(--ink)',
             }}
           >
             lt
           </span>
-          <span style={{ fontWeight: 800, fontSize: 19, letterSpacing: '-0.02em' }}>
+          <span style={{ fontWeight: 500, fontSize: 18, letterSpacing: '-0.01em' }}>
             moerdani
           </span>
           <span
             style={{
               fontFamily: 'var(--font-jetbrains), monospace',
-              fontSize: 12,
-              color: 'var(--accent)',
+              fontSize: 11,
+              color: 'var(--muted)',
             }}
           >
             .com
@@ -86,12 +82,10 @@ export function Nav() {
               href={item.href}
               style={navItem}
               onMouseEnter={(e) => {
-                e.currentTarget.style.color = 'var(--accent)';
-                e.currentTarget.style.borderBottomColor = 'var(--accent)';
+                e.currentTarget.style.color = 'var(--ink)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.color = 'var(--ink)';
-                e.currentTarget.style.borderBottomColor = 'transparent';
+                e.currentTarget.style.color = 'var(--muted)';
               }}
             >
               <T en={item.en} id={item.id} />
@@ -101,12 +95,10 @@ export function Nav() {
             href="/writing"
             style={navItem}
             onMouseEnter={(e) => {
-              e.currentTarget.style.color = 'var(--accent)';
-              e.currentTarget.style.borderBottomColor = 'var(--accent)';
+              e.currentTarget.style.color = 'var(--ink)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.color = 'var(--ink)';
-              e.currentTarget.style.borderBottomColor = 'transparent';
+              e.currentTarget.style.color = 'var(--muted)';
             }}
           >
             <T en="Writing" id="Tulisan" />

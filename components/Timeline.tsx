@@ -64,14 +64,24 @@ const entries: Entry[] = [
 export function Timeline() {
   return (
     <section id="timeline" style={{ background: 'var(--ink)', color: 'var(--bg)' }}>
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: 'clamp(64px,10vh,120px) clamp(20px,4vw,56px)' }}>
+      <div style={{ maxWidth: 1100, margin: '0 auto', padding: 'clamp(64px,12vh,160px) clamp(20px,6vw,120px)' }}>
         <Reveal index={0}>
           <div style={{ fontFamily: 'var(--font-jetbrains), monospace', fontSize: 13, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'color-mix(in oklab, var(--accent) 50%, white)', marginBottom: 14 }}>
             2007 – 2026
           </div>
         </Reveal>
         <Reveal index={0}>
-          <h2 style={heading}>
+          <h2
+            style={{
+              margin: '18px 0 0',
+              fontSize: 'clamp(28px,4vw,44px)',
+              lineHeight: 1.12,
+              fontWeight: 400,
+              fontStyle: 'italic',
+              fontFamily: 'var(--font-eb-garamond), serif',
+              letterSpacing: '-0.01em',
+            }}
+          >
             <T en="Twenty years, one pattern" id="Dua puluh tahun, satu pola" />
           </h2>
         </Reveal>

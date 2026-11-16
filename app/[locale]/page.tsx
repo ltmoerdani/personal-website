@@ -25,14 +25,9 @@ export default async function HomePage({
       <Nav />
       <main>
         <Hero />
-        <StatsMarquee />
-        <Positioning />
         <CaseStudies />
         <Approach />
         <Timeline />
-        <Rating />
-        <Testimonials />
-        <Credentials />
         <Contact />
       </main>
     </>

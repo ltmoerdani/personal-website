@@ -8,189 +8,139 @@ export function Hero() {
       id="top"
       style={{
         position: 'relative',
-        padding: 'clamp(48px,8vh,96px) clamp(20px,4vw,56px) 0',
-        maxWidth: 1280,
+        padding: 'clamp(72px,12vh,160px) clamp(20px,6vw,120px) clamp(48px,10vh,120px)',
+        maxWidth: 1100,
         margin: '0 auto',
       }}
     >
-      <div className="ltm-hero-grid">
-        <div>
-          <div
-            style={{
-              fontFamily: 'var(--font-jetbrains), monospace',
-              fontSize: 13,
-              letterSpacing: '0.14em',
-              textTransform: 'uppercase',
-              color: 'var(--accent)',
-              display: 'flex',
-              alignItems: 'center',
-              gap: 10,
-              animation: 'ltm-fade 1s both',
-            }}
-          >
-            <span
-              style={{
-                width: 34,
-                height: '1.5px',
-                background: 'var(--accent)',
-                display: 'inline-block',
-              }}
-            />
-            <span>Laksmana (Oci) Tri Moerdani · Jakarta</span>
-            <span style={{ animation: 'ltm-blink 1.2s step-end infinite' }}>▍</span>
-          </div>
-
-          <h1
-            style={{
-              margin: '22px 0 0',
-              fontSize: 'clamp(32px,5vw,64px)',
-              lineHeight: 1.12,
-              letterSpacing: '-0.03em',
-              fontWeight: 900,
-              textWrap: 'balance',
-            }}
-          >
-            <T
-              en={
-                <>
-                  <Line delay="0.05s">Most product failures</Line>
-                  <Line delay="0.18s">
-                    {'aren\u2019t '}
-                    <Italic>engineering</Italic> problems.
-                  </Line>
-                  <Line delay="0.32s">
-                    {'They\u2019re '}
-                    <Italic accent underline>
-                      clarity
-                    </Italic>{' '}
-                    problems.
-                  </Line>
-                </>
-              }
-              id={
-                <>
-                  <Line delay="0.05s">Kebanyakan produk gagal</Line>
-                  <Line delay="0.18s">
-                    bukan karena <Italic>engineering</Italic>.
-                  </Line>
-                  <Line delay="0.32s">
-                    Tapi karena <Italic accent underline>tidak jelas</Italic>.
-                  </Line>
-                </>
-              }
-            />
-          </h1>
-
-          <p
-            style={{
-              margin: '22px 0 0',
-              maxWidth: 480,
-              fontSize: 16,
-              lineHeight: 1.6,
-              color: 'rgba(29,28,26,0.68)',
-              animation: 'ltm-rise 0.9s var(--ease) 0.5s both',
-            }}
-          >
-            <T
-              en={
-                <>
-                  Fractional CPO and co-founder of Reka Cipta Digital. Twenty years in
-                  digital work, most of it learning the hard way which product decisions
-                  actually hold up.
-                </>
-              }
-              id={
-                <>
-                  Fractional CPO dan co-founder Reka Cipta Digital. Dua puluh tahun
-                  di dunia digital, sebagian besarnya habis untuk belajar mana
-                  keputusan produk yang benar-benar bertahan dan mana yang tidak.
-                </>
-              }
-            />
-          </p>
-
-          <div
-            style={{
-              display: 'flex',
-              gap: 14,
-              marginTop: 28,
-              flexWrap: 'wrap',
-              animation: 'ltm-rise 0.9s var(--ease) 0.62s both',
-            }}
-          >
-            <a
-              href="#work"
-              style={primaryBtn}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background =
-                  'color-mix(in oklab, var(--accent) 78%, black)';
-                e.currentTarget.style.transform = 'translateY(-2px)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'var(--accent)';
-                e.currentTarget.style.transform = 'none';
-              }}
-            >
-              <T en="See the work" id="Lihat karya" />{' '}
-              <span style={{ fontFamily: 'var(--font-jetbrains), monospace' }}>↓</span>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/ltmoerdani"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={outlineBtn}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = '#0A66C2';
-                e.currentTarget.style.borderColor = '#0A66C2';
-                e.currentTarget.style.color = '#fff';
-                e.currentTarget.style.transform = 'translateY(-2px)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'transparent';
-                e.currentTarget.style.borderColor = 'var(--ink)';
-                e.currentTarget.style.color = 'var(--ink)';
-                e.currentTarget.style.transform = 'none';
-              }}
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-              LinkedIn
-            </a>
-          </div>
-        </div>
-
+      <div style={{ maxWidth: 680 }}>
         <div
-          className="ltm-hero-photo-wrap"
           style={{
-            animation: 'ltm-fade 1.2s 0.3s both',
+            fontFamily: 'var(--font-jetbrains), monospace',
+            fontSize: 12,
+            letterSpacing: '0.16em',
+            textTransform: 'uppercase',
+            color: 'var(--muted)',
+            display: 'flex',
+            alignItems: 'center',
+            gap: 10,
+            animation: 'ltm-fade 0.8s both',
           }}
         >
-          <div
-            style={{
-              position: 'absolute',
-              inset: -22,
-              border: '1.5px dashed color-mix(in oklab, var(--accent) 55%, transparent)',
-              borderRadius: '50%',
-              animation: 'ltm-spin 32s linear infinite',
-            }}
+          <span>Laksmana (Oci) Tri Moerdani · Jakarta</span>
+        </div>
+
+        <h1
+          style={{
+            margin: '28px 0 0',
+            fontSize: 'clamp(40px,7vw,72px)',
+            lineHeight: 1.08,
+            letterSpacing: '-0.01em',
+            fontWeight: 400,
+            fontStyle: 'italic',
+            textWrap: 'balance',
+            fontFamily: 'var(--font-eb-garamond), serif',
+          }}
+        >
+          <T
+            en={
+              <>
+                Most product failures
+                <br />
+                aren&apos;t engineering problems.
+                <br />
+                They&apos;re clarity problems.
+              </>
+            }
+            id={
+              <>
+                Kebanyakan produk gagal
+                <br />
+                bukan karena engineering.
+                <br />
+                Tapi karena tidak jelas.
+              </>
+            }
           />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            id="ltm-photo"
-            src="/profile.png"
-            alt="Laksmana Tri Moerdani"
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              display: 'block',
-              background: 'var(--accent)',
-              boxShadow: '0 24px 60px -20px rgba(29,58,46,0.45)',
-            }}
+        </h1>
+
+        <p
+          style={{
+            margin: '32px 0 0',
+            maxWidth: 520,
+            fontSize: 'clamp(1.125rem, 1.05rem + 0.3vw, 1.3125rem)',
+            lineHeight: 1.6,
+            color: 'var(--ink)',
+            animation: 'ltm-rise 0.9s var(--ease-out) 0.2s both',
+          }}
+        >
+          <T
+            en={
+              <>
+              Fractional CPO and co-founder of Reka Cipta Digital. Twenty years in
+              digital work, helping founders build the right product, not just a product.
+              </>
+            }
+            id={
+              <>
+              Fractional CPO dan co-founder Reka Cipta Digital. Dua puluh tahun
+              di dunia digital, membantu founder membangun produk yang tepat, bukan sekadar produk.
+              </>
+            }
           />
-          <div style={badgeLeft}>
-            <T en="20 yrs · 3 continents" id="20 thn · 3 benua" />
-          </div>
-          <div style={badgeRight}>★ 5.0</div>
+        </p>
+
+        <div
+          style={{
+            display: 'flex',
+            gap: 16,
+            marginTop: 40,
+            flexWrap: 'wrap',
+            alignItems: 'center',
+            animation: 'ltm-rise 0.9s var(--ease-out) 0.32s both',
+          }}
+        >
+          <a
+            href="#work"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 8,
+              padding: '10px 18px',
+              border: '1px solid var(--ink)',
+              color: 'var(--ink)',
+              fontSize: 'clamp(1rem, 0.98rem + 0.1vw, 1.0625rem)',
+              transition: 'all 180ms var(--ease-out)',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = 'var(--ink)';
+              e.currentTarget.style.color = 'var(--bg)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'transparent';
+              e.currentTarget.style.color = 'var(--ink)';
+            }}
+          >
+            <T en="See the work" id="Lihat karya" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/ltmoerdani"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              color: 'var(--muted)',
+              fontSize: 'clamp(1rem, 0.98rem + 0.1vw, 1.0625rem)',
+              transition: 'color 180ms var(--ease-out)',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.color = 'var(--ink)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.color = 'var(--muted)';
+            }}
+          >
+            LinkedIn
+          </a>
         </div>
       </div>
     </header>

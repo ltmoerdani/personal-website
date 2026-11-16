@@ -41,15 +41,26 @@ const steps: Step[] = [
 
 export function Approach() {
   return (
-    <section id="approach" style={{ background: 'color-mix(in oklab, var(--accent) 10%, var(--bg))' }}>
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: 'clamp(64px,10vh,120px) clamp(20px,4vw,56px)' }}>
+    <section id="approach" style={{ background: 'color-mix(in oklab, var(--paper) 60%, var(--bg))' }}>
+      <div style={{ maxWidth: 1100, margin: '0 auto', padding: 'clamp(64px,12vh,160px) clamp(20px,6vw,120px)' }}>
         <Reveal index={0}>
-          <div style={{ fontFamily: 'var(--font-jetbrains), monospace', fontSize: 13, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 14 }}>
-            <T en="How I work" id="Cara saya bekerja" />
+          <div style={{ fontFamily: 'var(--font-jetbrains), monospace', fontSize: 12, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: 18 }}>
+            <T en="Approach" id="Pendekatan" />
           </div>
         </Reveal>
         <Reveal index={0}>
-          <h2 style={heading}>
+          <h2
+            style={{
+              margin: '18px 0 0',
+              fontSize: 'clamp(28px,4vw,44px)',
+              lineHeight: 1.12,
+              fontWeight: 400,
+              fontStyle: 'italic',
+              fontFamily: 'var(--font-eb-garamond), serif',
+              letterSpacing: '-0.01em',
+              maxWidth: 680,
+            }}
+          >
             <T
               en="Forcing clarity before the money and the building start."
               id="Memaksa kejelasan sebelum uang dan pembangunan dimulai."
